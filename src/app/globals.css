@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #F8F9FC;
+  --ink: #101A35;
+  --accent: #285BFF;
+  --tint: #E9EEFA;
+  --muted: #4E586E;
+  --muted-light: #68738A;
+  --positive: #16834A;
+  --border: #E1E6F0;
+  --border-dark: #1F2C4C;
+  --dark: #0B1530;
+  --dark-card: #121F42;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Tabular figures for pricing and statistics */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum';
+}
+
+/* Focus visibility rule: 2px accent with 2px offset */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Progressive enhancement: by default everything is visible (100% usable without JS animation) */
+.reveal-item {
+  opacity: 1;
+  transform: none;
+}
+
+/* When JS is ready and user does not prefer reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+  html.js-ready .reveal-item:not(.is-revealed) {
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 240ms ease-out, transform 240ms ease-out;
+  }
+
+  html.js-ready .reveal-item.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 240ms ease-out, transform 240ms ease-out;
+  }
+}

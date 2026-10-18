@@ -30,6 +30,15 @@ export function StarterSection() {
           {/* Left Column: English Editorial Copy */}
           <div className="lg:col-span-6 space-y-6">
             <ScrollReveal delayMs={50}>
+              {starterSectionData.leadLine && (
+                <p
+                  lang="hi-Latn"
+                  className="text-ink text-lg sm:text-xl font-normal leading-relaxed border-l-2 border-accent pl-3.5 mb-6"
+                >
+                  &ldquo;{starterSectionData.leadLine}&rdquo;
+                </p>
+              )}
+
               {starterSectionData.paragraphs.map((p, idx) => (
                 <p key={idx} className="text-muted text-base sm:text-lg leading-relaxed font-normal">
                   {p}
@@ -59,21 +68,21 @@ export function StarterSection() {
             <ScrollReveal delayMs={100}>
               <div className="border border-border border-l-4 border-l-accent bg-white p-6 sm:p-8 rounded-none">
                 <div className="flex items-center justify-between mb-4 pb-3 border-b border-border">
-                  <span className="font-mono text-xs font-bold text-muted uppercase tracking-wider">
+                  <span className="font-hindi text-xs font-medium text-muted uppercase tracking-wider">
                     {starterSectionData.hindiNote}
                   </span>
-                  <span className="font-mono text-xs font-bold text-accent">
+                  <span className="font-hindi text-xs font-medium text-accent">
                     ₹5,000 / माह
                   </span>
                 </div>
 
-                <blockquote className="font-hindi text-base sm:text-lg text-ink font-medium leading-relaxed mb-6">
+                <blockquote className="font-hindi text-base sm:text-lg text-ink font-normal leading-relaxed mb-6">
                   &ldquo;{starterSectionData.hindiQuote}&rdquo;
                 </blockquote>
 
                 <div className="pt-4 border-t border-border flex items-center justify-between text-xs text-muted">
-                  <span>टेस्टिंग और मूल्यांकन पैकेज</span>
-                  <span className="font-mono">₹3,000 विज्ञापन + ₹2,000 सेवा</span>
+                  <span className="font-hindi">टेस्टिंग और मूल्यांकन पैकेज</span>
+                  <span className="font-hindi">₹3,000 विज्ञापन + ₹2,000 सेवा</span>
                 </div>
               </div>
             </ScrollReveal>

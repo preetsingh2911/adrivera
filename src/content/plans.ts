@@ -2,6 +2,7 @@ export interface PlanPricing {
   id: string;
   name: string;
   subtitle: string;
+  purposeTagline?: string;
   totalPrice: number;
   priceDisplay: string;
   billingPeriod: string;
@@ -33,6 +34,7 @@ export const plansContent: PlanPricing[] = [
     id: 'starter',
     name: 'Starter',
     subtitle: 'Accessible entry point for testing paid Meta Ads',
+    purposeTagline: 'Pehli baar ads chala rahe ho? Toh ₹5,000 per month se shuru karke dekho.',
     totalPrice: 5000,
     priceDisplay: '₹5,000',
     billingPeriod: '/month',
@@ -74,6 +76,7 @@ export const plansContent: PlanPricing[] = [
     id: 'growth',
     name: 'Growth',
     subtitle: 'For businesses ready for creative testing and weekly optimization',
+    purposeTagline: 'Business achha chal raha hai? Ab usse aur logon tak pahunchao.',
     totalPrice: 8000,
     priceDisplay: '₹8,000',
     billingPeriod: '/month',
@@ -111,6 +114,7 @@ export const plansContent: PlanPricing[] = [
     id: 'premium',
     name: 'Premium',
     subtitle: 'Intensive campaign management and close collaborative partnership',
+    purposeTagline: 'Aapka business grow kar raha hai. Ab apni pehchaan bhi grow karo.',
     totalPrice: 16000,
     priceDisplay: '₹16,000',
     billingPeriod: '/month',
@@ -275,6 +279,8 @@ export const pricingTransparencyRules: string[] = [
 export const starterSectionData = {
   eyebrow: '09 / Entry Point',
   headline: "You Don't Have to Commit to a Big Budget to Get Started.",
+  leadLine:
+    'Ek baar try karne mein kya jaata hai? ₹5,000 se shuru karo, results dekho, phir aage decide karo.',
   paragraphs: [
     "We understand that not every business is ready to invest heavily in advertising. That's why our Starter package combines a ₹3,000 advertising budget with basic campaign management for a total of ₹5,000 per month.",
     'Start with a manageable package, evaluate the service and campaign performance, and decide what makes sense for your business next.',

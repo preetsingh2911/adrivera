@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Manrope, Noto_Sans_Devanagari } from 'next/font/google';
+import { Inter, Manrope, IBM_Plex_Mono, Noto_Sans_Devanagari, Newsreader } from 'next/font/google';
 import './globals.css';
 import { siteConfig } from '@/content/site';
 
@@ -7,21 +7,51 @@ const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '500', '600'],
+  preload: true,
+  fallback: ['system-ui', 'sans-serif'],
+  adjustFontFallback: true,
 });
 
 const manrope = Manrope({
   subsets: ['latin'],
   variable: '--font-manrope',
   display: 'swap',
-  weight: ['500', '600', '700', '800'],
+  weight: ['600', '800'],
+  preload: true,
+  fallback: ['system-ui', 'sans-serif'],
+  adjustFontFallback: true,
+});
+
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono',
+  display: 'swap',
+  weight: ['400', '500'],
+  preload: false,
+  fallback: ['ui-monospace', 'monospace'],
+  adjustFontFallback: true,
 });
 
 const notoDevanagari = Noto_Sans_Devanagari({
   subsets: ['devanagari'],
-  variable: '--font-noto-devanagari',
+  variable: '--font-hindi',
   display: 'swap',
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '500'],
+  preload: false,
+  fallback: ['sans-serif'],
+  adjustFontFallback: true,
+});
+
+const newsreader = Newsreader({
+  subsets: ['latin'],
+  variable: '--font-newsreader',
+  display: 'swap',
+  weight: ['400'],
+  style: ['normal'],
+  preload: false,
+  fallback: ['Georgia', 'serif'],
+  adjustFontFallback: true,
 });
 
 const siteUrl = 'https://adrivera.in';
@@ -117,7 +147,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${manrope.variable} ${notoDevanagari.variable}`}
+      className={`${inter.variable} ${manrope.variable} ${ibmPlexMono.variable} ${notoDevanagari.variable} ${newsreader.variable}`}
     >
       <body className="bg-bg text-ink min-h-screen antialiased selection:bg-tint selection:text-ink">
         {/* Skip to Main Content Link for Keyboard and Screen Reader Accessibility */}

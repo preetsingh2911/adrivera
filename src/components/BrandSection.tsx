@@ -2,17 +2,27 @@ import React from 'react';
 import { brandBuildingData } from '@/content/visibility';
 import { ScrollReveal } from './ScrollReveal';
 
-export function BrandSection() {
+interface BrandSectionProps {
+  useSerifHeadline?: boolean;
+}
+
+export function BrandSection({ useSerifHeadline = false }: BrandSectionProps) {
   return (
     <section className="bg-[#0B1530] text-white py-20 sm:py-24 md:py-28 border-b border-white/10">
       <div className="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Block */}
         <ScrollReveal>
           <div className="max-w-4xl mb-12 sm:mb-16">
-            <span className="inline-block text-xs font-semibold uppercase tracking-eyebrow text-white/60 mb-4">
+            <span className="font-mono text-xs font-medium uppercase tracking-eyebrow text-white/60 mb-4 block">
               {brandBuildingData.eyebrow}
             </span>
-            <h2 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white tracking-tighter leading-[1.08]">
+            <h2
+              className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white tracking-tighter leading-[1.08] ${
+                useSerifHeadline
+                  ? 'font-serif font-normal'
+                  : 'font-heading font-extrabold'
+              }`}
+            >
               {brandBuildingData.headline}
             </h2>
           </div>
@@ -23,9 +33,20 @@ export function BrandSection() {
           {/* Left Column: Narrative Copy */}
           <div className="lg:col-span-6 space-y-6">
             <ScrollReveal delayMs={60}>
+              {/* Slogan V2: Lead line of body copy */}
+              {brandBuildingData.leadLine && (
+                <p
+                  lang="hi-Latn"
+                  className="text-white text-lg sm:text-xl font-normal leading-relaxed border-l-2 border-accent pl-3.5"
+                >
+                  &ldquo;{brandBuildingData.leadLine}&rdquo;
+                </p>
+              )}
+
               {brandBuildingData.paragraphs.map((p, idx) => (
                 <p
                   key={idx}
+                  lang={idx === 1 ? 'hi-Latn' : undefined}
                   className="text-white/80 text-base sm:text-lg leading-relaxed font-normal"
                 >
                   {p}
@@ -38,17 +59,28 @@ export function BrandSection() {
           <div className="lg:col-span-6">
             <ScrollReveal delayMs={120}>
               <div className="mb-3">
-                <span className="font-mono uppercase text-xs tracking-wider text-white/70 font-semibold block">
+                <span className="font-mono uppercase text-xs tracking-wider text-white/70 font-medium block">
                   The Broader Opportunity
                 </span>
               </div>
+
+              {/* Slogan V4: Intro line of opportunity list */}
+              {brandBuildingData.opportunityIntro && (
+                <p
+                  lang="hi-Latn"
+                  className="text-white/90 text-sm sm:text-base leading-relaxed font-normal mb-4"
+                >
+                  {brandBuildingData.opportunityIntro}
+                </p>
+              )}
+
               <ul className="border-y border-white/15 divide-y divide-white/15">
                 {brandBuildingData.opportunities.map((item, idx) => (
                   <li key={idx} className="py-4 flex items-start gap-4">
-                    <span className="font-mono text-xs text-white/70 font-bold mt-1 flex-shrink-0">
+                    <span className="font-mono text-xs text-white/70 font-medium mt-1 flex-shrink-0">
                       0{idx + 1}
                     </span>
-                    <span className="text-sm sm:text-base text-white/95 leading-relaxed font-medium">
+                    <span className="text-sm sm:text-base text-white/95 leading-relaxed font-normal">
                       {item}
                     </span>
                   </li>
@@ -58,16 +90,30 @@ export function BrandSection() {
           </div>
         </div>
 
+        {/* Slogan V3: Large pull statement placed before qualification block */}
+        {brandBuildingData.pullStatement && (
+          <ScrollReveal delayMs={150}>
+            <div className="mt-12 sm:mt-16 p-6 sm:p-8 border border-white/15 bg-white/[0.03]">
+              <p
+                lang="hi-Latn"
+                className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight leading-tight"
+              >
+                &ldquo;{brandBuildingData.pullStatement}&rdquo;
+              </p>
+            </div>
+          </ScrollReveal>
+        )}
+
         {/* Qualification Paragraph - Visually Distinct Bordered Block */}
         <ScrollReveal delayMs={180}>
-          <div className="mt-12 sm:mt-16 border border-white/20 bg-white/[0.04] p-6 sm:p-8 rounded-none">
+          <div className="mt-8 border border-white/20 bg-white/[0.04] p-6 sm:p-8 rounded-none">
             <div className="flex items-center gap-2 mb-3">
               <span className="w-1.5 h-1.5 bg-accent inline-block flex-shrink-0" />
-              <span className="font-mono uppercase text-xs tracking-wider text-white/70 font-semibold">
-                Important Qualification & Commercial Reality
+              <span className="font-mono uppercase text-xs tracking-wider text-white/70 font-medium">
+                Important Qualification &amp; Commercial Reality
               </span>
             </div>
-            <p className="text-white/90 text-sm sm:text-base leading-relaxed">
+            <p className="text-white/90 text-sm sm:text-base leading-relaxed font-normal">
               {brandBuildingData.qualification}
             </p>
           </div>

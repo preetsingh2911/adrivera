@@ -166,7 +166,15 @@ export function PricingSection() {
 
                   {/* Included Scope Highlights */}
                   <div className="mb-6">
-                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-ink block mb-3">
+                    {plan.purposeTagline && (
+                      <p
+                        lang="hi-Latn"
+                        className="text-xs text-ink font-normal leading-relaxed mb-4 p-2.5 bg-tint/30 border-l-2 border-accent"
+                      >
+                        {plan.purposeTagline}
+                      </p>
+                    )}
+                    <span className="text-[11px] font-mono font-medium uppercase tracking-wider text-ink block mb-3">
                       Included Scope
                     </span>
                     <ul className="space-y-2.5 text-xs text-ink/90">

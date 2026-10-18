@@ -25,7 +25,9 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
         heading: ['var(--font-manrope)', 'system-ui', 'sans-serif'],
-        hindi: ['var(--font-noto-devanagari)', 'sans-serif'],
+        mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
+        hindi: ['var(--font-hindi)', 'sans-serif'],
+        serif: ['var(--font-newsreader)', 'Georgia', 'serif'],
       },
       borderRadius: {
         none: '0px',

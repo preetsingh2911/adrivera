@@ -63,10 +63,10 @@ export const siteContent: SiteContent = {
     {
       title: 'Policies & Legal',
       links: [
-        { label: 'Privacy Policy', href: '#privacy' },
-        { label: 'Terms of Service', href: '#terms' },
-        { label: 'Cancellation Terms', href: '#cancellation' },
-        { label: 'Advertising Disclaimers', href: '#disclaimers' },
+        { label: 'Privacy Policy', href: '/privacy' },
+        { label: 'Terms of Service', href: '/terms' },
+        { label: 'Cancellation & Renewal', href: '/cancellation-and-renewal' },
+        { label: 'Advertising Disclaimers', href: '/advertising-disclaimer' },
       ],
     },
   ],

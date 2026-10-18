@@ -1,6 +1,7 @@
 export const finalCtaData = {
   eyebrow: '12 / Next Step',
   headline: 'Your Customers Are Already Online. Make Your Business Easier to Discover.',
+  hinglishLead: 'Aapka agla customer shayad abhi aapko jaanta bhi nahi.',
   supportingCopy:
     'Start with a clearly priced advertising package, understand your campaign performance, and decide how you want to grow from there.',
   primaryCta: {

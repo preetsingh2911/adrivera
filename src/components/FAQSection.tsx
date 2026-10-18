@@ -28,7 +28,7 @@ export function FAQSection() {
         {/* Section Header */}
         <ScrollReveal>
           <div className="max-w-3xl mb-12 sm:mb-16">
-            <span className="inline-block text-xs font-semibold uppercase tracking-eyebrow text-muted mb-4">
+            <span className="inline-block text-xs font-semibold uppercase tracking-eyebrow text-muted mb-4 font-mono">
               {faqsData.eyebrow}
             </span>
             <h2 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl text-ink tracking-tighter leading-tight mb-4">
@@ -64,7 +64,10 @@ export function FAQSection() {
                 </span>
               </summary>
 
-              <div className="pt-4 pl-8 sm:pl-9 pr-4 text-xs sm:text-sm text-ink/80 leading-relaxed font-normal border-t border-border/50 mt-4">
+              <div
+                className="pt-4 pl-8 sm:pl-9 pr-4 text-xs sm:text-sm text-ink/80 leading-relaxed font-normal border-t border-border/50 mt-4"
+                {...(item.lang ? { lang: item.lang } : {})}
+              >
                 {item.answer}
               </div>
             </details>

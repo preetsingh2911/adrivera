@@ -2,79 +2,87 @@ export interface FAQItem {
   id: string;
   question: string;
   answer: string;
+  lang?: string;
 }
 
 export const faqsData = {
-  eyebrow: '11 / FAQs',
+  eyebrow: '12 / Questions & Answers',
   headline: 'Frequently Asked Questions',
   leadText:
-    'Clear answers to the most common questions about our plans, advertising budgets, deliverables, and service scopes.',
+    'Clear, direct answers regarding our advertising packages, budget allocations, creative deliverables, and campaign accountability.',
   items: [
     {
       id: 'faq-1',
       question: 'Is the advertising budget included in the package?',
       answer:
-        'Yes. The displayed monthly package price includes both the allocated Meta advertising budget and ADrivera service fee. The exact allocation is displayed for Starter (INR 3,000 ad / INR 2,000 service) and Growth (INR 4,500 ad / INR 3,500 service). No additional agency management fee is added on top.',
+        'Haan, displayed monthly price mein Meta ka ad budget aur ADrivera ki management fee dono shamil hain. Har standard plan ke saath exact budget allocation clear dikhaya gaya hai.',
+      lang: 'hi-Latn',
     },
     {
       id: 'faq-2',
       question: 'Will you guarantee sales or leads?',
       answer:
-        'No. We manage advertising activities professionally, configure targeting, and report actual performance. Business results depend on multiple factors beyond advertising, including your offer, product quality, local competition, pricing, and how quickly your team responds to incoming customer enquiries.',
+        'No. We manage the agreed advertising activities and report actual performance. Results depend on multiple factors, including the business, offer, competition, and customer experience.',
     },
     {
       id: 'faq-3',
       question: 'Can I start if I have never run ads before?',
       answer:
-        'Yes. The Starter plan (INR 5,000 per month) is designed specifically for business owners who want to test Meta advertising with a manageable initial investment, understand how campaigns perform, and evaluate our working relationship before scaling.',
+        'Bada investment karne ki zaroorat nahi. Pehle chhote budget se apne business ke liye ads test kijiye. Starter plan unhi businesses ke liye design kiya gaya hai jo Meta ads ko ek limited monthly budget ke saath try karna chahte hain.',
+      lang: 'hi-Latn',
     },
     {
       id: 'faq-4',
       question: 'What happens if I want to increase my budget?',
       answer:
-        'You can move to Growth, Premium, or request a Custom package depending on your goals and the advertising complexity required. Upgrades take effect at the next billing cycle or on an agreed prorated schedule.',
+        'Pehle try kijiye, campaign ke results samjhiye, aur phir apne business ke hisaab se scale kijiye. Jab aap ready hon, tab hum Growth, Premium ya Custom package par move karne ka plan discuss kar sakte hain.',
+      lang: 'hi-Latn',
     },
     {
       id: 'faq-5',
       question: 'Which platforms do you advertise on?',
       answer:
-        'Primarily Facebook and Instagram using Meta Ads Manager. Placements can include Feed, Stories, and Reels, with supported campaign destinations such as direct WhatsApp conversations or contact forms where relevant.',
+        'Hum primarily Facebook aur Instagram par Meta Ads Manager ke through campaigns run karte hain, aur jahan relevant ho wahan direct WhatsApp enquiry destinations set up karte hain.',
+      lang: 'hi-Latn',
     },
     {
       id: 'faq-6',
       question: 'Do you create video ads?',
       answer:
-        'AI-assisted video production is included in Growth and higher packages according to the defined package scope. The Starter package includes static creative development and does not include video production.',
+        'AI-assisted video production is included in Growth and higher packages according to the agreed scope. Starter has a more limited creative allowance.',
     },
     {
       id: 'faq-7',
       question: 'Will you keep changing my ads?',
       answer:
-        'Creative changes depend on your package. Starter includes a focused creative scope. Growth includes a defined allowance of approximately 2 to 3 creative variations or replacements per month. Premium and Custom allow for more extensive creative pipelines as agreed.',
+        'Creative updates aapke package par depend karte hain. Starter plan mein focused creatives hote hain, jabki Growth aur Premium mein regular creative variations aur refreshes shamil rehte hain.',
+      lang: 'hi-Latn',
     },
     {
       id: 'faq-8',
       question: 'Can you advertise for my particular business?',
       answer:
-        'ADrivera evaluates your business category, objectives, location, audience, and applicable Meta advertising policies before recommending an advertising approach. Certain restricted categories (e.g. medical treatments, financial products) are subject to Meta platform regulations.',
+        'ADrivera can evaluate your business, objective, location, audience, and applicable advertising policies before recommending a suitable approach.',
     },
     {
       id: 'faq-9',
       question: 'Can I choose my own budget?',
       answer:
-        'Yes. Custom packages are available starting at INR 16,000 per month for businesses requiring a larger advertising spend, multiple locations, or custom operational requirements. Budgets and service scopes are confirmed before onboarding.',
+        'Haan bilkul. Agar aapko standard plans se alag budget ya customized service chahiye, toh hum Custom package design kar sakte hain.',
+      lang: 'hi-Latn',
     },
     {
       id: 'faq-10',
       question: 'What if my ads receive clicks but no sales?',
       answer:
-        'We examine the available performance data to diagnose potential bottlenecks. If ads are generating clicks at reasonable costs but visitors do not buy or enquire, we will review your offer clarity, landing destination, pricing, and follow-up speed. Clicks demonstrate visibility; sales require an effective customer conversion path.',
+        'We will explain the available performance data and identify potential issues within our agreed scope. Clicks alone do not guarantee sales, and the wider sales process may need attention.',
     },
     {
       id: 'faq-11',
       question: 'Do you provide in-person meetings?',
       answer:
-        'Starter is managed remotely via WhatsApp, phone, and video calls. Growth includes one in-person review meeting per month in Bhopal. Premium and Custom packages include more frequent in-person coordination as agreed in the service contract.',
+        'Starter plan fully online manage hota hai. Growth package mein har mahine ek in-person meeting shamil hai, aur Premium ya Custom plans mein zaroorat ke hisaab se meetings schedule hoti hain.',
+      lang: 'hi-Latn',
     },
   ] as FAQItem[],
 };

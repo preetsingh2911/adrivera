@@ -3,6 +3,7 @@ export const heroData = {
   headline: 'Good Business. Better Visibility. Stronger Growth.',
   supportingCopy:
     'Reach relevant audiences, generate enquiries, and build brand recognition with Facebook and Instagram advertising managed by ADrivera.',
+  secondaryHinglishLine: 'Aap business sambhaliye, online visibility hum sambhalenge.',
   primaryCta: {
     label: 'Explore Plans',
     href: '#pricing',

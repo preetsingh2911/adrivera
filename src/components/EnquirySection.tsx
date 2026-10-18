@@ -133,13 +133,16 @@ export function EnquirySection() {
       <div className="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="max-w-3xl mb-12 sm:mb-16">
-            <span className="inline-block text-xs font-semibold uppercase tracking-eyebrow text-muted mb-4">
+            <span className="inline-block text-xs font-semibold uppercase tracking-eyebrow text-muted mb-4 font-mono">
               11 / Direct Enquiry
             </span>
             <h2 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl text-ink tracking-tighter leading-tight mb-4">
               Start Your Advertising Enquiry
             </h2>
-            <p className="text-muted text-base sm:text-lg leading-relaxed">
+            <p className="text-accent text-base sm:text-lg font-medium leading-snug mb-3" lang="hi-Latn">
+              Agar aapko lagta hai ki aapka business aur grow kar sakta hai, toh shuruaat aaj hi kijiye.
+            </p>
+            <p className="text-muted text-base leading-relaxed">
               Fill in your business details to compose an enquiry message. When submitted, you will be directed to send the formatted message directly through WhatsApp.
             </p>
           </div>
@@ -380,15 +383,15 @@ export function EnquirySection() {
                 <ul className="space-y-3.5 text-xs sm:text-sm text-ink/85 mb-6">
                   <li className="flex items-start gap-3">
                     <span className="font-mono text-xs font-bold text-accent flex-shrink-0 mt-0.5">01</span>
-                    <span>We review your business category, target customers in Bhopal, and advertising goals.</span>
+                    <span lang="hi-Latn">Hum aapki business category, Bhopal ke target customers, aur campaign goals ko review karte hain.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="font-mono text-xs font-bold text-accent flex-shrink-0 mt-0.5">02</span>
-                    <span>We confirm that the selected plan and Meta policy fit your specific offer.</span>
+                    <span lang="hi-Latn">Aapke offer aur selected package ke hisaab se Meta policies aur ad strategy align karte hain.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="font-mono text-xs font-bold text-accent flex-shrink-0 mt-0.5">03</span>
-                    <span>We guide you through onboarding and exact ad budget allocation before launch.</span>
+                    <span lang="hi-Latn">Campaign live karne se pehle exact ad budget allocation aur creative setup finalize karte hain.</span>
                   </li>
                 </ul>
 

@@ -1,34 +1,36 @@
-export interface PromiseData {
+export interface TrustContent {
   eyebrow: string;
   headline: string;
-  leadText: string;
+  promiseParagraphs: string[];
   agencyResponsibilities: string[];
   customerResponsibilities: string[];
-  disclaimerNote: string;
+  commitmentNote: string;
 }
 
-export const promisesData: PromiseData = {
-  eyebrow: '10 / Accountability',
+export const trustContent: TrustContent = {
+  eyebrow: '11 / Accountability',
   headline: 'Honest Advertising. Clear Accountability.',
-  leadText:
-    'Our responsibility is to manage your advertising professionally, configure campaigns appropriately, monitor performance, and make improvements within your selected plan. Your business results also depend on factors beyond advertising.',
+  promiseParagraphs: [
+    'Our responsibility is to manage your advertising professionally, configure campaigns appropriately, monitor performance, and make improvements within your selected plan.',
+    'Your business results also depend on factors beyond advertising, including product quality, pricing, competition, customer experience, offer quality, and your ability to convert enquiries into sales.',
+    'We do not guarantee a fixed number of leads, sales, revenue, or return on advertising spend. We do commit to transparent communication, clear reporting, and the agreed advertising work.',
+  ],
   agencyResponsibilities: [
-    'Configuring agreed campaign structures, objectives, and parameters in Meta Ads Manager',
-    'Applying appropriate geographic boundaries and audience interest targeting',
-    'Producing and delivering the ad creatives included within your selected plan',
-    'Monitoring campaign health, cost indicators, and delivery efficiency',
-    'Optimizing audiences and budgets within the defined monthly scope',
-    'Providing transparent reports detailing the exact Meta advertising spend and achieved metrics',
-    'Advising on creative improvements and practical advertising next steps',
+    'The agreed campaign setup.',
+    'Appropriate targeting and placement configuration.',
+    'The included creative deliverables.',
+    'Monitoring and optimization according to the plan.',
+    'Reporting and communicating campaign performance.',
   ],
   customerResponsibilities: [
-    'Providing accurate, timely information regarding products, services, and pricing',
-    'Supplying brand assets, photos, or raw footage where necessary',
-    'Reviewing and approving ad creative drafts within agreed timelines',
-    'Responding to customer enquiries and leads promptly via WhatsApp or phone',
-    'Delivering consistent product quality, pricing integrity, and good customer service',
-    'Maintaining compliance with applicable business regulations and Meta trade policies',
+    'Providing accurate information about their business.',
+    'Supplying product or service details, pricing, and offers.',
+    'Responding to customer enquiries promptly.',
+    'Maintaining product quality and customer service.',
+    'Approving creative materials and complying with applicable business requirements.',
   ],
-  disclaimerNote:
-    'We do not guarantee a fixed number of leads, sales, revenue, or return on advertising spend (ROAS). We commit to transparent communication, clear reporting, and delivering the agreed advertising work with professional care.',
+  commitmentNote:
+    'This clear separation of responsibilities ensures honest expectations, mutual accountability, and a disciplined approach to local performance advertising in Bhopal.',
 };
+
+export const promisesData = trustContent;

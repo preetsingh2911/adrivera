@@ -24,7 +24,7 @@ export function Eyebrow({
 
   return (
     <div
-      className={`text-xs font-semibold uppercase tracking-eyebrow mb-3 block ${
+      className={`font-mono text-xs font-medium uppercase tracking-eyebrow mb-3 block ${
         dark ? 'text-white/70' : 'text-muted'
       } ${className}`}
     >

@@ -67,6 +67,14 @@ export function VisibilitySection() {
         <Reveal>
           <div className="max-w-3xl mb-12">
             <Eyebrow number="03" label="Visibility Gap" />
+            {visibilityData.openingPullQuote && (
+              <blockquote
+                lang="hi-Latn"
+                className="border-l-2 border-accent pl-4 my-4 font-sans text-lg sm:text-xl text-ink font-medium leading-relaxed"
+              >
+                &ldquo;{visibilityData.openingPullQuote}&rdquo;
+              </blockquote>
+            )}
             <h2 className="font-heading font-extrabold text-ink text-3xl sm:text-4xl md:text-5xl tracking-tighter leading-snugger mb-5">
               {visibilityData.headline}
             </h2>
@@ -176,20 +184,23 @@ export function VisibilitySection() {
 
         {/* Below: Three Benefits (Discovery, Familiarity, Action) as Three-Column Ruled List */}
         <Reveal delayMs={120}>
-          <div className="grid grid-cols-1 md:grid-cols-3 border-y border-border divide-y md:divide-y-0 md:divide-x divide-border bg-white mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 border-y border-border divide-y md:divide-y-0 md:divide-x divide-border bg-white mb-6">
             {visibilityData.benefits.map((benefit) => (
               <div
                 key={benefit.number}
                 className="p-6 sm:p-8 md:p-10 flex flex-col justify-between"
               >
                 <div>
-                  <div className="font-mono text-xs font-bold text-accent mb-3 tracking-wider">
+                  <div className="font-mono text-xs font-medium text-accent mb-3 tracking-wider">
                     {benefit.number} / {benefit.title.toUpperCase()}
                   </div>
                   <h3 className="font-heading font-extrabold text-ink text-xl sm:text-2xl mb-3 tracking-tight">
                     {benefit.title}
                   </h3>
-                  <p className="text-sm font-semibold text-ink leading-snug mb-3">
+                  <p
+                    lang={benefit.isHinglishSummary ? 'hi-Latn' : undefined}
+                    className="text-sm font-medium text-ink leading-snug mb-3"
+                  >
                     {benefit.summary}
                   </p>
                 </div>
@@ -199,6 +210,18 @@ export function VisibilitySection() {
               </div>
             ))}
           </div>
+
+          {/* Slogan V1 Closing Line */}
+          {visibilityData.closingLine && (
+            <div className="mb-8 p-5 border border-border bg-tint/40">
+              <p
+                lang="hi-Latn"
+                className="font-sans font-medium text-ink text-base sm:text-lg leading-relaxed"
+              >
+                &ldquo;{visibilityData.closingLine}&rdquo;
+              </p>
+            </div>
+          )}
         </Reveal>
 
         {/* Qualification Note from the Brief */}

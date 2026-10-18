@@ -32,7 +32,10 @@ export function FinalCtaSection() {
               </div>
 
               {/* Right Column (5 cols): Supporting Copy and Direct Action Buttons */}
-              <div className="lg:col-span-5 flex flex-col items-start gap-6">
+              <div className="lg:col-span-5 flex flex-col items-start gap-5">
+                <p className="text-blue-200 text-base sm:text-lg font-medium leading-relaxed" lang="hi-Latn">
+                  {finalCtaData.hinglishLead}
+                </p>
                 <p className="text-white/80 text-base sm:text-lg leading-relaxed font-normal">
                   {finalCtaData.supportingCopy}
                 </p>

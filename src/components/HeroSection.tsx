@@ -33,9 +33,14 @@ export function HeroSection() {
             </Reveal>
 
             <Reveal delayMs={120}>
-              <p className="text-muted text-base sm:text-lg leading-relaxed max-w-[65ch] mb-8">
+              <p className="text-muted text-base sm:text-lg leading-relaxed max-w-[65ch] mb-3">
                 {heroData.supportingCopy}
               </p>
+              {heroData.secondaryHinglishLine && (
+                <p lang="hi-Latn" className="text-ink text-sm sm:text-base font-normal leading-relaxed max-w-[65ch] mb-8">
+                  {heroData.secondaryHinglishLine}
+                </p>
+              )}
             </Reveal>
 
             <Reveal delayMs={180}>

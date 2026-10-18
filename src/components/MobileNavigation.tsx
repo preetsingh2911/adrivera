@@ -127,11 +127,11 @@ export function MobileNavigation({
       <div className="pt-6 border-t border-border flex flex-col gap-3">
         <Button
           variant="primary"
-          href="#pricing"
+          href="/pricing"
           fullWidth
           onClick={onClose}
         >
-          Get Started
+          Plans Dekhein
         </Button>
       </div>
     </div>

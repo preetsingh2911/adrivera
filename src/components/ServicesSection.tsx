@@ -25,7 +25,7 @@ export function ServicesSection() {
         <div className="border-y border-border divide-y divide-border bg-white">
           {servicesData.items.map((item, idx) => (
             <ScrollReveal key={item.number} delayMs={idx * 30}>
-              <div className="py-6 sm:py-7 px-4 sm:px-6 md:px-8 grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-8 items-baseline md:hover:bg-tint/50 transition-colors duration-150">
+              <div className="motion-card py-6 sm:py-7 px-4 sm:px-6 md:px-8 grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-8 items-baseline md:hover:bg-tint/50 transition-colors duration-150">
                 {/* Left: Number & Service Name */}
                 <div className="md:col-span-5 lg:col-span-4 flex items-baseline gap-4 sm:gap-6">
                   <span className="font-mono text-xs sm:text-sm font-bold text-accent tracking-wider flex-shrink-0">

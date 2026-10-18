@@ -71,14 +71,14 @@ export function ProofSection() {
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-border mb-6">
                 <div>
                   <span className="text-xs font-semibold uppercase tracking-eyebrow text-ink block mb-1">
-                    Verified Performance Framework
+                    Transparent Experience Framework
                   </span>
                   <p className="text-xs text-muted">
-                    Statistical claims and metrics are reserved strictly for third-party audited results.
+                    Hum koi unverified 10x claims ya fabricated numbers share nahi karte. Real work aur realistic performance data par focus karte hain.
                   </p>
                 </div>
                 <span className="self-start sm:self-auto text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 border border-border text-muted bg-bg rounded-[2px]">
-                  Zero Unverified Figures
+                  Zero Fake Claims
                 </span>
               </div>
 
@@ -93,7 +93,7 @@ export function ProofSection() {
                       Audience Research
                     </h3>
                     <p>
-                      Designing campaigns around geographic radius boundaries, local spending habits, and commercial demand across Bhopal.
+                      Bhopal ke local areas, buying habits aur customer behavior ke hisaab se target audience plan karna.
                     </p>
                   </div>
                   <div className="pt-3 mt-4 border-t border-border/60 text-[10px] font-mono text-muted">
@@ -107,10 +107,10 @@ export function ProofSection() {
                       02 / PRACTICE
                     </span>
                     <h3 className="font-heading font-bold text-ink text-sm mb-2">
-                      Creative Adaptation
+                      Creative Development
                     </h3>
                     <p>
-                      Iterating static feed banners and vertical Reels formats tailored to Meta Ads Manager placement guidelines.
+                      Feed posts aur vertical Reels ke liye aise clear ad creatives banana jo Bhopal ki audience ka attention attract karein.
                     </p>
                   </div>
                   <div className="pt-3 mt-4 border-t border-border/60 text-[10px] font-mono text-muted">
@@ -124,10 +124,10 @@ export function ProofSection() {
                       03 / PRACTICE
                     </span>
                     <h3 className="font-heading font-bold text-ink text-sm mb-2">
-                      Transparent Spend
+                      Transparent Ad Spend
                     </h3>
                     <p>
-                      Itemizing Meta advertising spend separately from agency management fees on all starter and growth tiers.
+                      Meta advertising spend aur agency management fee ka exact allocation pehle din se clear rakhna.
                     </p>
                   </div>
                   <div className="pt-3 mt-4 border-t border-border/60 text-[10px] font-mono text-muted">

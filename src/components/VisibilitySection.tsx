@@ -94,10 +94,10 @@ export function VisibilitySection() {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-6 border-b border-border mb-6">
               <div>
                 <span className="text-xs font-semibold uppercase tracking-eyebrow text-ink block mb-0.5">
-                  Market Reach &amp; Visibility Distribution
+                  Market Reach Aur Visibility Model
                 </span>
                 <span className="text-xs text-muted">
-                  Simulated local audience matrix in Bhopal (240 discrete population clusters)
+                  Bhopal mein audience reach ka illustrative matrix (240 population nodes)
                 </span>
               </div>
               <span className="self-start sm:self-auto text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 border border-border text-muted bg-bg rounded-[2px]">
@@ -158,19 +158,19 @@ export function VisibilitySection() {
                 <div className="flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-none bg-ink inline-block" />
                   <span className="text-ink font-medium">
-                    People who know the business today <span className="text-muted">(walk-ins &amp; referrals)</span>
+                    Jo log aaj business ko jaante hain <span className="text-muted">(walk-ins &amp; referrals)</span>
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-none bg-accent inline-block" />
                   <span className="text-ink font-medium">
-                    People reached through advertising <span className="text-muted">(Meta campaign radius)</span>
+                    Ads ke zariye jude naye log <span className="text-muted">(Meta campaign reach)</span>
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-none bg-border inline-block" />
                   <span className="text-muted">
-                    Broader Bhopal market <span className="text-muted">(untapped reach)</span>
+                    Bhopal ka baaki market <span className="text-muted">(untapped potential)</span>
                   </span>
                 </div>
               </div>

@@ -40,24 +40,24 @@ export interface SiteContent {
 
 export const siteContent: SiteContent = {
   brandName: 'ADrivera',
-  tagline: 'Good Business. Better Visibility. Stronger Growth.',
+  tagline: 'Business achha hai. Ab duniya ko pata bhi chalne do.',
   whatsappNumber: '918815512459',
   navLinks: [
-    { label: 'Home', href: '#home' },
-    { label: 'What We Do', href: '#what-we-do' },
-    { label: 'Our Approach', href: '#our-approach' },
-    { label: 'Pricing', href: '#pricing' },
-    { label: 'FAQs', href: '#faqs' },
+    { label: 'Home', href: '/#home' },
+    { label: 'Kyun Zaroori Hai', href: '/#what-we-do' },
+    { label: 'Process', href: '/#our-approach' },
+    { label: 'Plans Dekhein', href: '/#pricing' },
+    { label: 'FAQs', href: '/#faqs' },
   ],
   footerLinks: [
     {
       title: 'Navigation',
       links: [
-        { label: 'Home', href: '#home' },
-        { label: 'What We Do', href: '#what-we-do' },
-        { label: 'Our Approach', href: '#our-approach' },
-        { label: 'Pricing', href: '#pricing' },
-        { label: 'FAQs', href: '#faqs' },
+        { label: 'Home', href: '/#home' },
+        { label: 'Kyun Zaroori Hai', href: '/#what-we-do' },
+        { label: 'Process', href: '/#our-approach' },
+        { label: 'Plans Dekhein', href: '/#pricing' },
+        { label: 'FAQs', href: '/#faqs' },
       ],
     },
     {
@@ -70,8 +70,6 @@ export const siteContent: SiteContent = {
       ],
     },
   ],
-  // Empty for now per brief claims policy. Each entry requires a value, definition, source, and verified flag.
-  // Only entries with verified: true are permitted to render in the UI.
   verifiedStats: [],
   location: 'Bhopal, Madhya Pradesh, India',
   contact: {
@@ -84,11 +82,11 @@ export const siteContent: SiteContent = {
   },
   disclaimers: {
     metaNonAffiliation:
-      'ADrivera is an independent performance marketing agency and is not affiliated with, sponsored by, or endorsed by Meta Platforms, Inc. Facebook and Instagram are trademarks of Meta Platforms, Inc.',
+      'ADrivera ek independent performance advertising agency hai aur Meta Platforms, Inc. se officially affiliated ya endorsed nahi hai. Facebook aur Instagram Meta Platforms, Inc. ke trademarks hain.',
     resultsGuarantee:
-      'We do not guarantee a fixed number of leads, sales, revenue, or return on ad spend. Campaign performance is influenced by market demand, offer quality, pricing, and sales follow-up.',
+      'Hum fixed leads, guaranteed sales ya unrealistic return on ad spend ka fake vaada nahi karte. Campaign performance market demand, offer quality, pricing aur customer follow-up par depend karti hai.',
     taxNotice:
-      'Package prices include the stated Meta advertising budget and ADrivera service fee. Statutory taxes or GST disclosures will be confirmed prior to contract confirmation.',
+      'Displayed package prices mein Meta advertising budget aur ADrivera service fee included hai. Koi hidden agency charge nahi hai.',
   },
 };
 

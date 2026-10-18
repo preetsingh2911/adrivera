@@ -22,6 +22,8 @@ html {
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(rgba(23, 37, 29, 0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(23, 37, 29, 0.025) 1px, transparent 1px);
+  background-size: 32px 32px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -41,10 +43,66 @@ html {
 body {
   background-color: var(--bg);
   color: var(--ink);
-  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes loading-sweep {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(300%);
+  }
+}
+
+@keyframes pulse-mark {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.7);
+    opacity: 0.5;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body {
+    animation: page-enter 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .motion-card {
+    transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 280ms ease, border-color 280ms ease;
+  }
+
+  .motion-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 30px rgba(23, 37, 29, 0.09);
+    border-color: rgba(225, 92, 53, 0.55);
+  }
+}
+
+.loading-sweep {
+  animation: loading-sweep 1.4s ease-in-out infinite;
+}
+
+.pulse-mark {
+  animation: pulse-mark 1.2s ease-in-out infinite;
 }
 
 /* Tabular figures for pricing and statistics */
@@ -63,23 +121,14 @@ textarea:focus-visible {
   outline-offset: 2px;
 }
 
-/* Progressive enhancement: by default everything is visible (100% usable without JS animation) */
+/* Progressive enhancement: everything is immediately visible with clean transitions */
 .reveal-item {
   opacity: 1;
   transform: none;
 }
 
-/* When JS is ready and user does not prefer reduced motion */
 @media (prefers-reduced-motion: no-preference) {
-  html.js-ready .reveal-item:not(.is-revealed) {
-    opacity: 0;
-    transform: translateY(8px);
-    transition: opacity 240ms ease-out, transform 240ms ease-out;
-  }
-
-  html.js-ready .reveal-item.is-revealed {
-    opacity: 1;
-    transform: translateY(0);
+  .reveal-item {
     transition: opacity 240ms ease-out, transform 240ms ease-out;
   }
 }

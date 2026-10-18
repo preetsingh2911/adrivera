@@ -11,11 +11,16 @@ import { siteConfig } from '@/content/site';
 import { ScrollReveal } from './ScrollReveal';
 
 export function PricingSection() {
-  const handleSelectPlan = (planId: string) => {
+  const handleSelectPlan = (planId: string, e?: React.MouseEvent) => {
     if (typeof window !== 'undefined') {
       window.dispatchEvent(
         new CustomEvent('adrivera-select-plan', { detail: { plan: planId } })
       );
+      const enquiryEl = document.getElementById('enquiry');
+      if (enquiryEl) {
+        if (e) e.preventDefault();
+        enquiryEl.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -29,11 +34,10 @@ export function PricingSection() {
               08 / Pricing
             </span>
             <h2 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl text-ink tracking-tighter leading-tight mb-4">
-              Simple Pricing. Advertising Included.
+              Shuruaat chhoti rakhiye. Business ko grow karne ka mauka dijiye.
             </h2>
             <p className="text-muted text-base sm:text-lg leading-relaxed">
-              Choose a monthly plan based on the level of advertising support your business needs.
-              Every listed package includes an allocated Meta advertising budget and ADrivera&apos;s service fee.
+              Pehli baar Meta Ads try kar rahe hain? Koi baat nahi. Apne budget aur business ki zaroorat ke hisaab se plan chuniye. Displayed monthly price hi total package price hai, jismein allocated Meta ad spend aur ADrivera service dono included hain.
             </p>
           </div>
         </ScrollReveal>
@@ -47,7 +51,7 @@ export function PricingSection() {
             return (
               <div
                 key={plan.id}
-                className={`p-6 sm:p-8 flex flex-col justify-between h-full rounded-none relative ${
+                className={`motion-card p-6 sm:p-8 flex flex-col justify-between h-full rounded-none relative ${
                   isStarter ? 'border-t-4 border-t-accent' : ''
                 }`}
               >
@@ -55,7 +59,7 @@ export function PricingSection() {
                   {/* Starter Emphasis Text Label (Plain text, not a pill) */}
                   {isStarter ? (
                     <span className="font-mono text-xs font-bold text-accent uppercase tracking-wider block mb-2">
-                      Best place to begin
+                      Shuruaat ke liye best
                     </span>
                   ) : (
                     <span className="font-mono text-xs font-semibold text-muted uppercase tracking-wider block mb-2">
@@ -158,7 +162,7 @@ export function PricingSection() {
                           </svg>
                         </div>
                         <span className="text-[11px] font-mono text-muted block italic">
-                          Allocation confirmed before purchase
+                          Allocation purchase se pehle confirm hoti hai
                         </span>
                       </div>
                     )}
@@ -175,7 +179,7 @@ export function PricingSection() {
                       </p>
                     )}
                     <span className="text-[11px] font-mono font-medium uppercase tracking-wider text-ink block mb-3">
-                      Included Scope
+                      Package Scope (Kya Shamil Hai)
                     </span>
                     <ul className="space-y-2.5 text-xs text-ink/90">
                       {plan.features.map((feature, fIdx) => (
@@ -199,7 +203,7 @@ export function PricingSection() {
                   {plan.limits.length > 0 && (
                     <div className="mb-6 pt-4 border-t border-border/70">
                       <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-muted block mb-2">
-                        Scope Limits
+                        Scope Limits (Dhyan Rakhein)
                       </span>
                       <ul className="space-y-1.5 text-[11px] text-muted">
                         {plan.limits.map((limit, lIdx) => (
@@ -216,8 +220,8 @@ export function PricingSection() {
                 {/* Card CTA: Opens Enquiry flow with that plan preselected */}
                 <div className="pt-6 border-t border-border">
                   <a
-                    href={`#enquiry?plan=${plan.id}`}
-                    onClick={() => handleSelectPlan(plan.id)}
+                    href="#enquiry"
+                    onClick={(e) => handleSelectPlan(plan.id, e)}
                     className={`flex items-center justify-center min-h-[48px] w-full px-4 text-sm font-semibold rounded-[2px] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 ${
                       isStarter
                         ? 'bg-accent text-white hover:bg-[#1E4BD9] active:bg-[#153BB8]'
@@ -240,7 +244,7 @@ export function PricingSection() {
                 Feature Matrix
               </span>
               <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-ink tracking-tight">
-                Plan Comparison
+                Plan Comparison (Har Feature Samjhein)
               </h3>
             </div>
 
@@ -301,13 +305,13 @@ export function PricingSection() {
           <div className="border border-border bg-white p-6 sm:p-10 rounded-none mb-8">
             <div className="mb-6 pb-4 border-b border-border">
               <span className="font-mono uppercase text-xs tracking-wider text-muted font-semibold block mb-1">
-                Commercial Standards
+                Pricing Transparency
               </span>
               <h3 className="font-heading font-extrabold text-2xl text-ink tracking-tight">
-                How the Price Is Made Up
+                Paisa Kahan Kharch Hota Hai
               </h3>
               <p className="text-xs sm:text-sm text-muted mt-1">
-                ADrivera operates under strict pricing transparency. We never invent arbitrary retainers or obscure your ad spend.
+                ADrivera clear pricing par kaam karta hai. Ad spend aur agency service fees dono pehle din se transparent hain.
               </p>
             </div>
 

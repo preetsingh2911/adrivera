@@ -40,14 +40,14 @@ export function TrustSection() {
 
         {/* Two-Column Ruled Accountability Layout */}
         <ScrollReveal delayMs={100}>
-          <div className="grid grid-cols-1 md:grid-cols-2 border border-border bg-white rounded-none divide-y md:divide-y-0 md:divide-x divide-border">
+            <div className="motion-card grid grid-cols-1 md:grid-cols-2 border border-border bg-white rounded-none divide-y md:divide-y-0 md:divide-x divide-border">
             {/* Left Column: ADrivera's Responsibilities */}
             <div className="p-6 sm:p-10 flex flex-col justify-between">
               <div>
                 <div className="flex items-center gap-3 mb-6 pb-4 border-b border-border">
                   <span className="w-2.5 h-2.5 bg-accent flex-shrink-0" />
                   <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-ink tracking-tight">
-                    ADrivera is responsible for:
+                    ADrivera ki responsibility:
                   </h3>
                 </div>
 
@@ -64,7 +64,7 @@ export function TrustSection() {
               </div>
 
               <div className="mt-8 pt-4 border-t border-border/60 text-[11px] font-mono text-muted uppercase">
-                Agency Service Standard
+                ADrivera Service Standard
               </div>
             </div>
 
@@ -74,7 +74,7 @@ export function TrustSection() {
                 <div className="flex items-center gap-3 mb-6 pb-4 border-b border-border">
                   <span className="w-2.5 h-2.5 bg-ink flex-shrink-0" />
                   <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-ink tracking-tight">
-                    You are responsible for:
+                    Aapki responsibility:
                   </h3>
                 </div>
 
@@ -91,7 +91,7 @@ export function TrustSection() {
               </div>
 
               <div className="mt-8 pt-4 border-t border-border/60 text-[11px] font-mono text-muted uppercase">
-                Client Commercial Partnership
+                Client Partnership Standard
               </div>
             </div>
           </div>

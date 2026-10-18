@@ -29,10 +29,10 @@ export function Button({
   ...props
 }: ButtonProps) {
   const baseStyles =
-    'inline-flex items-center justify-center min-h-[48px] px-6 text-sm font-semibold rounded-[2px] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2';
+    'inline-flex items-center justify-center min-h-[48px] px-6 text-sm font-semibold rounded-[2px] transition-[color,background-color,border-color,transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_18px_rgba(23,37,29,0.12)] active:translate-y-0 active:shadow-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2';
 
   const variantStyles: Record<ButtonVariant, string> = {
-    primary: 'bg-accent text-white hover:bg-[#1E4BD9] active:bg-[#153BB8]',
+    primary: 'bg-accent text-white hover:bg-[#C84825] active:bg-[#AE3C20]',
     secondary:
       'border border-ink text-ink bg-transparent hover:bg-ink/5 active:bg-ink/10',
     'secondary-dark':

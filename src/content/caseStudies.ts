@@ -31,21 +31,21 @@ export interface CaseStudiesData {
 
 export const caseStudiesData: CaseStudiesData = {
   eyebrow: '10 / Evidence & Transparency',
-  headline: 'Real Campaigns. Transparent Results.',
+  headline: 'Real Campaigns. Saaf Aur Transparent Data.',
   leadText:
-    'Every campaign operates with real commercial constraints. We present advertising performance openly—documenting actual ad spend, platform delivery metrics, and operational lessons.',
+    'Har business ki apni practical situations hoti hain. Hum advertising performance ko transparent tareeqe se share karte hain—actual ad spend, platform delivery metrics aur seekhe gaye lessons ke saath.',
   statusPolicyNote:
-    'ADrivera does not publish fabricated statistics, unverified client testimonials, or commercial claims without written consent. When client-verified data is pending verification, we present structured illustrative benchmarks clearly marked as sample figures.',
+    'ADrivera fake claims ya bina permission fabricated testimonials publish nahi karta. Yahan hum ek educational campaign benchmark share kar rahe hain jo dikhata hai ki hum advertising performance data ko kaise evaluate aur present karte hain.',
   definitions: [
     {
       term: 'Views (Impressions) vs. Unique Reach',
       explanation:
-        'Impressions represent the total count of times an ad appeared on screen, including repeated views by the same user. Unique Reach measures the distinct individual people who were served the advertisement at least once.',
+        'Impressions ka matlab hai ki ad screen par kitni baar dikha (repeated views shamil hain). Unique Reach ka matlab hai kitne alag-alag logon ne ad ko kam se kam ek baar dekha.',
     },
     {
       term: 'Cost Per Click (CPC) vs. Cost Per Lead or Sale',
       explanation:
-        'CPC measures the exact platform cost required to generate a click to your website or WhatsApp channel. CPC does not measure the cost of acquiring a paying customer or completed transaction, which depends on offer attractiveness, pricing, and your direct sales conversion process.',
+        'CPC Meta platform par ek click ki cost hoti hai. CPC ka matlab direct customer ya sale nahi hota—kyunki final conversion offer, pricing aur customer follow-up par bhi depend karta hai.',
     },
   ],
   entries: [
@@ -62,7 +62,7 @@ export const caseStudiesData: CaseStudiesData = {
       cpc: '₹6.61 (Sample average CPC)',
       enquiries: '44 (Sample WhatsApp conversations started)',
       contextNotes:
-        'A local dining establishment tested advertising within a 5 km radius in Bhopal. Week 1 utilized a static menu image (average CPC ₹8.20). In week 2, an AI-assisted video reel showcasing dish preparation replaced the static ad, reducing average CPC to ₹5.40. Table bookings were directly contingent on the venue staff replying to WhatsApp inquiries within 10 minutes.',
+        'Ek local dining establishment ne Bhopal mein 5 km radius ke andar ads test kiye. Pehle week mein static image chalaya gaya (CPC ₹8.20). Doosre week mein food preparation ka video Reel ad banaya gaya, jisse average CPC ghat kar ₹5.40 ho gaya. Final table bookings ke liye venue staff ka WhatsApp enquiries par time par reply dena decisive factor raha.',
       ownership: 'founder-owned',
       status: 'illustrative',
     },

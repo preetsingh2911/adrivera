@@ -7,81 +7,85 @@ export interface FAQItem {
 
 export const faqsData = {
   eyebrow: '12 / Questions & Answers',
-  headline: 'Frequently Asked Questions',
+  headline: 'Frequently Asked Questions — Aam Sawaal Aur Saaf Jawaab',
   leadText:
-    'Clear, direct answers regarding our advertising packages, budget allocations, creative deliverables, and campaign accountability.',
+    'Packages, ad spend, creative deliverables aur campaign process ke baare mein business owners ke zaroori sawaal.',
   items: [
     {
       id: 'faq-1',
-      question: 'Is the advertising budget included in the package?',
+      question: 'Kya ₹5,000 mein ad spend bhi included hai?',
       answer:
-        'Haan, displayed monthly price mein Meta ka ad budget aur ADrivera ki management fee dono shamil hain. Har standard plan ke saath exact budget allocation clear dikhaya gaya hai.',
+        'Haan. Starter plan ka total monthly price ₹5,000 hai, jismein ₹3,000 Meta advertising ke liye aur ₹2,000 ADrivera ki service ke liye allocated hain. Koi hidden fee nahi hai.',
       lang: 'hi-Latn',
     },
     {
       id: 'faq-2',
-      question: 'Will you guarantee sales or leads?',
+      question: 'Kya sales guaranteed hain?',
       answer:
-        'No. We manage the agreed advertising activities and report actual performance. Results depend on multiple factors, including the business, offer, competition, and customer experience.',
+        'Nahi. Hum advertising campaign ko professionally manage karte hain, lekin sales product, pricing, offer, competition aur customer experience jaise factors par bhi depend karti hain.',
+      lang: 'hi-Latn',
     },
     {
       id: 'faq-3',
-      question: 'Can I start if I have never run ads before?',
+      question: 'Agar maine pehle kabhi ads nahi chalaye toh?',
       answer:
-        'Bada investment karne ki zaroorat nahi. Pehle chhote budget se apne business ke liye ads test kijiye. Starter plan unhi businesses ke liye design kiya gaya hai jo Meta ads ko ek limited monthly budget ke saath try karna chahte hain.',
+        'Bilkul shuru kar sakte hain. Starter plan un businesses ke liye hai jo pehli baar Meta Ads try karna chahte hain aur ek chhote budget ke saath actual performance dekhna chahte hain.',
       lang: 'hi-Latn',
     },
     {
       id: 'faq-4',
-      question: 'What happens if I want to increase my budget?',
+      question: 'Agar mujhe zyada advertising chahiye toh?',
       answer:
-        'Pehle try kijiye, campaign ke results samjhiye, aur phir apne business ke hisaab se scale kijiye. Jab aap ready hon, tab hum Growth, Premium ya Custom package par move karne ka plan discuss kar sakte hain.',
+        'Aap Growth, Premium ya Custom plan ke options discuss kar sakte hain. Sahi plan aapke goals aur requirements par depend karega.',
       lang: 'hi-Latn',
     },
     {
       id: 'faq-5',
-      question: 'Which platforms do you advertise on?',
+      question: 'Kya aap mere business ke liye ads chala sakte hain?',
+      answer:
+        'Apne business, location aur goal ke baare mein batayiye. Hum evaluate karenge ki kaunsa campaign approach suitable ho sakta hai.',
+      lang: 'hi-Latn',
+    },
+    {
+      id: 'faq-6',
+      question: 'Kaunse platforms par ads chalenge?',
       answer:
         'Hum primarily Facebook aur Instagram par Meta Ads Manager ke through campaigns run karte hain, aur jahan relevant ho wahan direct WhatsApp enquiry destinations set up karte hain.',
       lang: 'hi-Latn',
     },
     {
-      id: 'faq-6',
-      question: 'Do you create video ads?',
-      answer:
-        'AI-assisted video production is included in Growth and higher packages according to the agreed scope. Starter has a more limited creative allowance.',
-    },
-    {
       id: 'faq-7',
-      question: 'Will you keep changing my ads?',
+      question: 'Kya aap video ads bhi banate hain?',
       answer:
-        'Creative updates aapke package par depend karte hain. Starter plan mein focused creatives hote hain, jabki Growth aur Premium mein regular creative variations aur refreshes shamil rehte hain.',
+        'Haan, AI-assisted video reels Growth aur higher packages mein included hain. Starter plan static ad banners aur single primary creatives ke liye hota hai.',
       lang: 'hi-Latn',
     },
     {
       id: 'faq-8',
-      question: 'Can you advertise for my particular business?',
+      question: 'Kya aap ads ko regularly change karenge?',
       answer:
-        'ADrivera can evaluate your business, objective, location, audience, and applicable advertising policies before recommending a suitable approach.',
+        'Creative updates aapke package par depend karte hain. Starter plan mein focused single primary creative hota hai, jabki Growth aur Premium mein regular creative variations aur testing shamil rehte hain.',
+      lang: 'hi-Latn',
     },
     {
       id: 'faq-9',
-      question: 'Can I choose my own budget?',
+      question: 'Agar ads par clicks aaye lekin sales na mile toh?',
       answer:
-        'Haan bilkul. Agar aapko standard plans se alag budget ya customized service chahiye, toh hum Custom package design kar sakte hain.',
+        'Hum campaign data analyze karenge ki audience kahan drop ho rahi hai. Clicks alone sales guarantee nahi karte—offer, pricing aur follow-up conversation par bhi focus karna zaroori hota hai.',
       lang: 'hi-Latn',
     },
     {
       id: 'faq-10',
-      question: 'What if my ads receive clicks but no sales?',
+      question: 'Kya aap in-person meetings provide karte hain?',
       answer:
-        'We will explain the available performance data and identify potential issues within our agreed scope. Clicks alone do not guarantee sales, and the wider sales process may need attention.',
+        'Starter plan online (WhatsApp aur calls par) manage hota hai. Growth package mein Bhopal mein har mahine 1 in-person meeting included hai, aur Premium ya Custom plans mein zaroorat ke hisaab se meetings schedule hoti hain.',
+      lang: 'hi-Latn',
     },
     {
       id: 'faq-11',
-      question: 'Do you provide in-person meetings?',
+      question: 'Kya main apna khud ka custom budget decide kar sakta hoon?',
       answer:
-        'Starter plan fully online manage hota hai. Growth package mein har mahine ek in-person meeting shamil hai, aur Premium ya Custom plans mein zaroorat ke hisaab se meetings schedule hoti hain.',
+        'Haan bilkul. Agar aapko standard plans se alag budget ya customized advertising support chahiye, toh hum aapke goals ke hisaab se Custom plan discuss kar sakte hain.',
       lang: 'hi-Latn',
     },
   ] as FAQItem[],

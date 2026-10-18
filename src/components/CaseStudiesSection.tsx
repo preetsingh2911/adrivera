@@ -115,7 +115,7 @@ export function CaseStudiesSection() {
                 {/* Campaign Context & Qualitative Notes */}
                 <div className="p-6 sm:p-8 border-t border-border bg-bg/20">
                   <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-muted block mb-2">
-                    Campaign Context &amp; Operational Observations
+                    Campaign Context Aur Observations
                   </span>
                   <p className="text-xs sm:text-sm text-ink/85 leading-relaxed font-normal">
                     {study.contextNotes}
@@ -131,9 +131,9 @@ export function CaseStudiesSection() {
           <div className="border border-border bg-white p-6 sm:p-8 rounded-none">
             <div className="mb-6 pb-3 border-b border-border flex items-center justify-between">
               <span className="font-mono uppercase text-xs tracking-wider text-muted font-bold">
-                Metric Standard &amp; Evaluation Guide
+                Metrics Samjhein (Evaluation Guide)
               </span>
-              <span className="text-[11px] font-mono text-muted">No Invented Growth Figures</span>
+              <span className="text-[11px] font-mono text-muted">Zero Fake Growth Claims</span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">

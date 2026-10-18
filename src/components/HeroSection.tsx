@@ -23,7 +23,7 @@ export function HeroSection() {
           {/* Left Column (7 cols): Core Positioning */}
           <div className="lg:col-span-7 flex flex-col items-start">
             <Reveal>
-              <Eyebrow number="01" label="Performance Marketing in Bhopal" />
+              <Eyebrow number="01" label={heroData.eyebrow} />
             </Reveal>
 
             <Reveal delayMs={60}>
@@ -45,7 +45,7 @@ export function HeroSection() {
 
             <Reveal delayMs={180}>
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-6">
-                <Button variant="primary" href="#pricing">
+                <Button variant="primary" href={heroData.primaryCta.href}>
                   {heroData.primaryCta.label}
                 </Button>
                 <Button
@@ -80,7 +80,7 @@ export function HeroSection() {
               {/* Desktop Composition: 3 Overlapping Frames on Shared Baseline Grid */}
               <div className="hidden md:block relative h-[460px] w-full border border-border bg-white p-4">
                 {/* Frame B: 9:16 Story (Apex Academy) - Layered at the back */}
-                <div className="absolute right-4 top-4 w-[175px] border border-border bg-[#0B1530] text-white p-3 z-10 rounded-none">
+                <div className="motion-card absolute right-4 top-4 w-[175px] border border-border bg-[#0B1530] text-white p-3 z-10 rounded-none">
                   {/* Story Progress Indicators */}
                   <div className="flex gap-1 mb-2.5">
                     <span className="h-[2px] bg-white flex-1 inline-block" />
@@ -110,12 +110,12 @@ export function HeroSection() {
                   </div>
                   {/* Story Bottom Action */}
                   <div className="border border-white/30 text-center py-1.5 text-[9px] font-semibold uppercase tracking-wider text-white bg-white/10 rounded-[2px]">
-                    Send Message
+                    WhatsApp Karein
                   </div>
                 </div>
 
                 {/* Frame A: 4:5 Feed Post (Sample Cafe) - Layered on the left */}
-                <div className="absolute left-4 top-8 w-[215px] border border-border bg-bg p-3 z-20 rounded-none">
+                <div className="motion-card absolute left-4 top-8 w-[215px] border border-border bg-bg p-3 z-20 rounded-none">
                   {/* Feed Header */}
                   <div className="flex items-center gap-2 mb-2.5 pb-2 border-b border-border">
                     <span className="w-6 h-6 bg-ink text-white text-[10px] font-bold flex items-center justify-center font-mono">
@@ -145,13 +145,13 @@ export function HeroSection() {
                   <div className="flex items-center justify-between pt-1 text-[10px]">
                     <span className="font-semibold text-ink">4:5 Feed Placement</span>
                     <span className="bg-accent text-white px-2 py-0.5 rounded-[2px] font-semibold text-[9px]">
-                      Claim Offer
+                      Offer Lein
                     </span>
                   </div>
                 </div>
 
                 {/* Frame C: 1:1 Square (Greenfield Estates) - Overlapping front right */}
-                <div className="absolute right-8 bottom-4 w-[205px] border border-border bg-white p-3 z-30 rounded-none">
+                <div className="motion-card absolute right-8 bottom-4 w-[205px] border border-border bg-white p-3 z-30 rounded-none">
                   {/* 1:1 Header */}
                   <div className="flex items-center gap-2 mb-2 pb-1.5 border-b border-border">
                     <span className="w-5 h-5 bg-[#00875A] text-white text-[9px] font-bold flex items-center justify-center font-mono">
@@ -178,7 +178,7 @@ export function HeroSection() {
                   <div className="flex items-center justify-between text-[9px]">
                     <span className="font-mono text-muted">1:1 Carousel</span>
                     <span className="border border-ink text-ink px-2 py-0.5 rounded-[2px] font-semibold">
-                      Brochure
+                      Details Dekhein
                     </span>
                   </div>
                 </div>
@@ -212,7 +212,7 @@ export function HeroSection() {
                     <div className="flex items-center justify-between text-[10px]">
                       <span className="font-mono text-muted">Generic Format</span>
                       <span className="bg-accent text-white px-2 py-0.5 rounded-[2px] font-semibold">
-                        Claim Offer
+                        Offer Lein
                       </span>
                     </div>
                   </div>
@@ -242,7 +242,7 @@ export function HeroSection() {
                       </p>
                     </div>
                     <div className="border border-white/30 text-center py-1 text-[9px] font-semibold uppercase tracking-wider text-white bg-white/10 rounded-[2px]">
-                      Send WhatsApp
+                      WhatsApp Karein
                     </div>
                   </div>
 
@@ -271,7 +271,7 @@ export function HeroSection() {
                     <div className="flex items-center justify-between text-[9px]">
                       <span className="font-mono text-muted">Property Ad</span>
                       <span className="border border-ink text-ink px-2 py-0.5 rounded-[2px] font-semibold">
-                        Brochure
+                        Details Dekhein
                       </span>
                     </div>
                   </div>

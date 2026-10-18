@@ -6,35 +6,35 @@ export interface ProcessStep {
 
 export const processData = {
   eyebrow: '07 / Process',
-  headline: 'A Clear Process. No Guesswork.',
+  headline: 'Saaf Tareeka. Zero Guesswork.',
   leadText:
-    'We follow a disciplined four-step sequence to understand your business, plan and launch campaigns, monitor results, and report real performance.',
+    'Pehle business aur target audience ko samjhenge, campaign plan karke live karenge, performance monitor karenge aur clean data ke basis par aage badhenge.',
   steps: [
     {
       step: '01',
       title: 'Step 1 — Understand',
       description:
-        'Learn about the business, target customers, service area, offer, and advertising goals.',
+        'Aapka business, offering, Bhopal ke target customers aur main advertising goals ko detail mein samjhenge.',
     },
     {
       step: '02',
-      title: 'Step 2 — Plan and Launch',
+      title: 'Step 2 — Plan aur Launch',
       description:
-        'Select an appropriate campaign objective, audience, creative, placement strategy, and budget allocation.',
+        'Sahi campaign objective, audience targeting, ad creatives, placements aur budget allocation ke saath campaign live karenge.',
     },
     {
       step: '03',
-      title: 'Step 3 — Monitor and Improve',
+      title: 'Step 3 — Monitor aur Improve',
       description:
-        'Review results and make optimizations according to the package scope.',
+        'Package ke hisaab se ad performance ko track karenge aur zaroori improvements aur optimizations karenge.',
     },
     {
       step: '04',
-      title: 'Step 4 — Report and Decide',
+      title: 'Step 4 — Report aur Decide',
       description:
-        'Explain performance, identify lessons, and recommend whether the next step should be refinement, continuation, or scaling.',
+        'Report mein samjhenge ki spend kitna hua, reach kitni mili aur available data ke basis par aage kya step lena chahiye.',
     },
   ] as ProcessStep[],
   footnote:
-    'Campaign optimization is an ongoing learning process rather than a guarantee of better results every month.',
+    'Campaign optimization data ke basis par improve karne ka process hai, bina kisi unreal sales guarantee ke.',
 };

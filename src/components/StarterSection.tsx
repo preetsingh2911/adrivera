@@ -47,42 +47,47 @@ export function StarterSection() {
 
               <div className="pt-4">
                 <a
-                  href="#enquiry?plan=starter"
-                  onClick={() => {
+                  href="#enquiry"
+                  onClick={(e) => {
                     if (typeof window !== 'undefined') {
                       window.dispatchEvent(
                         new CustomEvent('adrivera-select-plan', { detail: { plan: 'starter' } })
                       );
+                      const el = document.getElementById('enquiry');
+                      if (el) {
+                        e.preventDefault();
+                        el.scrollIntoView({ behavior: 'smooth' });
+                      }
                     }
                   }}
                   className="inline-flex items-center justify-center min-h-[48px] px-8 text-sm font-semibold text-white bg-accent hover:bg-[#1E4BD9] active:bg-[#153BB8] rounded-[2px] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2"
                 >
-                  Start with ₹5,000
+                  ₹5,000 Se Shuru Karein
                 </a>
               </div>
             </ScrollReveal>
           </div>
 
-          {/* Right Column: Hindi Copy in a Ruled Quote Block */}
+          {/* Right Column: Ruled Quote Block */}
           <div className="lg:col-span-6">
             <ScrollReveal delayMs={100}>
               <div className="border border-border border-l-4 border-l-accent bg-white p-6 sm:p-8 rounded-none">
                 <div className="flex items-center justify-between mb-4 pb-3 border-b border-border">
-                  <span className="font-hindi text-xs font-medium text-muted uppercase tracking-wider">
+                  <span className="font-mono text-xs font-medium text-muted uppercase tracking-wider">
                     {starterSectionData.hindiNote}
                   </span>
-                  <span className="font-hindi text-xs font-medium text-accent">
-                    ₹5,000 / माह
+                  <span className="font-mono text-xs font-bold text-accent">
+                    ₹5,000 / Month
                   </span>
                 </div>
 
-                <blockquote className="font-hindi text-base sm:text-lg text-ink font-normal leading-relaxed mb-6">
+                <blockquote className="text-base sm:text-lg text-ink font-normal leading-relaxed mb-6" lang="hi-Latn">
                   &ldquo;{starterSectionData.hindiQuote}&rdquo;
                 </blockquote>
 
-                <div className="pt-4 border-t border-border flex items-center justify-between text-xs text-muted">
-                  <span className="font-hindi">टेस्टिंग और मूल्यांकन पैकेज</span>
-                  <span className="font-hindi">₹3,000 विज्ञापन + ₹2,000 सेवा</span>
+                <div className="pt-4 border-t border-border flex items-center justify-between text-xs text-muted font-mono">
+                  <span>Testing aur evaluation package</span>
+                  <span>₹3,000 Ads + ₹2,000 Service</span>
                 </div>
               </div>
             </ScrollReveal>

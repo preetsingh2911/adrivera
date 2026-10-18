@@ -4,28 +4,28 @@ export interface EnquiryOption {
 }
 
 export const businessCategories: EnquiryOption[] = [
-  { value: 'retail', label: 'Retail & Consumer Goods' },
-  { value: 'food-hospitality', label: 'Food, Cafe & Hospitality' },
-  { value: 'healthcare-wellness', label: 'Healthcare, Clinic & Wellness' },
-  { value: 'education-coaching', label: 'Coaching, Institute & Education' },
-  { value: 'real-estate', label: 'Real Estate & Property Development' },
+  { value: 'retail', label: 'Retail & Consumer Goods (Dukaan, Showroom, Products)' },
+  { value: 'food-hospitality', label: 'Restaurant, Cafe, Bakery & Hospitality' },
+  { value: 'healthcare-wellness', label: 'Clinic, Hospital, Dental & Wellness' },
+  { value: 'education-coaching', label: 'Coaching, Institute & Classes' },
+  { value: 'real-estate', label: 'Real Estate, Builders & Property' },
   { value: 'professional-services', label: 'Professional & Business Services' },
-  { value: 'local-services', label: 'Local Home & Trade Services' },
+  { value: 'local-services', label: 'Local Services (Salon, Repair, Event Services)' },
   { value: 'other', label: 'Other Local Business' },
 ];
 
 export const primaryObjectives: EnquiryOption[] = [
-  { value: 'leads', label: 'Generate Customer Inquiries & Leads' },
-  { value: 'brand-awareness', label: 'Increase Local Brand Recognition in Bhopal' },
-  { value: 'whatsapp-chat', label: 'Direct WhatsApp Customer Conversations' },
-  { value: 'offer-promotion', label: 'Promote a Seasonal Offer, Event or Launch' },
-  { value: 'store-visits', label: 'Drive Foot Traffic to Physical Store/Location' },
+  { value: 'leads', label: 'Enquiries & Customer Leads Badhana' },
+  { value: 'brand-awareness', label: 'Bhopal Mein Business Ki Pehchaan (Brand Visibility)' },
+  { value: 'whatsapp-chat', label: 'Customers Se Direct WhatsApp Par Baat Karna' },
+  { value: 'offer-promotion', label: 'Naya Offer, Discount Ya Event Promote Karna' },
+  { value: 'store-visits', label: 'Dukaan, Clinic Ya Store Par Footfall Badhana' },
 ];
 
 export const planOptions: EnquiryOption[] = [
   { value: 'starter', label: 'Starter — ₹5,000/month (₹3,000 Ads + ₹2,000 Service)' },
   { value: 'growth', label: 'Growth — ₹8,000/month (₹4,500 Ads + ₹3,500 Service)' },
-  { value: 'premium', label: 'Premium — ₹16,000/month (Custom Allocation)' },
+  { value: 'premium', label: 'Premium — ₹16,000/month (Focused Advertising Support)' },
   { value: 'custom', label: 'Custom — From ₹16,000/month (Tailored Scope)' },
 ];
 
@@ -47,17 +47,17 @@ export function buildWhatsAppMessage(data: EnquiryFormData): string {
   const planLabel =
     planOptions.find((p) => p.value === data.preferredPlan)?.label || data.preferredPlan;
 
-  return `Hello ADrivera Team,
+  return `Namaste ADrivera Team,
 
-I would like to explore Meta advertising for my business in Bhopal. Here are my details:
+Main apne business ke liye Meta advertising (Facebook & Instagram) discuss karna chahta hoon. Mere details ye hain:
 
 • Business Name: ${data.businessName.trim()}
 • Category: ${categoryLabel}
 • Location: ${data.location.trim()}
-• Primary Objective: ${objectiveLabel}
+• Main Goal: ${objectiveLabel}
 • Preferred Plan: ${planLabel}
 • Contact Person: ${data.contactName.trim()}
 • Phone / WhatsApp: ${data.phone.trim()}
 
-Please review my details and share the onboarding steps.`;
+Kripya mere details review karke aage ka advertising process batayein.`;
 }

@@ -5,7 +5,7 @@ import { siteConfig } from '@/content/site';
 
 export function WhatsAppStickyBar() {
   const defaultMessage = encodeURIComponent(
-    'Hello ADrivera team, I would like to learn more about Meta Ads packages for my business in Bhopal.'
+    'Namaste ADrivera team, main apne business ke liye Meta advertising (Facebook & Instagram) ke baare mein baat karna chahta hoon.'
   );
   const whatsappUrl = `https://wa.me/${siteConfig.contact.whatsappNumberPlaceholder}?text=${defaultMessage}`;
 
@@ -21,11 +21,11 @@ export function WhatsAppStickyBar() {
         <div className="flex items-center gap-2.5">
           <span className="w-2 h-2 bg-positive inline-block rounded-none" />
           <span className="text-xs font-semibold uppercase tracking-wider text-white">
-            Chat on WhatsApp
+            WhatsApp Par Baat Karein
           </span>
         </div>
         <span className="text-xs font-mono text-white/70">
-          Direct Desk
+          Direct Chat
         </span>
       </a>
     </div>

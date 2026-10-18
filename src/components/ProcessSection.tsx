@@ -25,7 +25,7 @@ export function ProcessSection() {
         <div className="relative border border-border bg-white rounded-none divide-y md:divide-y-0 md:divide-x divide-border grid grid-cols-1 md:grid-cols-4">
           {processData.steps.map((step, idx) => (
             <ScrollReveal key={step.step} delayMs={idx * 50}>
-              <div className="p-6 sm:p-8 flex flex-col justify-between h-full relative">
+              <div className="motion-card p-6 sm:p-8 flex flex-col justify-between h-full relative">
                 <div>
                   {/* Top Hairline Indicator & Large Numeral */}
                   <div className="flex items-center justify-between mb-4">

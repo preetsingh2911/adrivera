@@ -32,7 +32,7 @@ export function StickyMobileCta() {
   const whatsAppUrl = `https://wa.me/${
     siteConfig.contact.whatsappNumberPlaceholder
   }?text=${encodeURIComponent(
-    'Hello ADrivera team, I would like to enquire about Meta advertising for my business in Bhopal.'
+    'Namaste ADrivera team, main apne business ke liye Meta advertising (Facebook & Instagram) ke baare mein baat karna chahta hoon.'
   )}`;
 
   return (
@@ -51,14 +51,14 @@ export function StickyMobileCta() {
           className="flex-1 flex items-center justify-center gap-2 min-h-[48px] px-4 text-sm font-semibold text-white bg-accent hover:bg-[#1E4BD9] active:bg-[#153BB8] rounded-none transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent"
         >
           <span className="w-2 h-2 bg-white inline-block flex-shrink-0" />
-          <span>WhatsApp Us</span>
+          <span>WhatsApp Par Baat Karein</span>
         </a>
 
         <a
-          href="#enquiry"
+          href="/#pricing"
           className="flex items-center justify-center min-h-[48px] px-4 text-xs font-mono font-bold uppercase tracking-wider text-ink border border-border bg-bg hover:bg-bg/80 active:bg-border/40 rounded-none transition-colors"
         >
-          Enquire
+          Plan Chunein
         </a>
       </div>
     </aside>

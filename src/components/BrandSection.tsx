@@ -60,7 +60,7 @@ export function BrandSection({ useSerifHeadline = false }: BrandSectionProps) {
             <ScrollReveal delayMs={120}>
               <div className="mb-3">
                 <span className="font-mono uppercase text-xs tracking-wider text-white/70 font-medium block">
-                  The Broader Opportunity
+                  Business Se Brand Banne Ka Mauka
                 </span>
               </div>
 
@@ -110,7 +110,7 @@ export function BrandSection({ useSerifHeadline = false }: BrandSectionProps) {
             <div className="flex items-center gap-2 mb-3">
               <span className="w-1.5 h-1.5 bg-accent inline-block flex-shrink-0" />
               <span className="font-mono uppercase text-xs tracking-wider text-white/70 font-medium">
-                Important Qualification &amp; Commercial Reality
+                Zaroori Clarification &amp; Commercial Reality
               </span>
             </div>
             <p className="text-white/90 text-sm sm:text-base leading-relaxed font-normal">

@@ -6,51 +6,51 @@ export interface ServiceItem {
 
 export const servicesData = {
   eyebrow: '05 / Services',
-  headline: 'Everything You Need to Get Your Meta Ads Moving.',
+  headline: 'Hum sirf ads nahi chalate. Hum aapke business ko sahi logon tak pahunchane par focus karte hain.',
   leadText:
-    'We manage the technical setup, audience targeting, creative development, and ongoing optimization so your Meta advertising runs with clarity and purpose.',
+    'Pehle samjhenge aapka business, phir advertising plan banayenge. Campaign setup, creative, targeting aur regular optimization—sab agreed package ke hisaab se manage hoga.',
   items: [
     {
       number: '01',
       title: 'Campaign planning',
       description:
-        'Understand the business, its goals, location, audience, and budget before choosing an advertising approach.',
+        'Pehle samjhenge aapka business, aapke customers aur aapka goal. Phir uske hisaab se advertising plan banayenge.',
     },
     {
       number: '02',
-      title: 'Audience and location targeting',
+      title: 'Audience aur location targeting',
       description:
-        'Configure appropriate geographic and audience settings based on campaign objectives, available targeting options, and applicable advertising policies.',
+        'Har business ke customers alag hote hain. Isliye audience aur location ka selection aapke business aur campaign goal ke hisaab se kiya jayega.',
     },
     {
       number: '03',
-      title: 'Creative development',
+      title: 'Creative production',
       description:
-        'Create or adapt suitable advertising visuals, copy, and videos according to the selected plan.',
+        'Aapke business ke liye aise ad creatives banane mein madad karenge jo aapki offering ko clearly dikhayein aur audience ka attention attract karein.',
     },
     {
       number: '04',
-      title: 'Campaign setup',
+      title: 'Campaign setup & configuration',
       description:
-        'Configure campaigns, objectives, placements, destinations, and tracking where applicable.',
+        'Meta Ads Manager mein campaign objectives, placement settings, budget allocation aur destination tracking professionally configure karenge.',
     },
     {
       number: '05',
-      title: 'Monitoring and optimization',
+      title: 'Campaign optimization',
       description:
-        'Review campaign performance, identify problems, and make changes within the scope of the selected package.',
+        'Campaign ki performance ko monitor karke, package ke hisaab se, zaroori improvements kiye jayenge.',
     },
     {
       number: '06',
       title: 'Performance reporting',
       description:
-        'Explain what was spent, what the campaign delivered, which metrics matter, and what could be improved.',
+        'Sirf numbers nahi—report mein samjhiye ki kitna spend hua, kitni reach mili, kitne clicks aaye aur available data kya indicate karta hai.',
     },
     {
       number: '07',
-      title: 'Enquiry-focused advertising',
+      title: 'WhatsApp enquiries integration',
       description:
-        'Where appropriate, use Facebook and Instagram ads that direct interested customers to WhatsApp, website forms, phone calls, or other supported destinations.',
+        'Jab aapke potential customers interested hon, toh unke liye WhatsApp par aapse contact karna aasaan banaiye.',
     },
   ] as ServiceItem[],
 };

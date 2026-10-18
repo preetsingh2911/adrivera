@@ -9,28 +9,28 @@ export interface TrustContent {
 
 export const trustContent: TrustContent = {
   eyebrow: '11 / Accountability',
-  headline: 'Honest Advertising. Clear Accountability.',
+  headline: 'Hum vaade nahi, transparent advertising par bharosa karte hain.',
   promiseParagraphs: [
-    'Our responsibility is to manage your advertising professionally, configure campaigns appropriately, monitor performance, and make improvements within your selected plan.',
-    'Your business results also depend on factors beyond advertising, including product quality, pricing, competition, customer experience, offer quality, and your ability to convert enquiries into sales.',
-    'We do not guarantee a fixed number of leads, sales, revenue, or return on advertising spend. We do commit to transparent communication, clear reporting, and the agreed advertising work.',
+    'Har business ke results alag hote hain. Product, pricing, competition, offer aur customer experience bhi final results ko affect karte hain.',
+    'Hamari responsibility hai agreed campaign ko professionally set up karna, monitor karna, package ke hisaab se optimize karna aur actual performance aapke saath share karna.',
+    'Hum guaranteed sales ka promise nahi karte. Hum clear communication, transparent reporting aur agreed advertising work par focus karte hain.',
   ],
   agencyResponsibilities: [
-    'The agreed campaign setup.',
-    'Appropriate targeting and placement configuration.',
-    'The included creative deliverables.',
-    'Monitoring and optimization according to the plan.',
-    'Reporting and communicating campaign performance.',
+    'Agreed campaign ka professional setup aur technical configuration.',
+    'Sahi audience, location aur placement settings.',
+    'Package mein included ad creatives aur copy deliverables.',
+    'Campaign monitoring aur plan scope ke hisaab se regular optimization.',
+    'Transparent monthly reporting aur actual performance metrics.',
   ],
   customerResponsibilities: [
-    'Providing accurate information about their business.',
-    'Supplying product or service details, pricing, and offers.',
-    'Responding to customer enquiries promptly.',
-    'Maintaining product quality and customer service.',
-    'Approving creative materials and complying with applicable business requirements.',
+    'Apne business, products aur pricing ki accurate jankari dena.',
+    'Product photos, offers aur required details time par share karna.',
+    'Incoming WhatsApp enquiries aur calls ka prompt response dena.',
+    'Product quality aur customer service standard maintain rakhna.',
+    'Ad creatives ko review aur approve karna.',
   ],
   commitmentNote:
-    'This clear separation of responsibilities ensures honest expectations, mutual accountability, and a disciplined approach to local performance advertising in Bhopal.',
+    'Clear responsibilities se dono taraf honest expectations rehti hain aur advertising professional tareeqe se aage badhti hai.',
 };
 
 export const promisesData = trustContent;

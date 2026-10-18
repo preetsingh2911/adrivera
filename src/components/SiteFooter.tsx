@@ -9,7 +9,7 @@ export function SiteFooter() {
           {/* Brand Column */}
           <div className="md:col-span-6 flex flex-col items-start">
             <a
-              href="#home"
+              href="/"
               className="flex items-center gap-2 text-ink font-heading font-semibold text-xl tracking-tight mb-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2"
             >
               <span

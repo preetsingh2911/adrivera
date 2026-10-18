@@ -206,10 +206,10 @@ export function PlatformsSection() {
               {/* Label & Description */}
               <div className="mt-4 pt-4 border-t border-border">
                 <h3 className="font-heading font-bold text-ink text-base mb-1">
-                  Facebook & Instagram Feed
+                  {platformsData.wireframes[0]?.label || 'Facebook & Instagram Feed'}
                 </h3>
                 <p className="text-xs text-muted leading-relaxed">
-                  In-feed sponsored post configured for high readability, native browsing habit, and prominent headline messaging.
+                  {platformsData.wireframes[0]?.description}
                 </p>
               </div>
             </div>
@@ -407,10 +407,10 @@ export function PlatformsSection() {
               {/* Label & Description */}
               <div className="mt-4 pt-4 border-t border-border">
                 <h3 className="font-heading font-bold text-ink text-base mb-1">
-                  Instagram & Facebook Stories
+                  {platformsData.wireframes[1]?.label || 'Instagram & Facebook Stories'}
                 </h3>
                 <p className="text-xs text-muted leading-relaxed">
-                  Full-screen vertical story with sequential progress bars, strong visual impact, and instant interactive response options.
+                  {platformsData.wireframes[1]?.description}
                 </p>
               </div>
             </div>
@@ -637,10 +637,10 @@ export function PlatformsSection() {
               {/* Label & Description */}
               <div className="mt-4 pt-4 border-t border-border">
                 <h3 className="font-heading font-bold text-ink text-base mb-1">
-                  Instagram & Facebook Reels
+                  {platformsData.wireframes[2]?.label || 'Instagram & Facebook Reels'}
                 </h3>
                 <p className="text-xs text-muted leading-relaxed">
-                  Vertical short-form video featuring a dedicated right-side interaction column for engagement, sharing, and sound tracking.
+                  {platformsData.wireframes[2]?.description}
                 </p>
               </div>
             </div>
@@ -652,13 +652,13 @@ export function PlatformsSection() {
           <div className="border border-border bg-white p-6 sm:p-10 mb-8 rounded-none">
             <div className="mb-8">
               <span className="font-mono uppercase text-xs tracking-wider text-muted font-semibold block mb-2">
-                Conversion Architecture
+                Conversion Process
               </span>
               <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-ink tracking-tight">
-                How an Impression Becomes a Conversation
+                Ad Dekhne Se WhatsApp Conversation Tak Ka Safar
               </h3>
               <p className="text-sm text-muted mt-2 max-w-2xl">
-                The advertising platform and the contact destination are distinct stages. Meta delivers visibility; WhatsApp enables personal closing.
+                Meta Ads aapko reach aur visibility dete hain, aur WhatsApp par direct customer se baat karke deal close hoti hai.
               </p>
             </div>
 
@@ -706,13 +706,13 @@ export function PlatformsSection() {
                   {/* Distinction Clarification */}
                   <div className="mt-6 pt-4 border-t border-border/80 text-[11px] font-mono text-muted">
                     {step.category === 'Platform' && (
-                      <span>Environment: Paid Meta Placement</span>
+                      <span>Platform: Meta Sponsored Ad</span>
                     )}
                     {step.category === 'Interaction' && (
-                      <span>Action: Verified User Intent</span>
+                      <span>Action: Verified Customer Intent</span>
                     )}
                     {step.category === 'Destination' && (
-                      <span>Environment: Private 1-on-1 Chat</span>
+                      <span>Destination: 1-on-1 WhatsApp Chat</span>
                     )}
                   </div>
                 </div>

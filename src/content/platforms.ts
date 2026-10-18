@@ -16,9 +16,9 @@ export interface FlowStep {
 
 export const platformsData = {
   eyebrow: '06 / Placements',
-  headline: 'Reach Customers Where They Spend Their Time.',
+  headline: 'Jahan Bhopal Ke Log Active Hain, Wahin Dikhega Aapka Business.',
   leadText:
-    'Meta advertising can provide access to different placements and campaign formats, depending on campaign objectives, eligibility, and account configuration.',
+    'Aapke potential customers har roz ghanton Instagram aur Facebook scroll karte hain. Sahi placements aur ad formats ke saath aapka ad unke saamne sahi waqt par dikhaya ja sakta hai.',
   wireframes: [
     {
       id: 'feed',
@@ -26,15 +26,15 @@ export const platformsData = {
       aspectRatio: '4:5',
       format: 'In-Feed Sponsored Post',
       description:
-        'A native feed placement optimized for high visual impact, prominent headlines, and clear context before the user scrolls.',
+        'Feed placement jahan high-impact visuals aur clear headline se scrolling audience ka dhyan turant attract hota hai.',
     },
     {
       id: 'stories',
       label: 'Instagram & Facebook Stories',
       aspectRatio: '9:16',
-      format: 'Full-Screen Story',
+      format: 'Full-Screen Story Ad',
       description:
-        'Immersive full-screen vertical ad format with top progress indicators and a direct swipe-up or message call-to-action.',
+        'Full-screen vertical format jahan customer direct swipe ya message karke aapse seedha connect ho sakta hai.',
     },
     {
       id: 'reels',
@@ -42,38 +42,37 @@ export const platformsData = {
       aspectRatio: '9:16',
       format: 'Short-Form Video Reel',
       description:
-        'Fast-paced short-form video featuring vertical presentation and a dedicated right-side action column for likes, comments, and shares.',
+        'Fast-moving short video format jo local audience tak genuine engagement aur organic feel ke saath business ko pahunchata hai.',
     },
   ] as PlacementWireframe[],
   flowSteps: [
     {
       step: '01',
       category: 'Platform',
-      title: 'Ad on Facebook / Instagram',
+      title: 'Ad Facebook / Instagram Par Dekha',
       role: 'Advertising Platform',
       description:
-        'Where potential customers discover your business through targeted feed, story, or reel placements.',
+        'Bhopal ke potential customers Feed, Stories ya Reels scroll karte waqt aapka ad dekhte hain.',
     },
     {
       step: '02',
       category: 'Interaction',
-      title: 'Tap Call-to-Action',
-      role: 'Direct Engagement',
+      title: 'Call-to-Action Par Tap Kiya',
+      role: 'Direct Action',
       description:
-        'The prospect engages with the sponsored creative and taps the verified action button.',
+        "Interested customer ad par diye gaye button ('WhatsApp Karein' ya 'Details Dekhein') par tap karta hai.",
     },
     {
       step: '03',
       category: 'Destination',
-      title: 'WhatsApp Chat',
-      role: 'Contact Destination',
+      title: 'Direct WhatsApp Chat Shuru',
+      role: 'Customer Enquiry',
       description:
-        'A direct one-on-one conversation starts in WhatsApp where your business can answer questions and close orders.',
+        'Customer seedhe aapke WhatsApp par aata hai, jahan aap unki enquiry attend karke deal close kar sakte hain.',
     },
   ] as FlowStep[],
   placementNote:
-    'Not every campaign uses every placement. We select placements based on your specific business objective, audience, creative format, and available performance data.',
+    'Har campaign ke liye har placement zaroori nahi hoti. Aapke business goal aur creative format ke hisaab se best placements select ki jaati hain.',
   distinctionNote:
-    'Advertising platforms (Facebook & Instagram) and contact destinations (WhatsApp, website forms, or phone calls) serve distinct functions in your campaign architecture.',
+    'Meta Ads (Facebook aur Instagram) reach aur traffic create karte hain, jabki WhatsApp enquiries ko attend karne ka personal medium hai.',
 };
-

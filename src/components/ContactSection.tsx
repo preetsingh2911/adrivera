@@ -14,11 +14,11 @@ export function ContactSection() {
   const handleLaunchWhatsApp = (e: React.FormEvent) => {
     e.preventDefault();
     const message = [
-      `Hello ADrivera team,`,
-      `I would like to enquire about advertising services in Bhopal.`,
+      `Namaste ADrivera team,`,
+      `Main apne business ke liye Meta advertising ke baare mein baat karna chahta hoon.`,
       `Business Name: ${businessName || 'Not specified'}`,
       `Category: ${category || 'Not specified'}`,
-      `Primary Goal: ${objective}`,
+      `Main Goal: ${objective}`,
       `Selected Package: ${selectedPlan}`,
     ].join('\n');
 
@@ -33,15 +33,14 @@ export function ContactSection() {
       <div className="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="max-w-3xl mb-12">
-            <span className="inline-block text-xs font-semibold uppercase tracking-eyebrow text-muted mb-3">
+            <span className="inline-block text-xs font-semibold uppercase tracking-eyebrow text-muted mb-3 font-mono">
               Direct Contact
             </span>
             <h2 className="font-heading font-extrabold text-ink text-3xl sm:text-4xl md:text-5xl tracking-tighter leading-snugger mb-4">
-              Start an Honest Conversation About Your Advertising.
+              Apne Business Ke Baare Mein Batayein.
             </h2>
             <p className="text-muted text-base sm:text-lg leading-relaxed">
-              Tell us about your business in Bhopal. We will review your goals, recommend a sensible
-              starting package, and explain what to expect before you spend any money.
+              Apne business, location aur goal ke baare mein batayiye. Hum evaluate karenge ki kaunsa campaign approach aapke liye suitable ho sakta hai.
             </p>
           </div>
         </ScrollReveal>
@@ -51,7 +50,7 @@ export function ContactSection() {
           <div className="lg:col-span-7 border border-border bg-white p-6 sm:p-8 rounded-none">
             <div className="flex items-center justify-between pb-4 border-b border-border mb-6">
               <span className="text-xs font-bold uppercase tracking-eyebrow text-ink">
-                Direct Enquiry Dispatch
+                Direct WhatsApp Enquiry
               </span>
               <span className="text-[10px] uppercase font-bold text-muted border border-border px-2 py-0.5 rounded-[2px] bg-bg">
                 Opens in WhatsApp
@@ -64,14 +63,14 @@ export function ContactSection() {
                   htmlFor="businessName"
                   className="block text-xs font-bold uppercase tracking-wider text-ink mb-1.5"
                 >
-                  Business Name
+                  Business Ka Naam
                 </label>
                 <input
                   id="businessName"
                   type="text"
                   value={businessName}
                   onChange={(e) => setBusinessName(e.target.value)}
-                  placeholder="e.g. Bhopal Bakery & Café"
+                  placeholder="Jaise: Bhopal Bakery & Café"
                   required
                   className="w-full h-12 px-3.5 text-sm bg-bg border border-border rounded-[2px] text-ink placeholder:text-muted/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2"
                 />
@@ -90,7 +89,7 @@ export function ContactSection() {
                     type="text"
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
-                    placeholder="e.g. Restaurant, Real Estate, Salon"
+                    placeholder="Jaise: Restaurant, Real Estate, Salon"
                     required
                     className="w-full h-12 px-3.5 text-sm bg-bg border border-border rounded-[2px] text-ink placeholder:text-muted/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2"
                   />
@@ -101,7 +100,7 @@ export function ContactSection() {
                     htmlFor="objective"
                     className="block text-xs font-bold uppercase tracking-wider text-ink mb-1.5"
                   >
-                    Primary Goal
+                    Aapka Main Goal
                   </label>
                   <select
                     id="objective"
@@ -122,7 +121,7 @@ export function ContactSection() {
                   htmlFor="selectedPlan"
                   className="block text-xs font-bold uppercase tracking-wider text-ink mb-1.5"
                 >
-                  Interested Package
+                  Kaunsa Plan Dekhna Chahte Hain
                 </label>
                 <select
                   id="selectedPlan"
@@ -144,7 +143,7 @@ export function ContactSection() {
                   type="submit"
                   className="w-full min-h-[48px] px-6 text-sm font-semibold text-white bg-accent hover:bg-[#1E4BD9] active:bg-[#153BB8] rounded-[2px] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2"
                 >
-                  Send Enquiry via WhatsApp
+                  WhatsApp Par Details Bhejein
                 </button>
               </div>
             </form>
@@ -172,20 +171,19 @@ export function ContactSection() {
                       {siteConfig.contact.whatsappNumberFormatted}
                     </span>
                     <span className="text-[10px] uppercase font-bold text-muted border border-border px-1.5 py-0.5 bg-bg rounded-[2px]">
-                      Placeholder
+                      Desk Line
                     </span>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Launch Notice */}
+            {/* Trust Note */}
             <div className="border border-border p-5 bg-tint/30 text-xs text-muted leading-relaxed">
               <span className="font-bold text-ink uppercase tracking-wider block mb-1">
-                Pre-Launch Placeholder Disclosure
+                ADrivera Assurance
               </span>
-              The WhatsApp number above is currently a placeholder and will be linked to the official verified
-              agency WhatsApp Business account prior to domain launch.
+              Koi hidden charges nahi, agreed budget ke sath transparent ad spend aur clear campaign reporting.
             </div>
           </div>
         </div>

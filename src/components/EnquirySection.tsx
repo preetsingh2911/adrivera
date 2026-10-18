@@ -82,18 +82,18 @@ export function EnquirySection() {
     const newErrors: Partial<Record<keyof EnquiryFormData, string>> = {};
 
     if (!formData.businessName.trim()) {
-      newErrors.businessName = 'Please enter your business or venture name.';
+      newErrors.businessName = 'Kripya apne business ya venture ka naam darj karein.';
     }
     if (!formData.location.trim()) {
-      newErrors.location = 'Please specify your business location or area in Bhopal.';
+      newErrors.location = 'Kripya apne business ki location ya area batayein.';
     }
     if (!formData.contactName.trim()) {
-      newErrors.contactName = 'Please enter your contact name.';
+      newErrors.contactName = 'Kripya apna naam darj karein.';
     }
 
     const cleanPhone = formData.phone.replace(/[\s\-\+]/g, '');
     if (!cleanPhone || cleanPhone.length < 10) {
-      newErrors.phone = 'Please provide a valid 10-digit phone or WhatsApp number.';
+      newErrors.phone = 'Kripya sahi 10-digit phone ya WhatsApp number darj karein.';
     }
 
     setErrors(newErrors);
@@ -122,7 +122,6 @@ export function EnquirySection() {
       setCopied(true);
       setTimeout(() => setCopied(false), 3000);
     } catch {
-      // Fallback if clipboard API is restricted
       setCopied(true);
       setTimeout(() => setCopied(false), 3000);
     }
@@ -134,16 +133,16 @@ export function EnquirySection() {
         <ScrollReveal>
           <div className="max-w-3xl mb-12 sm:mb-16">
             <span className="inline-block text-xs font-semibold uppercase tracking-eyebrow text-muted mb-4 font-mono">
-              11 / Direct Enquiry
+              11 / Shuru Kijiye
             </span>
             <h2 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl text-ink tracking-tighter leading-tight mb-4">
-              Start Your Advertising Enquiry
+              Apne Business Ke Baare Mein Batayein
             </h2>
-            <p className="text-accent text-base sm:text-lg font-medium leading-snug mb-3" lang="hi-Latn">
+            <p className="text-accent text-base sm:text-lg font-medium leading-snug mb-3">
               Agar aapko lagta hai ki aapka business aur grow kar sakta hai, toh shuruaat aaj hi kijiye.
             </p>
             <p className="text-muted text-base leading-relaxed">
-              Fill in your business details to compose an enquiry message. When submitted, you will be directed to send the formatted message directly through WhatsApp.
+              Form bhariye aur details seedhe WhatsApp par bhejiye. Hum aapke business aur goals ke hisaab se Meta Ads approach discuss karenge.
             </p>
           </div>
         </ScrollReveal>
@@ -163,7 +162,7 @@ export function EnquirySection() {
                     htmlFor="businessName"
                     className="block text-xs font-mono font-bold uppercase tracking-wider text-ink mb-2"
                   >
-                    Business Name <span className="text-accent">*</span>
+                    Aapke Business Ka Naam <span className="text-accent">*</span>
                   </label>
                   <input
                     type="text"
@@ -173,7 +172,7 @@ export function EnquirySection() {
                     onChange={handleChange}
                     aria-invalid={!!errors.businessName}
                     aria-describedby={errors.businessName ? 'businessName-error' : undefined}
-                    placeholder="e.g. Malwa Organic Foods / City Dental Care"
+                    placeholder="Jaise: Malwa Organic Foods / City Dental Care"
                     className={`w-full min-h-[48px] px-4 text-sm bg-bg border rounded-none text-ink placeholder:text-muted/60 focus:outline-none focus:border-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 ${
                       errors.businessName ? 'border-red-600' : 'border-border'
                     }`}
@@ -193,7 +192,7 @@ export function EnquirySection() {
                       htmlFor="category"
                       className="block text-xs font-mono font-bold uppercase tracking-wider text-ink mb-2"
                     >
-                      Business Category <span className="text-accent">*</span>
+                      Business Ki Category <span className="text-accent">*</span>
                     </label>
                     <select
                       id="category"
@@ -216,7 +215,7 @@ export function EnquirySection() {
                       htmlFor="location"
                       className="block text-xs font-mono font-bold uppercase tracking-wider text-ink mb-2"
                     >
-                      Business Location <span className="text-accent">*</span>
+                      Location (Bhopal Mein Kahan) <span className="text-accent">*</span>
                     </label>
                     <input
                       type="text"
@@ -226,7 +225,7 @@ export function EnquirySection() {
                       onChange={handleChange}
                       aria-invalid={!!errors.location}
                       aria-describedby={errors.location ? 'location-error' : undefined}
-                      placeholder="e.g. Arera Colony, MP Nagar, Bhopal"
+                      placeholder="Jaise: Arera Colony, MP Nagar, Bhopal"
                       className={`w-full min-h-[48px] px-4 text-sm bg-bg border rounded-none text-ink placeholder:text-muted/60 focus:outline-none focus:border-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 ${
                         errors.location ? 'border-red-600' : 'border-border'
                       }`}
@@ -247,7 +246,7 @@ export function EnquirySection() {
                       htmlFor="objective"
                       className="block text-xs font-mono font-bold uppercase tracking-wider text-ink mb-2"
                     >
-                      Primary Objective <span className="text-accent">*</span>
+                      Aapka Main Goal <span className="text-accent">*</span>
                     </label>
                     <select
                       id="objective"
@@ -270,7 +269,7 @@ export function EnquirySection() {
                       htmlFor="preferredPlan"
                       className="block text-xs font-mono font-bold uppercase tracking-wider text-ink mb-2"
                     >
-                      Preferred Plan <span className="text-accent">*</span>
+                      Kaunsa Plan Dekhna Chahte Hain <span className="text-accent">*</span>
                     </label>
                     <select
                       id="preferredPlan"
@@ -296,7 +295,7 @@ export function EnquirySection() {
                       htmlFor="contactName"
                       className="block text-xs font-mono font-bold uppercase tracking-wider text-ink mb-2"
                     >
-                      Your Name <span className="text-accent">*</span>
+                      Aapka Naam <span className="text-accent">*</span>
                     </label>
                     <input
                       type="text"
@@ -306,7 +305,7 @@ export function EnquirySection() {
                       onChange={handleChange}
                       aria-invalid={!!errors.contactName}
                       aria-describedby={errors.contactName ? 'contactName-error' : undefined}
-                      placeholder="e.g. Rajesh Sharma"
+                      placeholder="Jaise: Rajesh Sharma"
                       className={`w-full min-h-[48px] px-4 text-sm bg-bg border rounded-none text-ink placeholder:text-muted/60 focus:outline-none focus:border-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 ${
                         errors.contactName ? 'border-red-600' : 'border-border'
                       }`}
@@ -324,7 +323,7 @@ export function EnquirySection() {
                       htmlFor="phone"
                       className="block text-xs font-mono font-bold uppercase tracking-wider text-ink mb-2"
                     >
-                      Phone / WhatsApp Number <span className="text-accent">*</span>
+                      WhatsApp / Phone Number <span className="text-accent">*</span>
                     </label>
                     <input
                       type="tel"
@@ -334,7 +333,7 @@ export function EnquirySection() {
                       onChange={handleChange}
                       aria-invalid={!!errors.phone}
                       aria-describedby={errors.phone ? 'phone-error' : undefined}
-                      placeholder="e.g. 98260 00000"
+                      placeholder="Jaise: 98260 00000"
                       className={`w-full min-h-[48px] px-4 text-sm bg-bg border rounded-none text-ink placeholder:text-muted/60 focus:outline-none focus:border-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 ${
                         errors.phone ? 'border-red-600' : 'border-border'
                       }`}
@@ -353,7 +352,7 @@ export function EnquirySection() {
                     type="submit"
                     className="w-full flex items-center justify-center min-h-[50px] px-6 text-sm font-semibold text-white bg-accent hover:bg-[#1E4BD9] active:bg-[#153BB8] rounded-[2px] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2"
                   >
-                    Open in WhatsApp &amp; Send
+                    WhatsApp Par Details Bhejein
                   </button>
                 </div>
 
@@ -362,7 +361,7 @@ export function EnquirySection() {
                   <span className="w-1.5 h-1.5 bg-ink/40 inline-block mt-1 flex-shrink-0" />
                   <p className="leading-relaxed">
                     <span className="font-semibold text-ink">Privacy Guarantee: </span>
-                    No personal or commercial details are stored on our website. Submitting this form simply formats your message and opens WhatsApp so you remain in complete control of sending it.
+                    Aapki details hamari website par store nahi hoti hain. Ye form sirf ek formatted message banakar WhatsApp open karta hai taaki control aapke haath mein rahe.
                   </p>
                 </div>
               </form>
@@ -374,30 +373,30 @@ export function EnquirySection() {
             <ScrollReveal delayMs={100}>
               <div className="border border-border bg-white p-6 sm:p-8 rounded-none">
                 <span className="text-xs font-mono font-bold uppercase tracking-wider text-muted block mb-2">
-                  Transparent Next Steps
+                  Agla Kadam Kya Hoga?
                 </span>
                 <h3 className="font-heading font-extrabold text-xl text-ink tracking-tight mb-4">
-                  What Happens When You Enquire
+                  Enquiry Ke Baad Process Kaise Chalega
                 </h3>
 
                 <ul className="space-y-3.5 text-xs sm:text-sm text-ink/85 mb-6">
                   <li className="flex items-start gap-3">
                     <span className="font-mono text-xs font-bold text-accent flex-shrink-0 mt-0.5">01</span>
-                    <span lang="hi-Latn">Hum aapki business category, Bhopal ke target customers, aur campaign goals ko review karte hain.</span>
+                    <span>Hum aapki business category, Bhopal ke target customers aur advertising goals ko samjhenge.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="font-mono text-xs font-bold text-accent flex-shrink-0 mt-0.5">02</span>
-                    <span lang="hi-Latn">Aapke offer aur selected package ke hisaab se Meta policies aur ad strategy align karte hain.</span>
+                    <span>Aapke budget aur offer ke hisaab se sahi Meta Ads strategy aur creative format suggest karenge.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="font-mono text-xs font-bold text-accent flex-shrink-0 mt-0.5">03</span>
-                    <span lang="hi-Latn">Campaign live karne se pehle exact ad budget allocation aur creative setup finalize karte hain.</span>
+                    <span>Campaign live hone se pehle clear ad budget aur timeline aapke saath finalize ki jayegi.</span>
                   </li>
                 </ul>
 
                 <div className="p-4 bg-bg border border-border text-xs text-muted leading-relaxed">
-                  <span className="font-semibold text-ink">Founder Assurance: </span>
-                  No sales pressure, no fabricated performance promises, and no separate agency management fees.
+                  <span className="font-semibold text-ink">ADrivera Assurance: </span>
+                  Koi hidden agency charges nahi, koi fake sales promises nahi, aur clean transparent reporting.
                 </div>
               </div>
             </ScrollReveal>
@@ -408,14 +407,14 @@ export function EnquirySection() {
                 <div className="border border-border bg-white p-6 sm:p-8 rounded-none">
                   <div className="flex items-center justify-between mb-3 pb-3 border-b border-border">
                     <span className="font-mono text-xs font-bold uppercase tracking-wider text-accent">
-                      Composed Message Preview
+                      Formatted Message Preview
                     </span>
                     <button
                       type="button"
                       onClick={handleCopy}
                       className="px-3 py-1.5 text-xs font-mono font-semibold text-ink border border-ink hover:bg-ink/5 active:bg-ink/10 transition-colors rounded-[2px]"
                     >
-                      {copied ? 'Copied!' : 'Copy Message'}
+                      {copied ? 'Copied!' : 'Message Copy Karein'}
                     </button>
                   </div>
 
@@ -424,7 +423,7 @@ export function EnquirySection() {
                   </pre>
 
                   <p className="mt-3 text-[11px] font-mono text-muted">
-                    If WhatsApp did not launch automatically, copy this message and send it to our team.
+                    Agar WhatsApp automatically open nahi hua, toh ye message copy karke WhatsApp par bhej dijiye.
                   </p>
                 </div>
               </ScrollReveal>

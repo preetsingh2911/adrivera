@@ -29,14 +29,15 @@ export function Button({
   ...props
 }: ButtonProps) {
   const baseStyles =
-    'inline-flex items-center justify-center min-h-[48px] px-6 text-sm font-semibold rounded-[2px] transition-[color,background-color,border-color,transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_18px_rgba(23,37,29,0.12)] active:translate-y-0 active:shadow-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2';
+    'group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md px-6 font-medium transition-all duration-100 translate-x-[3px] hover:translate-x-[0px] translate-y-[3px] hover:translate-y-[0px] active:translate-y-[3px] active:translate-x-[3px] cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2';
 
   const variantStyles: Record<ButtonVariant, string> = {
-    primary: 'bg-accent text-white hover:bg-[#C84825] active:bg-[#AE3C20]',
+    primary:
+      'bg-linear-to-r bg-gradient-to-r dark:from-[#070e41] dark:to-[#263381] from-[#f6f7ff] to-[#f5f6ff] dark:border-[rgb(76_100_255)] border-2 border-[#263381] text-foreground dark:text-white [box-shadow:0px_0px_rgb(38_51_129)] hover:[box-shadow:5px_5px_rgb(38_51_129)] active:[box-shadow:0px_0px_rgb(38_51_129)] dark:hover:[box-shadow:5px_5px_rgb(76_100_255)] dark:active:[box-shadow:0px_0px_rgb(76_100_255)] focus-visible:outline-[#263381]',
     secondary:
-      'border border-ink text-ink bg-transparent hover:bg-ink/5 active:bg-ink/10',
+      'bg-white dark:bg-[#070e41] border-2 border-[#263381] text-[#263381] dark:text-white [box-shadow:0px_0px_rgb(38_51_129)] hover:[box-shadow:5px_5px_rgb(38_51_129)] active:[box-shadow:0px_0px_rgb(38_51_129)] dark:hover:[box-shadow:5px_5px_rgb(76_100_255)] dark:active:[box-shadow:0px_0px_rgb(76_100_255)] focus-visible:outline-[#263381]',
     'secondary-dark':
-      'border border-white/70 text-white bg-transparent hover:bg-white/10 active:bg-white/15 focus-visible:outline-white',
+      'bg-linear-to-r bg-gradient-to-r from-[#070e41] to-[#263381] border-2 border-[rgb(76_100_255)] text-white [box-shadow:0px_0px_rgb(76_100_255)] hover:[box-shadow:5px_5px_rgb(76_100_255)] active:[box-shadow:0px_0px_rgb(76_100_255)] focus-visible:outline-white',
   };
 
   const combinedStyles = `${baseStyles} ${variantStyles[variant]} ${
@@ -59,3 +60,5 @@ export function Button({
     </button>
   );
 }
+
+export default Button;

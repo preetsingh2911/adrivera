@@ -155,7 +155,7 @@ export function PricingSection() {
                   <button
                     type="button"
                     onClick={() => handleContactPlan(plan.id)}
-                    className="flex min-h-[48px] w-full items-center justify-center rounded-[2px] bg-accent px-4 text-sm font-semibold text-white transition-colors hover:bg-[#1E4BD9] active:bg-[#153BB8] focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2"
+                    className="group relative flex h-12 w-full items-center justify-center overflow-hidden rounded-md bg-linear-to-r bg-gradient-to-r dark:from-[#070e41] dark:to-[#263381] from-[#f6f7ff] to-[#f5f6ff] dark:border-[rgb(76_100_255)] border-2 border-[#263381] px-4 font-semibold text-foreground dark:text-white transition-all duration-100 hover:[box-shadow:5px_5px_rgb(38_51_129)] translate-x-[3px] hover:translate-x-[0px] translate-y-[3px] hover:translate-y-[0px] [box-shadow:0px_0px_rgb(38_51_129)] dark:hover:[box-shadow:5px_5px_rgb(76_100_255)] dark:active:[box-shadow:0px_0px_rgb(76_100_255)] active:[box-shadow:0px_0px_rgb(38_51_129)] active:translate-y-[3px] active:translate-x-[3px]"
                   >
                     Contact Now
                   </button>
@@ -164,7 +164,7 @@ export function PricingSection() {
                     aria-expanded={isExpanded}
                     aria-controls={`${plan.id}-details`}
                     onClick={() => setExpandedPlan(isExpanded ? null : plan.id)}
-                    className="flex min-h-[44px] w-full items-center justify-center border border-ink bg-transparent px-4 text-sm font-semibold text-ink transition-colors hover:bg-ink/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2"
+                    className="group relative flex h-11 w-full items-center justify-center overflow-hidden rounded-md border-2 border-[#263381] bg-white dark:bg-[#070e41] px-4 font-semibold text-[#263381] dark:text-white transition-all duration-100 hover:[box-shadow:5px_5px_rgb(38_51_129)] translate-x-[3px] hover:translate-x-[0px] translate-y-[3px] hover:translate-y-[0px] [box-shadow:0px_0px_rgb(38_51_129)] active:[box-shadow:0px_0px_rgb(38_51_129)] active:translate-y-[3px] active:translate-x-[3px]"
                   >
                     {isExpanded ? 'Show Less' : 'Know More'}
                   </button>

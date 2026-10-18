@@ -2,6 +2,10 @@ import type { Metadata } from 'next';
 import { Inter, Manrope, IBM_Plex_Mono, Noto_Sans_Devanagari } from 'next/font/google';
 import './globals.css';
 import { siteConfig } from '@/content/site';
+import { cn } from "@/lib/utils";
+import { SmoothCursor } from "@/components/ui/smooth-cursor";
+
+
 
 const inter = Inter({
   subsets: ['latin'],
@@ -132,7 +136,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${manrope.variable} ${ibmPlexMono.variable} ${notoDevanagari.variable}`}
+      className={cn(inter.variable, manrope.variable, ibmPlexMono.variable, notoDevanagari.variable)}
     >
       <body className="bg-bg text-ink min-h-screen antialiased selection:bg-tint selection:text-ink">
         {/* Skip to Main Content Link for Keyboard and Screen Reader Accessibility */}
@@ -148,6 +152,9 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }}
         />
+
+        {/* Global Smooth Cursor from Magic UI */}
+        <SmoothCursor />
 
         {children}
       </body>

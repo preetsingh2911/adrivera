@@ -1,103 +1,74 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { siteContent } from '@/content/site';
-import { Button } from './ui/Button';
-import { MobileNavigation } from './MobileNavigation';
+import CardNav, { type CardNavItem } from './CardNav';
 
 export function SiteHeader() {
-  const [mobileNavOpen, setMobileNavOpen] = useState(false);
-  const mobilePrimaryLinks = [
-    { label: 'Home', href: '/' },
-    { label: 'Kyun Zaroori', href: '/why-us' },
-    { label: 'Plans', href: '/#pricing' },
+  const items: CardNavItem[] = [
+    {
+      label: 'Why Us',
+      description: 'Bhopal businesses ke liye targeted Meta Ads execution.',
+      links: [
+        { label: 'Kyun Zaroori Hai', href: '/why-us' },
+        { label: 'Kaam Ka Tareeka', href: '/how-we-work' },
+        { label: 'Platforms Covered', href: '/#platforms' }
+      ]
+    },
+    {
+      label: 'Packages',
+      description: 'Sirf ₹5,000/month se transparent Meta Ads plans.',
+      links: [
+        { label: 'Starter (₹5,000/mo)', href: '/#pricing' },
+        { label: 'Growth (₹8,000/mo)', href: '/#pricing' },
+        { label: 'Premium (₹16,000/mo)', href: '/#pricing' },
+        { label: 'Custom (₹30,000+/mo)', href: '/#pricing' }
+      ]
+    },
+    {
+      label: 'Contact',
+      description: 'Direct communication & fast onboarding on WhatsApp.',
+      links: [
+        {
+          label: 'WhatsApp Chat',
+          href: 'https://wa.me/918815512459?text=Namaste%20ADrivera%20team%2C%20main%20Meta%20Ads%20ke%20baare%20mein%20baat%20karna%20chahta%20hoon.'
+        },
+        { label: 'Online Enquiry', href: '/contact' },
+        { label: 'About Agency', href: '/about' }
+      ]
+    }
   ];
-  const mobileMoreLinks = [
-    { label: 'Kaam Ka Tareeka', href: '/how-we-work' },
-    { label: 'About Us', href: '/about' },
-    { label: 'Contact', href: '/contact' },
-  ];
+
+  const logoNode = (
+    <div className="flex items-center gap-2 font-heading font-extrabold text-lg sm:text-xl tracking-tight text-ink">
+      <span className="h-2.5 w-2.5 flex-shrink-0 bg-accent rounded-[1px]" aria-hidden="true" />
+      <span>{siteContent.brandName}</span>
+    </div>
+  );
 
   return (
-    <>
-      <header className="sticky top-0 z-40 border-b border-border bg-bg/95 backdrop-blur-sm transition-colors duration-300">
-        <div className="mx-auto flex max-w-site flex-col px-4 py-3 sm:px-6 lg:h-20 lg:flex-row lg:items-center lg:px-8 lg:py-0">
-          {/* Wordmark: Manrope semibold with a small solid blue square before it, no gradient */}
-          <div className="flex h-10 items-center justify-between lg:h-auto">
-            <a
-              href="/"
-              className="group flex items-center gap-2 font-heading text-xl font-semibold tracking-tight text-ink transition-colors duration-200 hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2"
-            >
-              <span
-                className="h-2.5 w-2.5 flex-shrink-0 bg-accent"
-                aria-hidden="true"
-              />
-              <span>{siteContent.brandName}</span>
-            </a>
-
-            <button
-              type="button"
-              onClick={() => setMobileNavOpen(true)}
-              aria-label="Open more navigation"
-              aria-expanded={mobileNavOpen}
-              aria-controls="mobile-navigation-dialog"
-              className="flex h-10 items-center gap-2 border border-border px-3 font-mono text-[10px] font-semibold uppercase tracking-eyebrow text-ink transition-colors hover:border-accent hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 lg:hidden"
-            >
-              <span className="flex flex-col gap-1" aria-hidden="true">
-                <span className="h-px w-4 bg-current" />
-                <span className="h-px w-4 bg-current" />
-              </span>
-              More
-            </button>
-          </div>
-
-          <nav aria-label="Mobile Primary Navigation" className="mt-3 grid grid-cols-3 gap-2 lg:hidden">
-            {mobilePrimaryLinks.map((link, index) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className={`flex min-h-[38px] items-center justify-center border px-2 text-[10px] font-semibold uppercase tracking-[0.07em] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 ${
-                  index === 2
-                    ? 'border-accent bg-accent text-white hover:bg-[#1E4BD9]'
-                    : 'border-border bg-white/40 text-ink hover:border-accent hover:text-accent'
-                }`}
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
-
-          {/* Desktop Navigation */}
-          <nav
-            aria-label="Primary Navigation"
-            className="hidden md:flex items-center gap-8"
-          >
-            {siteContent.navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-muted transition-colors duration-200 hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2"
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
-
-          {/* Desktop Action Button: Rectangular, 2px radius, 48px min height */}
-          <div className="hidden md:flex items-center gap-4">
-            <Button variant="primary" href="/#pricing">
-              Plans Dekhein
-            </Button>
-          </div>
-
-        </div>
-      </header>
-      <MobileNavigation
-        isOpen={mobileNavOpen}
-        onClose={() => setMobileNavOpen(false)}
-        links={mobileMoreLinks}
-        brandName={siteContent.brandName}
-      />
-    </>
+    <header className="sticky top-3 z-40 px-3 sm:px-6 w-full pointer-events-none">
+      <div className="pointer-events-auto">
+        <CardNav
+          logo={logoNode}
+          logoAlt={siteContent.brandName}
+          logoHref="/"
+          items={items}
+          cta={{ label: 'Plans Dekhein', href: '/#pricing' }}
+          cardEffect="rise"
+          openOn="click"
+          surface="glass"
+          stagger={0.12}
+          bounce={0.2}
+          menuLabel
+          speed={1}
+          cardHeight={176}
+          maxWidth={820}
+          intro
+        />
+      </div>
+    </header>
   );
 }
+
+export default SiteHeader;

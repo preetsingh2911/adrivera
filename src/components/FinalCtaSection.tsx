@@ -36,7 +36,7 @@ export function FinalCtaSection() {
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full">
                   <a
                     href="/#pricing"
-                    className="inline-flex items-center justify-center min-h-[50px] px-8 text-sm font-semibold text-white bg-accent hover:bg-[#1E4BD9] active:bg-[#153BB8] rounded-[2px] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
+                    className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md bg-linear-to-r bg-gradient-to-r from-[#070e41] to-[#263381] border-2 border-[rgb(76_100_255)] px-8 font-medium text-white transition-all duration-100 hover:[box-shadow:5px_5px_rgb(76_100_255)] translate-x-[3px] hover:translate-x-[0px] translate-y-[3px] hover:translate-y-[0px] [box-shadow:0px_0px_rgb(76_100_255)] active:[box-shadow:0px_0px_rgb(76_100_255)] active:translate-y-[3px] active:translate-x-[3px]"
                   >
                     {finalCtaData.primaryCta.label}
                   </a>
@@ -45,7 +45,7 @@ export function FinalCtaSection() {
                     href="https://wa.me/918815512459?text=Namaste%20ADrivera%20team%2C%20main%20apne%20business%20ke%20liye%20Meta%20Ads%20ke%20baare%20mein%20baat%20karna%20chahta%20hoon."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center min-h-[50px] px-8 text-sm font-semibold text-white bg-transparent border border-white/30 hover:bg-white/10 active:bg-white/15 rounded-[2px] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
+                    className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md bg-transparent border-2 border-white/40 px-8 font-medium text-white transition-all duration-100 hover:[box-shadow:5px_5px_rgba(255,255,255,0.4)] translate-x-[3px] hover:translate-x-[0px] translate-y-[3px] hover:translate-y-[0px] [box-shadow:0px_0px_rgba(255,255,255,0.4)] active:translate-y-[3px] active:translate-x-[3px]"
                   >
                     {finalCtaData.secondaryCta.label}
                   </a>

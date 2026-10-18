@@ -1,7 +1,11 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-// Requirement 3: Build-time check that fails the production build if whatsappNumber is still the placeholder.
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Build-time check for verified whatsappNumber
 const siteTsPath = path.join(__dirname, 'content/site.ts');
 if (fs.existsSync(siteTsPath)) {
   const content = fs.readFileSync(siteTsPath, 'utf8');
@@ -28,4 +32,4 @@ const nextConfig = {
   trailingSlash: true,
 };
 
-module.exports = nextConfig;
+export default nextConfig;

@@ -41,7 +41,7 @@ export interface SiteContent {
 export const siteContent: SiteContent = {
   brandName: 'ADrivera',
   tagline: 'Good Business. Better Visibility. Stronger Growth.',
-  whatsappNumber: 'REPLACE_WITH_VERIFIED_NUMBER',
+  whatsappNumber: '918815512459',
   navLinks: [
     { label: 'Home', href: '#home' },
     { label: 'What We Do', href: '#what-we-do' },
@@ -75,10 +75,10 @@ export const siteContent: SiteContent = {
   verifiedStats: [],
   location: 'Bhopal, Madhya Pradesh, India',
   contact: {
-    whatsappNumberPlaceholder: 'REPLACE_WITH_VERIFIED_NUMBER',
-    whatsappNumberFormatted: 'Pending Verification',
-    whatsappDisplayPlaceholder: 'Pending Founder WhatsApp Verification',
-    isWhatsappVerified: false,
+    whatsappNumberPlaceholder: '918815512459',
+    whatsappNumberFormatted: '+91 88155 12459',
+    whatsappDisplayPlaceholder: '+91 88155 12459',
+    isWhatsappVerified: true,
     emailPlaceholder: 'hello@adrivera.in',
     officeLocation: 'Bhopal, Madhya Pradesh, India',
   },

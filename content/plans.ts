@@ -3,6 +3,11 @@ export interface PlanPricing {
   name: string;
   subtitle: string;
   purposeTagline?: string;
+  highlights: string[];
+  bestForLabel: string;
+  bestForDescription: string;
+  bestForExamples: string[];
+  bestForMessage: string;
   totalPrice: number;
   priceDisplay: string;
   billingPeriod: string;
@@ -33,27 +38,43 @@ export const plansContent: PlanPricing[] = [
   {
     id: 'starter',
     name: 'Starter',
-    subtitle: 'Pehli baar try kar rahe hain? Yahin se shuru kijiye.',
+    subtitle: 'Pehli baar Meta Ads try kar rahe hain? Yahin se shuru kijiye.',
     purposeTagline: 'Sirf ₹5,000 per month mein Meta Ads ki shuruaat kijiye.',
+    highlights: [
+      'Basic campaign management',
+      'Best for businesses trying online advertising for the first time',
+      'Audience and location targeting',
+    ],
+    bestForLabel: 'Pehli Baar Try Karne Walon Ke Liye',
+    bestForDescription:
+      'Agar aap pehli baar Meta Ads try karna chahte hain, ya apne business ki online reach badhane ke liye chhoti shuruaat karna chahte hain, toh ye plan aapke liye hai.',
+    bestForExamples: [
+      'Chhoti local shops aur retailers',
+      'First-time advertisers',
+      'Small businesses with a limited starting budget',
+      'Businesses reaching their local audience online',
+    ],
+    bestForMessage:
+      'Bada budget lagane se pehle shuruaat kijiye, campaign ke results samjhiye aur phir aage ka decision lijiye.',
     totalPrice: 5000,
     priceDisplay: '₹5,000',
     billingPeriod: '/month',
-    adSpend: 3000,
-    serviceFee: 2000,
+    adSpend: null,
+    serviceFee: null,
     targetPersona:
       'Naye business owners jo pehli baar Meta Ads ko bina heavy budget risk ke test karna chahte hain.',
     summary:
       'Sirf ₹5,000 per month mein Meta Ads ki shuruaat kijiye. Campaign ke results samjhiye, service ka experience lijiye aur phir decide kijiye ki aage kya karna hai.',
     features: [
-      '₹3,000 Meta advertising spend included',
-      '₹2,000 ADrivera service fee included',
-      'Basic campaign setup aur objective configuration',
-      'Bhopal aur local area targeted audience',
-      '1 primary ad creative (image/banner)',
-      'WhatsApp click-to-chat integration',
-      'Routine campaign health monitoring',
-      'Monthly performance report',
-      'Remote support via WhatsApp aur calls',
+      'Basic campaign setup.',
+      'Audience and location targeting.',
+      'One primary ad creative or one customer-supplied creative, according to the agreed scope.',
+      'WhatsApp integration where relevant.',
+      'Routine campaign monitoring.',
+      'Monthly performance report.',
+      'Support through calls, WhatsApp, or online meetings.',
+      'No in-person meetings included.',
+      'No repeated creative production or unlimited revisions.',
     ],
     limits: [
       'In-person meetings included nahi hain',
@@ -75,27 +96,41 @@ export const plansContent: PlanPricing[] = [
   {
     id: 'growth',
     name: 'Growth',
-    subtitle: 'Ab sirf ads nahi, unhe behtar banane par bhi focus kijiye.',
+    subtitle: 'Ads ko test kijiye, creatives improve kijiye aur campaign performance par zyada focus kijiye.',
     purposeTagline: 'Creative testing, AI-assisted video ads aur weekly optimization.',
+    highlights: [
+      'AI-assisted video ad creation',
+      'Regular campaign optimization',
+      'More extensive audience testing',
+    ],
+    bestForLabel: 'Local Businesses Ready to Grow',
+    bestForDescription:
+      'Agar aapka business already chal raha hai aur aap zyada logon tak pahunchne, better creatives test karne aur regular campaign optimization par focus karna chahte hain, toh Growth plan choose karein.',
+    bestForExamples: [
+      'Gyms aur fitness studios',
+      'Local shops, retailers, restaurants aur cafes',
+      'Service businesses growing in their city',
+      'Businesses ready for creative testing',
+    ],
+    bestForMessage:
+      'Sirf ads chalane se aage badhiye, creative testing aur regular optimization ke saath apni advertising improve kijiye.',
     totalPrice: 8000,
     priceDisplay: '₹8,000',
     billingPeriod: '/month',
-    adSpend: 4500,
-    serviceFee: 3500,
+    adSpend: null,
+    serviceFee: null,
     targetPersona:
       'Businesses with existing demand seeking creative variety, video ads, and regular optimization.',
     summary:
       'Jab aap creative testing, AI-assisted video ads aur regular campaign optimization chahte hain, tab Growth plan aapke liye hai.',
     features: [
-      '₹4,500 Meta advertising spend included',
-      '₹3,500 ADrivera service fee included',
-      'Starter plan ke saare features',
-      'AI-assisted video ads creation (Reels format)',
-      'Monthly 2 se 3 creative variations aur testing',
-      'Broader audience aur interest targeting',
-      'Weekly campaign reviews aur optimization',
-      'Detailed monthly performance report',
-      '1 monthly in-person meeting (Bhopal mein)',
+      'Everything in Starter.',
+      'AI-assisted video ad creation.',
+      'A defined allowance of approximately two to three creative variations or replacements per month.',
+      'More extensive audience testing.',
+      'Weekly optimization reviews.',
+      'Monthly performance reporting.',
+      'One in-person meeting per month.',
     ],
     limits: [
       'Creative variations monthly quota ke hisaab se (2-3)',
@@ -113,8 +148,24 @@ export const plansContent: PlanPricing[] = [
   {
     id: 'premium',
     name: 'Premium',
-    subtitle: 'Apne business ke liye zyada focused advertising support.',
+    subtitle: 'Apne business ke liye more advanced advertising aur closer campaign management.',
     purposeTagline: 'Focused growth aur scaling ke liye involved advertising partnership.',
+    highlights: [
+      'Advanced campaign management',
+      'More extensive optimization and creative testing',
+      'Customized allocation between service and advertising budget',
+    ],
+    bestForLabel: 'Multi-City Growth',
+    bestForDescription:
+      'Agar aap apne business ko ek se zyada cities mein promote karna chahte hain aur zyada involved advertising management ki zaroorat hai, toh Premium plan aapke liye hai.',
+    bestForExamples: [
+      'Businesses expanding into multiple cities',
+      'Established retail and multi-location businesses',
+      'Businesses launching in new markets',
+      'Brands seeking consistent presence across locations',
+    ],
+    bestForMessage:
+      'Ek city tak limited mat rahiye. Naye markets mein introduce hone ke liye agreed scope aur budget ke hisaab se structured strategy par kaam kijiye.',
     totalPrice: 16000,
     priceDisplay: '₹16,000',
     billingPeriod: '/month',
@@ -125,14 +176,14 @@ export const plansContent: PlanPricing[] = [
     summary:
       'Campaign performance, creative testing, audience response aur business goals ko dhyan mein rakhkar ek zyada involved advertising partnership.',
     features: [
-      '₹16,000 total monthly package price',
-      'Ad spend aur service allocation purchase se pehle confirm',
-      'Growth plan ke saare features',
-      'Advanced campaign planning aur scaling',
-      'Retargeting setup jahan audience data exist karta hai',
-      'Regular in-person meetings as required by scope',
-      'Priority support aur continuous optimization',
-      'Deeper campaign-performance analysis aur recommendations',
+      'Advanced campaign planning and scaling.',
+      'More extensive audience and creative testing.',
+      'Retargeting where suitable audiences and tracking are available.',
+      'Deeper campaign-performance analysis.',
+      'More frequent communication and regular in-person meetings according to the agreed scope.',
+      'Priority support.',
+      'Ongoing optimization within the agreed service scope.',
+      'Final advertising/service allocation to be confirmed before purchase.',
     ],
     limits: [
       'Exact service-fee aur advertising-spend allocation purchase se pehle confirm kiya jata hai',
@@ -148,9 +199,25 @@ export const plansContent: PlanPricing[] = [
   {
     id: 'custom',
     name: 'Custom',
-    subtitle: 'Aapka business alag hai. Aapka advertising plan bhi alag ho sakta hai.',
-    totalPrice: 16000,
-    priceDisplay: 'Starting at ₹16,000',
+    subtitle: 'Aapke business, goals aur budget ke hisaab se customized advertising plan.',
+    highlights: [
+      'Flexible campaign strategy',
+      'Customized budget allocation',
+      'Tailored service scope',
+    ],
+    bestForLabel: 'Multi-State Visibility & Brand Building',
+    bestForDescription:
+      'Agar aapka business multiple states mein operate karta hai, naye markets mein expand kar raha hai, ya apni digital brand image consistently build karna chahta hai, toh Custom plan aapki requirements ke hisaab se design kiya jayega.',
+    bestForExamples: [
+      'Established businesses targeting multiple states',
+      'High-scale businesses with larger advertising requirements',
+      'Brands entering new geographic markets',
+      'Businesses managing multiple locations or product lines',
+    ],
+    bestForMessage:
+      'Sirf local visibility nahi, naye markets tak pahunchne aur consistent digital identity build karne ke liye customized strategy choose kijiye.',
+    totalPrice: 30000,
+    priceDisplay: '₹30,000+',
     billingPeriod: '/month',
     adSpend: null,
     serviceFee: null,
@@ -159,12 +226,11 @@ export const plansContent: PlanPricing[] = [
     summary:
       'Agar aapko larger budget, multiple campaigns ya customized advertising support chahiye, toh apni requirements share kijiye. Hum aapke goals aur scope ke hisaab se plan discuss karenge.',
     features: [
-      'Custom budget allocation onboarding se pehle confirm',
-      'Multiple campaigns ya multiple business locations',
-      'Dedicated creative development pipeline',
-      'Advanced audience aur retargeting funnel architecture',
-      'Customized reporting cadence aur direct consultation',
-      'Intensive campaign optimization aur communication',
+      'Customized advertising strategy.',
+      'Flexible allocation between advertising spend and service.',
+      'Potentially larger budgets and multiple campaigns.',
+      'Customized creative production and reporting.',
+      'Scope and pricing confirmed individually before onboarding.',
     ],
     limits: [
       'Scope, deliverables aur pricing contract se pehle strictly mutually agreed',
@@ -190,23 +256,7 @@ export const pricingComparisonFeatures: ComparisonFeature[] = [
     starter: '₹5,000',
     growth: '₹8,000',
     premium: '₹16,000',
-    custom: 'Starting at ₹16,000',
-  },
-  {
-    category: 'Financials',
-    name: 'Meta Advertising Allocation',
-    starter: '₹3,000',
-    growth: '₹4,500',
-    premium: 'Confirmed before purchase',
-    custom: 'Confirmed before purchase',
-  },
-  {
-    category: 'Financials',
-    name: 'ADrivera Service Fee',
-    starter: '₹2,000',
-    growth: '₹3,500',
-    premium: 'Confirmed before purchase',
-    custom: 'Confirmed before purchase',
+    custom: '₹30,000+',
   },
   {
     category: 'Creative Scope',
@@ -268,10 +318,7 @@ export const pricingComparisonFeatures: ComparisonFeature[] = [
 
 export const pricingTransparencyRules: string[] = [
   'Displayed monthly price hi total package price hai—koi hidden agency fee nahi.',
-  'Package mein Meta ad spend aur ADrivera service fee dono clear included hain.',
-  'Starter mein ₹3,000 ad spend aur ₹2,000 agency service fee allocated hain.',
-  'Growth mein ₹4,500 ad spend aur ₹3,500 agency service fee allocated hain.',
-  'Premium aur Custom plans ka exact allocation purchase se pehle confirm kiya jata hai.',
+  'Campaign scope, budget allocation aur service deliverables purchase se pehle clearly discuss kiye jate hain.',
   'Actual reach, clicks aur enquiries business aur offer par depend karti hain—fake guaranteed sales claims nahi.',
   'Package limits aur deliverables pehle din se bilkul transparent hain.',
 ];
@@ -283,7 +330,7 @@ export const starterSectionData = {
     'Aapko pehle din se bada budget lagane ki zaroorat nahi. Shuruaat kijiye, actual performance dekhiye aur apne experience ke basis par aage ka decision lijiye.',
   paragraphs: [
     'Sirf ₹5,000 per month mein Meta Ads ki shuruaat kijiye. Campaign ke results samjhiye, service ka experience lijiye aur phir decide kijiye ki aage kya karna hai.',
-    'Aapko pehle din se bada budget lagane ki zaroorat nahi. Is package mein ₹3,000 Meta advertising spend aur ₹2,000 ADrivera service included hai. Shuruaat kijiye, actual performance dekhiye aur apne experience ke basis par aage ka decision lijiye.',
+    'Aapko pehle din se bada budget lagane ki zaroorat nahi. Shuruaat kijiye, actual performance dekhiye aur apne experience ke basis par aage ka decision lijiye.',
   ],
   hindiQuote:
     'Aapko pehle din se bada budget lagane ki zaroorat nahi. Shuruaat kijiye, actual performance dekhiye aur apne experience ke basis par aage ka decision lijiye. Hum campaign professionally set up karenge, regular monitor karenge aur honest reporting share karenge.',

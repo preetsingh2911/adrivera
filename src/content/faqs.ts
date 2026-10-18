@@ -15,7 +15,7 @@ export const faqsData = {
       id: 'faq-1',
       question: 'Kya ₹5,000 mein ad spend bhi included hai?',
       answer:
-        'Haan. Starter plan ka total monthly price ₹5,000 hai, jismein ₹3,000 Meta advertising ke liye aur ₹2,000 ADrivera ki service ke liye allocated hain. Koi hidden fee nahi hai.',
+        'Haan. Starter plan ka total monthly price ₹5,000 hai. Campaign scope, budget allocation aur service deliverables purchase se pehle clearly discuss kiye jate hain. Koi hidden fee nahi hai.',
       lang: 'hi-Latn',
     },
     {

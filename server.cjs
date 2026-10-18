@@ -22,8 +22,8 @@ const MIME_TYPES = {
 };
 
 const server = http.createServer((req, res) => {
-  let parsedUrl = new URL(req.url, `http://localhost:${PORT}`);
-  let pathname = parsedUrl.pathname;
+  const parsedUrl = new URL(req.url, `http://localhost:${PORT}`);
+  const pathname = parsedUrl.pathname;
 
   let filePath = path.join(PUBLIC_DIR, pathname);
 

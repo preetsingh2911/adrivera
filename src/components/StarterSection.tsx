@@ -87,7 +87,7 @@ export function StarterSection() {
 
                 <div className="pt-4 border-t border-border flex items-center justify-between text-xs text-muted font-mono">
                   <span>Testing aur evaluation package</span>
-                  <span>₹3,000 Ads + ₹2,000 Service</span>
+                  <span>Scope confirmed before purchase</span>
                 </div>
               </div>
             </ScrollReveal>

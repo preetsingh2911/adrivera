@@ -54,7 +54,7 @@ export default function TermsOfServicePage() {
             <strong>Total Package Price:</strong> The monthly price displayed on our website is the total amount due for that package.
           </li>
           <li>
-            <strong>Transparent Split:</strong> A defined portion is allocated directly to Meta advertising spend (e.g. ₹3,000 for Starter; ₹4,500 for Growth), with the balance covering ADrivera&apos;s campaign management and creative service.
+            <strong>Transparent Scope:</strong> Campaign scope, budget allocation, management, and creative service deliverables are discussed and agreed before purchase.
           </li>
           <li>
             <strong>No Hidden Agency Add-ons:</strong> No separate agency management fee or hidden percentage surcharge is added on top of the agreed package price.

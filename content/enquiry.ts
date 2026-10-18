@@ -23,10 +23,10 @@ export const primaryObjectives: EnquiryOption[] = [
 ];
 
 export const planOptions: EnquiryOption[] = [
-  { value: 'starter', label: 'Starter — ₹5,000/month (₹3,000 Ads + ₹2,000 Service)' },
-  { value: 'growth', label: 'Growth — ₹8,000/month (₹4,500 Ads + ₹3,500 Service)' },
+  { value: 'starter', label: 'Starter — ₹5,000/month' },
+  { value: 'growth', label: 'Growth — ₹8,000/month' },
   { value: 'premium', label: 'Premium — ₹16,000/month (Focused Advertising Support)' },
-  { value: 'custom', label: 'Custom — From ₹16,000/month (Tailored Scope)' },
+  { value: 'custom', label: 'Custom — ₹30,000+/month (Tailored Scope)' },
 ];
 
 export interface EnquiryFormData {

@@ -1,343 +1,178 @@
 'use client';
 
-import React from 'react';
-import {
-  pricingPlans,
-  pricingComparisonFeatures,
-  pricingTransparencyRules,
-  formatAllocation,
-} from '@/content/plans';
+import React, { useState } from 'react';
+import { pricingPlans } from '@/content/plans';
 import { siteConfig } from '@/content/site';
 import { ScrollReveal } from './ScrollReveal';
 
 export function PricingSection() {
-  const handleSelectPlan = (planId: string, e?: React.MouseEvent) => {
-    if (typeof window !== 'undefined') {
-      window.dispatchEvent(
-        new CustomEvent('adrivera-select-plan', { detail: { plan: planId } })
-      );
-      const enquiryEl = document.getElementById('enquiry');
-      if (enquiryEl) {
-        if (e) e.preventDefault();
-        enquiryEl.scrollIntoView({ behavior: 'smooth' });
-      }
+  const [expandedPlan, setExpandedPlan] = useState<string | null>(null);
+
+  const handleContactPlan = (planId: string) => {
+    const plan = pricingPlans.find((item) => item.id === planId);
+    if (!plan || typeof window === 'undefined') return;
+
+    const message = `Hi ADrivera, I'm interested in the ${plan.name} Plan for ${plan.priceDisplay}/month. Please share the next steps.`;
+
+    if (siteConfig.contact.isWhatsappVerified && siteConfig.contact.whatsappNumberPlaceholder) {
+      const whatsappUrl = `https://wa.me/${siteConfig.contact.whatsappNumberPlaceholder}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+      return;
     }
+
+    window.dispatchEvent(new CustomEvent('adrivera-select-plan', { detail: { plan: plan.id } }));
+    document.getElementById('enquiry')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <section id="pricing" className="py-20 sm:py-24 md:py-28 border-b border-border bg-bg">
-      <div className="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+    <section id="pricing" className="scroll-mt-20 border-b border-border bg-bg py-20 sm:py-24 md:py-28">
+      <div className="mx-auto max-w-site px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
-          <div className="max-w-3xl mb-12 sm:mb-16">
-            <span className="inline-block text-xs font-semibold uppercase tracking-eyebrow text-muted mb-4">
+          <div className="mb-12 max-w-3xl sm:mb-16">
+            <span className="mb-4 inline-block text-xs font-semibold uppercase tracking-eyebrow text-muted">
               08 / Pricing
             </span>
-            <h2 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl text-ink tracking-tighter leading-tight mb-4">
+            <h2 className="mb-4 font-heading text-3xl font-extrabold leading-tight tracking-tighter text-ink sm:text-4xl md:text-5xl">
               Shuruaat chhoti rakhiye. Business ko grow karne ka mauka dijiye.
             </h2>
-            <p className="text-muted text-base sm:text-lg leading-relaxed">
-              Pehli baar Meta Ads try kar rahe hain? Koi baat nahi. Apne budget aur business ki zaroorat ke hisaab se plan chuniye. Displayed monthly price hi total package price hai, jismein allocated Meta ad spend aur ADrivera service dono included hain.
+            <p className="text-base leading-relaxed text-muted sm:text-lg">
+              Apne budget aur business ki zaroorat ke hisaab se plan chuniye. Displayed monthly price hi total package price hai; campaign scope aur budget allocation purchase se pehle clearly discuss kiye jate hain.
             </p>
           </div>
         </ScrollReveal>
 
-        {/* Four Plan Columns on Desktop, Stacked on Mobile — 1px Borders, 0 Radius */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border border-border divide-y md:divide-y-0 md:divide-x divide-border bg-white mb-16 rounded-none">
-          {pricingPlans.map((plan, idx) => {
-            const isStarter = plan.id === 'starter';
-            const hasFixedSplit = plan.adSpend !== null && plan.serviceFee !== null;
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
+          {pricingPlans.map((plan, index) => {
+            const isExpanded = expandedPlan === plan.id;
+            const isGrowth = plan.id === 'growth';
 
             return (
-              <div
+              <article
                 key={plan.id}
-                className={`motion-card p-6 sm:p-8 flex flex-col justify-between h-full rounded-none relative ${
-                  isStarter ? 'border-t-4 border-t-accent' : ''
+                className={`motion-card flex h-full flex-col border bg-white p-5 shadow-sm sm:p-6 ${
+                  isGrowth
+                    ? 'border-accent bg-accent/[0.025] shadow-[0_14px_34px_rgba(40,91,255,0.12)] ring-1 ring-accent/20 lg:-translate-y-2'
+                    : 'border-border'
                 }`}
               >
-                <div>
-                  {/* Starter Emphasis Text Label (Plain text, not a pill) */}
-                  {isStarter ? (
-                    <span className="font-mono text-xs font-bold text-accent uppercase tracking-wider block mb-2">
-                      Shuruaat ke liye best
-                    </span>
-                  ) : (
-                    <span className="font-mono text-xs font-semibold text-muted uppercase tracking-wider block mb-2">
-                      Plan 0{idx + 1}
-                    </span>
-                  )}
+                <div className="flex flex-1 flex-col">
+                  <div className="mb-5 flex items-start justify-between gap-3">
+                    <div>
+                      <span className="mb-2 block font-mono text-[10px] font-bold uppercase tracking-wider text-muted">
+                        Plan 0{index + 1}
+                      </span>
+                      <h3 className="font-heading text-2xl font-extrabold tracking-tight text-ink">
+                        {plan.name}
+                      </h3>
+                    </div>
+                    {isGrowth && (
+                        <span className="border border-accent/40 bg-accent/[0.1] px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-accent">
+                          Recommended Plan
+                      </span>
+                    )}
+                  </div>
 
-                  {/* Plan Name */}
-                  <h3 className="font-heading font-extrabold text-ink text-2xl sm:text-3xl tracking-tight mb-2">
-                    {plan.name}
-                  </h3>
+                  <div className="mb-5 border-y border-border py-4">
+                    <div className="flex flex-wrap items-baseline gap-1.5">
+                      <span className="font-heading text-3xl font-extrabold tracking-tight text-ink tabular-nums">
+                        {plan.priceDisplay}
+                      </span>
+                      <span className="text-xs font-medium text-muted">{plan.billingPeriod}</span>
+                    </div>
+                    <span className="mt-1 block font-mono text-[10px] uppercase tracking-wider text-muted">
+                      Total monthly package
+                    </span>
+                  </div>
 
-                  {/* Subtitle */}
-                  <p className="text-xs text-muted leading-relaxed mb-6 min-h-[34px]">
+                  <p className="mb-5 min-h-[66px] text-sm leading-relaxed text-muted">
                     {plan.subtitle}
                   </p>
 
-                  {/* Total Price Large with Tabular Numerals */}
-                  <div className="mb-6 pb-6 border-b border-border">
-                    <div className="flex items-baseline gap-1.5">
-                      <span className="font-heading font-extrabold text-ink text-3xl sm:text-4xl tracking-tight tabular-nums">
-                        {plan.priceDisplay}
-                      </span>
-                      <span className="text-xs text-muted font-medium">
-                        {plan.billingPeriod}
-                      </span>
-                    </div>
-                    <span className="text-[11px] font-mono text-muted block mt-1">
-                      Total package price (All-inclusive)
+                  <div className="mb-6 border-l-2 border-accent bg-tint/45 p-4">
+                    <span className="mb-2 block font-mono text-[10px] font-bold uppercase tracking-wider text-accent">
+                      Ye Plan Kiske Liye Best Hai?
                     </span>
-                  </div>
-
-                  {/* Allocation Bar */}
-                  <div className="mb-6 p-4 bg-bg border border-border rounded-none">
-                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-muted block mb-2.5">
-                      Package Allocation
-                    </span>
-
-                    {hasFixedSplit ? (
-                      <div>
-                        {/* Horizontal split rectangle: ad spend in accent, service fee in ink */}
-                        <div className="w-full h-3 border border-border flex mb-2.5 bg-white">
-                          <div
-                            className="bg-accent h-full"
-                            style={{
-                              width: `${((plan.adSpend || 0) / plan.totalPrice) * 100}%`,
-                            }}
-                            title={`Meta Ad Spend: ₹${plan.adSpend?.toLocaleString('en-IN')}`}
-                          />
-                          <div
-                            className="bg-ink h-full"
-                            style={{
-                              width: `${((plan.serviceFee || 0) / plan.totalPrice) * 100}%`,
-                            }}
-                            title={`ADrivera Service Fee: ₹${plan.serviceFee?.toLocaleString('en-IN')}`}
-                          />
-                        </div>
-
-                        {/* Rupee amounts labelled under each segment */}
-                        <div className="flex justify-between items-center text-[11px] font-mono">
-                          <div className="flex items-center gap-1.5">
-                            <span className="w-2 h-2 bg-accent inline-block flex-shrink-0" />
-                            <span className="text-ink font-semibold">
-                              Ad: ₹{plan.adSpend?.toLocaleString('en-IN')}
-                            </span>
-                          </div>
-                          <div className="flex items-center gap-1.5">
-                            <span className="w-2 h-2 bg-ink inline-block flex-shrink-0" />
-                            <span className="text-ink font-semibold">
-                              Fee: ₹{plan.serviceFee?.toLocaleString('en-IN')}
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    ) : (
-                      <div>
-                        {/* Hatched outline bar (single-color diagonal lines, not a gradient) */}
-                        <div className="w-full h-3 border border-border relative bg-white overflow-hidden mb-2">
-                          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                              <pattern
-                                id={`hatch-${plan.id}`}
-                                width="6"
-                                height="6"
-                                patternTransform="rotate(45 0 0)"
-                                patternUnits="userSpaceOnUse"
-                              >
-                                <line
-                                  x1="0"
-                                  y1="0"
-                                  x2="0"
-                                  y2="6"
-                                  stroke="#101A35"
-                                  strokeWidth="1.5"
-                                  strokeOpacity="0.35"
-                                />
-                              </pattern>
-                            </defs>
-                            <rect width="100%" height="100%" fill={`url(#hatch-${plan.id})`} />
-                          </svg>
-                        </div>
-                        <span className="text-[11px] font-mono text-muted block italic">
-                          Allocation purchase se pehle confirm hoti hai
-                        </span>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Included Scope Highlights */}
-                  <div className="mb-6">
-                    {plan.purposeTagline && (
-                      <p
-                        lang="hi-Latn"
-                        className="text-xs text-ink font-normal leading-relaxed mb-4 p-2.5 bg-tint/30 border-l-2 border-accent"
-                      >
-                        {plan.purposeTagline}
-                      </p>
-                    )}
-                    <span className="text-[11px] font-mono font-medium uppercase tracking-wider text-ink block mb-3">
-                      Package Scope (Kya Shamil Hai)
-                    </span>
-                    <ul className="space-y-2.5 text-xs text-ink/90">
-                      {plan.features.map((feature, fIdx) => (
-                        <li key={fIdx} className="flex items-start gap-2">
-                          <svg
-                            className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-0.5"
-                            viewBox="0 0 16 16"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="1.5"
-                          >
-                            <polyline points="3 8 7 12 13 4" strokeLinecap="square" />
-                          </svg>
-                          <span className="leading-snug">{feature}</span>
+                    <h4 className="mb-2 font-heading text-base font-bold leading-snug text-ink">
+                      {plan.bestForLabel}
+                    </h4>
+                    <p className="mb-3 text-xs leading-relaxed text-ink/80">
+                      {plan.bestForDescription}
+                    </p>
+                    <ul className="mb-3 space-y-1.5 text-xs leading-snug text-ink/90">
+                      {plan.bestForExamples.map((example) => (
+                        <li key={example} className="flex items-start gap-2">
+                          <span className="mt-1.5 h-1 w-1 flex-shrink-0 bg-accent" aria-hidden="true" />
+                          <span>{example}</span>
                         </li>
                       ))}
                     </ul>
+                    <p className="border-t border-accent/20 pt-3 text-xs font-medium leading-relaxed text-ink">
+                      {plan.bestForMessage}
+                    </p>
                   </div>
 
-                  {/* Limits and Constraints */}
-                  {plan.limits.length > 0 && (
-                    <div className="mb-6 pt-4 border-t border-border/70">
-                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-muted block mb-2">
-                        Scope Limits (Dhyan Rakhein)
-                      </span>
-                      <ul className="space-y-1.5 text-[11px] text-muted">
-                        {plan.limits.map((limit, lIdx) => (
-                          <li key={lIdx} className="flex items-start gap-1.5">
-                            <span className="text-muted/60 flex-shrink-0">—</span>
-                            <span>{limit}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                </div>
+                  <ul className="mb-6 space-y-3 text-sm text-ink/90">
+                    {plan.highlights.map((highlight) => (
+                      <li key={highlight} className="flex items-start gap-2.5">
+                        <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 bg-accent" aria-hidden="true" />
+                        <span className="leading-snug">{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
 
-                {/* Card CTA: Opens Enquiry flow with that plan preselected */}
-                <div className="pt-6 border-t border-border">
-                  <a
-                    href="#enquiry"
-                    onClick={(e) => handleSelectPlan(plan.id, e)}
-                    className={`flex items-center justify-center min-h-[48px] w-full px-4 text-sm font-semibold rounded-[2px] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 ${
-                      isStarter
-                        ? 'bg-accent text-white hover:bg-[#1E4BD9] active:bg-[#153BB8]'
-                        : 'border border-ink text-ink bg-transparent hover:bg-ink/5'
+                  <div
+                    id={`${plan.id}-details`}
+                    aria-hidden={!isExpanded}
+                    className={`grid transition-[grid-template-rows,opacity,margin] duration-300 ease-out ${
+                      isExpanded ? 'mb-6 grid-rows-[1fr] opacity-100' : 'mb-0 grid-rows-[0fr] opacity-0'
                     }`}
                   >
-                    {plan.ctaLabel}
-                  </a>
+                    <div className="min-h-0 overflow-hidden">
+                      <div className="border-t border-border pt-5">
+                        <span className="mb-3 block font-mono text-[10px] font-bold uppercase tracking-wider text-muted">
+                          Full plan details
+                        </span>
+                        <ul className="space-y-2.5 text-xs leading-relaxed text-ink/90">
+                          {plan.features.map((feature) => (
+                            <li key={feature} className="flex items-start gap-2">
+                              <span className="mt-1.5 h-1 w-1 flex-shrink-0 bg-accent" aria-hidden="true" />
+                              <span>{feature}</span>
+                            </li>
+                          ))}
+                          {plan.limits.map((limit) => (
+                            <li key={limit} className="flex items-start gap-2 text-muted">
+                              <span className="mt-1.5 h-1 w-1 flex-shrink-0 bg-muted/60" aria-hidden="true" />
+                              <span>{limit}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
+
+                <div className="mt-auto space-y-3 border-t border-border pt-5">
+                  <button
+                    type="button"
+                    onClick={() => handleContactPlan(plan.id)}
+                    className="flex min-h-[48px] w-full items-center justify-center rounded-[2px] bg-accent px-4 text-sm font-semibold text-white transition-colors hover:bg-[#1E4BD9] active:bg-[#153BB8] focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2"
+                  >
+                    Contact Now
+                  </button>
+                  <button
+                    type="button"
+                    aria-expanded={isExpanded}
+                    aria-controls={`${plan.id}-details`}
+                    onClick={() => setExpandedPlan(isExpanded ? null : plan.id)}
+                    className="flex min-h-[44px] w-full items-center justify-center border border-ink bg-transparent px-4 text-sm font-semibold text-ink transition-colors hover:bg-ink/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2"
+                  >
+                    {isExpanded ? 'Show Less' : 'Know More'}
+                  </button>
+                </div>
+              </article>
             );
           })}
         </div>
-
-        {/* Full Comparison Table (Features by Plan) with Sticky First Column on Mobile */}
-        <ScrollReveal delayMs={100}>
-          <div className="mb-16">
-            <div className="mb-4">
-              <span className="font-mono uppercase text-xs tracking-wider text-muted font-semibold block mb-1">
-                Feature Matrix
-              </span>
-              <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-ink tracking-tight">
-                Plan Comparison (Har Feature Samjhein)
-              </h3>
-            </div>
-
-            {/* Horizontal scroll contained inside its own wrapper */}
-            <div className="overflow-x-auto border border-border bg-white rounded-none">
-              <table className="w-full text-left border-collapse min-w-[700px]">
-                <thead>
-                  <tr className="border-b border-border bg-bg/80">
-                    <th className="sticky left-0 bg-bg z-10 border-r border-border p-4 text-xs font-mono font-bold uppercase tracking-wider text-muted w-1/3">
-                      Plan Feature
-                    </th>
-                    <th className="border-r border-border p-4 text-xs font-mono font-bold uppercase tracking-wider text-accent bg-accent/[0.04]">
-                      Starter
-                    </th>
-                    <th className="border-r border-border p-4 text-xs font-mono font-bold uppercase tracking-wider text-ink">
-                      Growth
-                    </th>
-                    <th className="border-r border-border p-4 text-xs font-mono font-bold uppercase tracking-wider text-ink">
-                      Premium
-                    </th>
-                    <th className="p-4 text-xs font-mono font-bold uppercase tracking-wider text-ink">
-                      Custom
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-border text-xs sm:text-sm">
-                  {pricingComparisonFeatures.map((row, idx) => (
-                    <tr key={idx} className="hover:bg-bg/40 transition-colors">
-                      {/* Sticky First Column on Mobile */}
-                      <td className="sticky left-0 bg-white z-10 border-r border-border p-4 font-medium text-ink">
-                        <div>{row.name}</div>
-                        <span className="font-mono text-[10px] text-muted uppercase">
-                          {row.category}
-                        </span>
-                      </td>
-                      <td className="border-r border-border p-4 text-ink font-semibold bg-accent/[0.02]">
-                        {row.starter}
-                      </td>
-                      <td className="border-r border-border p-4 text-ink">
-                        {row.growth}
-                      </td>
-                      <td className="border-r border-border p-4 text-ink">
-                        {row.premium}
-                      </td>
-                      <td className="p-4 text-ink">
-                        {row.custom}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </ScrollReveal>
-
-        {/* How the Price Is Made Up Block — 7 Transparency Requirements */}
-        <ScrollReveal delayMs={140}>
-          <div className="border border-border bg-white p-6 sm:p-10 rounded-none mb-8">
-            <div className="mb-6 pb-4 border-b border-border">
-              <span className="font-mono uppercase text-xs tracking-wider text-muted font-semibold block mb-1">
-                Pricing Transparency
-              </span>
-              <h3 className="font-heading font-extrabold text-2xl text-ink tracking-tight">
-                Paisa Kahan Kharch Hota Hai
-              </h3>
-              <p className="text-xs sm:text-sm text-muted mt-1">
-                ADrivera clear pricing par kaam karta hai. Ad spend aur agency service fees dono pehle din se transparent hain.
-              </p>
-            </div>
-
-            <ol className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
-              {pricingTransparencyRules.map((rule, idx) => (
-                <li key={idx} className="flex items-start gap-3 p-3 bg-bg/50 border border-border/80">
-                  <span className="font-mono text-xs font-bold text-accent mt-0.5 flex-shrink-0">
-                    0{idx + 1}
-                  </span>
-                  <span className="text-ink/90 leading-relaxed font-normal">
-                    {rule}
-                  </span>
-                </li>
-              ))}
-            </ol>
-
-            {/* Placeholder Note Slot for Tax Disclosure from Config */}
-            <div className="mt-8 pt-4 border-t border-border flex items-start gap-3 text-xs text-muted">
-              <span className="w-1.5 h-1.5 bg-ink/40 inline-block mt-1.5 flex-shrink-0" />
-              <p className="leading-relaxed">
-                <span className="font-semibold text-ink">Tax Disclosure Note: </span>
-                {siteConfig.disclaimers.taxNotice}
-              </p>
-            </div>
-          </div>
-        </ScrollReveal>
       </div>
     </section>
   );

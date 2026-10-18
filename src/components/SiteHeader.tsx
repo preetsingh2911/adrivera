@@ -10,7 +10,7 @@ export function SiteHeader() {
   const mobilePrimaryLinks = [
     { label: 'Home', href: '/' },
     { label: 'Kyun Zaroori', href: '/why-us' },
-    { label: 'Plans', href: '/pricing' },
+    { label: 'Plans', href: '/#pricing' },
   ];
   const mobileMoreLinks = [
     { label: 'Kaam Ka Tareeka', href: '/how-we-work' },

@@ -23,7 +23,7 @@ export function CampaignProofSection() {
           <figcaption className="p-3 pb-2">
             <div className="flex items-baseline justify-between gap-3 mb-1">
               <span className="font-heading font-extrabold text-sm text-ink">
-                Taskloop
+                Taskloop · Rishabh, Owner
               </span>
               <span className="font-mono text-xs font-bold text-positive">
                 +1,240% views

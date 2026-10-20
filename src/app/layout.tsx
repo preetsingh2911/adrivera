@@ -4,6 +4,7 @@ import './globals.css';
 import { siteConfig } from '@/content/site';
 import { cn } from "@/lib/utils";
 import { SmoothCursor } from "@/components/ui/smooth-cursor";
+import { ThemeProvider } from '@/components/ThemeProvider';
 
 
 
@@ -136,9 +137,35 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={cn(inter.variable, manrope.variable, ibmPlexMono.variable, notoDevanagari.variable)}
     >
-      <body className="bg-bg text-ink min-h-screen antialiased selection:bg-tint selection:text-ink">
+      <head>
+        <meta name="color-scheme" content="light dark" />
+        <meta name="darkreader-lock" content="true" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var stored = localStorage.getItem('adrivera-theme');
+                  var supportDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  var isDark = stored === 'dark' || (!stored && supportDark) || (stored === 'system' && supportDark);
+                  if (isDark) {
+                    document.documentElement.classList.add('dark');
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                    document.documentElement.setAttribute('data-theme', 'light');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
+      <body suppressHydrationWarning className="bg-bg text-ink min-h-screen antialiased selection:bg-tint selection:text-ink">
+        <ThemeProvider>
         {/* Skip to Main Content Link for Keyboard and Screen Reader Accessibility */}
         <a
           href="#main-content"
@@ -157,6 +184,7 @@ export default function RootLayout({
         <SmoothCursor />
 
         {children}
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -84,7 +84,7 @@ export function VisibilitySection() {
         <Reveal delayMs={80}>
           <div
             ref={gridRef}
-            className="border border-border bg-white p-6 sm:p-8 mb-12 rounded-none"
+            className="border border-border bg-card p-6 sm:p-8 mb-12 rounded-none"
           >
             {/* Top Bar with Title & Illustrative Badge */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-6 border-b border-border mb-6">
@@ -188,7 +188,7 @@ export function VisibilitySection() {
 
         {/* Below: Three Benefits (Discovery, Familiarity, Action) as Three-Column Ruled List */}
         <Reveal delayMs={120}>
-          <div className="grid grid-cols-1 md:grid-cols-3 border-y border-border divide-y md:divide-y-0 md:divide-x divide-border bg-white mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 border-y border-border divide-y md:divide-y-0 md:divide-x divide-border bg-card mb-6">
             {visibilityData.benefits.map((benefit) => (
               <div
                 key={benefit.number}

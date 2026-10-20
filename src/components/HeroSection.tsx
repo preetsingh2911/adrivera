@@ -80,13 +80,13 @@ export function HeroSection() {
                   <span className="text-xs font-semibold uppercase tracking-eyebrow text-ink">
                     Ad Format Architecture
                   </span>
-                  <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 border border-border text-muted bg-white rounded-[2px]">
+                  <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 border border-border text-muted bg-card rounded-[2px]">
                     Illustrative Creatives
                   </span>
                 </div>
 
                 {/* Desktop Composition: 3 Overlapping Frames on Shared Baseline Grid */}
-                <div className="hidden md:block relative h-[460px] w-full border border-border bg-white p-4">
+                <div className="hidden md:block relative h-[460px] w-full border border-border bg-card p-4">
                   {/* Frame B: 9:16 Story (Apex Academy) - Layered at the back */}
                   <div className="motion-card absolute right-4 top-4 w-[175px] border border-border bg-[#0B1530] text-white p-3 z-10 rounded-none">
                     {/* Story Progress Indicators */}
@@ -143,7 +143,7 @@ export function HeroSection() {
                       </div>
                     </div>
                     {/* Feed Graphic Area (4:5 representation) */}
-                    <div className="border border-border bg-white p-3 mb-2.5">
+                    <div className="border border-border bg-card p-3 mb-2.5">
                       <span className="text-[9px] font-mono uppercase tracking-wider text-accent block mb-1">
                         Weekend Roastery
                       </span>
@@ -169,7 +169,7 @@ export function HeroSection() {
                   </div>
 
                   {/* Frame C: 1:1 Square (Greenfield Estates) - Overlapping front right */}
-                  <div className="motion-card absolute right-8 bottom-4 w-[205px] border border-border bg-white p-3 z-30 rounded-none">
+                  <div className="motion-card absolute right-8 bottom-4 w-[205px] border border-border bg-card p-3 z-30 rounded-none">
                     {/* 1:1 Header */}
                     <div className="flex items-center gap-2 mb-2 pb-1.5 border-b border-border">
                       <span className="w-5 h-5 bg-[#00875A] text-white text-[9px] font-bold flex items-center justify-center font-mono">
@@ -210,7 +210,7 @@ export function HeroSection() {
                 <div className="md:hidden">
                   <div className="flex overflow-x-auto snap-x snap-mandatory gap-3 pb-3 pt-1 -mx-4 px-4 scrollbar-none">
                     {/* Mobile Frame A: 4:5 Post */}
-                    <div className="snap-center flex-shrink-0 w-[240px] border border-border bg-white p-3 rounded-none">
+                    <div className="snap-center flex-shrink-0 w-[240px] border border-border bg-card p-3 rounded-none">
                       <div className="flex items-center gap-2 mb-2 pb-2 border-b border-border">
                         <span className="w-6 h-6 bg-ink text-white text-[10px] font-bold flex items-center justify-center font-mono">
                           SC
@@ -282,7 +282,7 @@ export function HeroSection() {
                     </div>
 
                     {/* Mobile Frame C: 1:1 Square */}
-                    <div className="snap-center flex-shrink-0 w-[230px] border border-border bg-white p-3 rounded-none">
+                    <div className="snap-center flex-shrink-0 w-[230px] border border-border bg-card p-3 rounded-none">
                       <div className="flex items-center gap-2 mb-2 pb-1.5 border-b border-border">
                         <span className="w-5 h-5 bg-[#00875A] text-white text-[9px] font-bold flex items-center justify-center font-mono">
                           GE

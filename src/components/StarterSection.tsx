@@ -71,7 +71,7 @@ export function StarterSection() {
           {/* Right Column: Ruled Quote Block */}
           <div className="lg:col-span-6">
             <ScrollReveal delayMs={100}>
-              <div className="border border-border border-l-4 border-l-accent bg-white p-6 sm:p-8 rounded-none">
+              <div className="border border-border border-l-4 border-l-accent bg-card p-6 sm:p-8 rounded-none">
                 <div className="flex items-center justify-between mb-4 pb-3 border-b border-border">
                   <span className="font-mono text-xs font-medium text-muted uppercase tracking-wider">
                     {starterSectionData.hindiNote}
@@ -96,7 +96,7 @@ export function StarterSection() {
 
         {/* Qualification Clarification from Brief */}
         <ScrollReveal delayMs={150}>
-          <div className="mt-10 border border-border p-5 sm:p-6 bg-white rounded-none flex items-start gap-3.5">
+          <div className="mt-10 border border-border p-5 sm:p-6 bg-card rounded-none flex items-start gap-3.5">
             <span className="w-1.5 h-1.5 bg-accent inline-block mt-1.5 flex-shrink-0" />
             <p className="text-xs sm:text-sm text-ink/80 leading-relaxed font-normal">
               {starterSectionData.qualification}

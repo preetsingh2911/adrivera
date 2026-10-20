@@ -1,5 +1,6 @@
 import React from 'react';
 import { siteContent } from '@/content/site';
+import { ThemeToggle } from './ThemeToggle';
 
 export function SiteFooter() {
   return (
@@ -60,9 +61,12 @@ export function SiteFooter() {
           <span>
             © {new Date().getFullYear()} {siteContent.brandName}. All rights reserved.
           </span>
-          <span className="font-mono text-[11px]">
-            Static Output · Fully Self-Contained
-          </span>
+          <div className="flex items-center gap-4 flex-wrap">
+            <ThemeToggle variant="pill" />
+            <span className="font-mono text-[11px]">
+              Static Output · Fully Self-Contained
+            </span>
+          </div>
         </div>
       </div>
     </footer>

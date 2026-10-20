@@ -22,7 +22,7 @@ export function ServicesSection() {
         </ScrollReveal>
 
         {/* Seven-Row Table Layout with 1px Rules */}
-        <div className="border-y border-border divide-y divide-border bg-white">
+        <div className="border-y border-border divide-y divide-border bg-card">
           {servicesData.items.map((item, idx) => (
             <ScrollReveal key={item.number} delayMs={idx * 30}>
               <div className="motion-card py-6 sm:py-7 px-4 sm:px-6 md:px-8 grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-8 items-baseline md:hover:bg-tint/50 transition-colors duration-150">

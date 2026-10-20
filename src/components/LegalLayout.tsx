@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { siteConfig } from '@/content/site';
+import { ThemeToggle } from './ThemeToggle';
 
 interface LegalLayoutProps {
   title: string;
@@ -29,7 +30,7 @@ export function LegalLayout({
   return (
     <div className="flex flex-col min-h-screen bg-bg text-ink selection:bg-tint selection:text-ink">
       {/* Legal Header */}
-      <header className="border-b border-border bg-white sticky top-0 z-30">
+      <header className="border-b border-border bg-card sticky top-0 z-30">
         <div className="max-w-site mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <Link
             href="/"
@@ -42,13 +43,16 @@ export function LegalLayout({
             <span>{siteConfig.brandName}</span>
           </Link>
 
-          <Link
-            href="/"
-            className="text-xs font-mono font-medium text-muted hover:text-ink transition-colors flex items-center gap-1.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent"
-          >
-            <span>&larr;</span>
-            <span>Back to Main Site</span>
-          </Link>
+          <div className="flex items-center gap-3 sm:gap-4">
+            <ThemeToggle size="sm" />
+            <Link
+              href="/"
+              className="text-xs font-mono font-medium text-muted hover:text-ink transition-colors flex items-center gap-1.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent"
+            >
+              <span>&larr;</span>
+              <span>Back to Main Site</span>
+            </Link>
+          </div>
         </div>
       </header>
 
@@ -70,7 +74,7 @@ export function LegalLayout({
           </div>
 
           {/* Pre-launch Legal Advisory Banner */}
-          <div className="border border-border border-l-4 border-l-accent p-5 sm:p-6 bg-white rounded-none mb-10">
+          <div className="border border-border border-l-4 border-l-accent p-5 sm:p-6 bg-card rounded-none mb-10">
             <div className="flex items-center gap-2 mb-2">
               <span className="w-2 h-2 bg-accent inline-block" />
               <span className="font-mono text-xs font-bold uppercase tracking-wider text-accent">
@@ -84,14 +88,14 @@ export function LegalLayout({
           </div>
 
           {/* Document Body */}
-          <div className="border border-border bg-white p-6 sm:p-10 md:p-12 rounded-none space-y-10 text-sm sm:text-base leading-relaxed text-ink/85">
+          <div className="border border-border bg-card p-6 sm:p-10 md:p-12 rounded-none space-y-10 text-sm sm:text-base leading-relaxed text-ink/85">
             {children}
           </div>
         </div>
       </main>
 
       {/* Legal Footer */}
-      <footer className="border-t border-border bg-white py-8 text-xs text-muted">
+      <footer className="border-t border-border bg-card py-8 text-xs text-muted">
         <div className="max-w-site mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex flex-wrap gap-4 font-mono text-[11px]">
             <Link href="/privacy" className="hover:text-ink transition-colors">

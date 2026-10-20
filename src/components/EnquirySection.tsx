@@ -154,7 +154,7 @@ export function EnquirySection() {
               <form
                 onSubmit={handleSubmit}
                 noValidate
-                className="border border-border bg-white p-6 sm:p-10 rounded-none shadow-none space-y-6"
+                className="border border-border bg-card p-6 sm:p-10 rounded-none shadow-none space-y-6"
               >
                 {/* Business Name */}
                 <div>
@@ -371,7 +371,7 @@ export function EnquirySection() {
           {/* Right Column: Information & Plain-Text Fallback Block */}
           <div className="lg:col-span-5 space-y-6">
             <ScrollReveal delayMs={100}>
-              <div className="border border-border bg-white p-6 sm:p-8 rounded-none">
+              <div className="border border-border bg-card p-6 sm:p-8 rounded-none">
                 <span className="text-xs font-mono font-bold uppercase tracking-wider text-muted block mb-2">
                   Agla Kadam Kya Hoga?
                 </span>
@@ -404,7 +404,7 @@ export function EnquirySection() {
             {/* Plain-text Fallback Composed Message Block */}
             {composedMessage && (
               <ScrollReveal delayMs={140}>
-                <div className="border border-border bg-white p-6 sm:p-8 rounded-none">
+                <div className="border border-border bg-card p-6 sm:p-8 rounded-none">
                   <div className="flex items-center justify-between mb-3 pb-3 border-b border-border">
                     <span className="font-mono text-xs font-bold uppercase tracking-wider text-accent">
                       Formatted Message Preview
@@ -412,7 +412,7 @@ export function EnquirySection() {
                     <button
                       type="button"
                       onClick={handleCopy}
-                      className="px-3 py-1.5 text-xs font-mono font-semibold text-ink border border-ink hover:bg-ink/5 active:bg-ink/10 transition-colors rounded-[2px]"
+                      className="px-3 py-1.5 text-xs font-mono font-semibold text-ink border border-ink hover:bg-tint/50 active:bg-tint transition-colors rounded-[2px]"
                     >
                       {copied ? 'Copied!' : 'Message Copy Karein'}
                     </button>

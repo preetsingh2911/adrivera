@@ -3,9 +3,13 @@
 @tailwind utilities;
 
 :root {
+  color-scheme: light dark;
   --bg: #F8F9FC;
+  --card: #FFFFFF;
   --ink: #101A35;
+  --foreground: #101A35;
   --accent: #285BFF;
+  --accent-hover: #1E4BD9;
   --tint: #E9EEFA;
   --muted: #4E586E;
   --muted-light: #68738A;
@@ -14,6 +18,28 @@
   --border-dark: #1F2C4C;
   --dark: #0B1530;
   --dark-card: #121F42;
+  --grid-line: rgba(23, 37, 29, 0.028);
+}
+
+.dark,
+[data-theme="dark"],
+:root:has(> head > meta[name="color-scheme"][content="dark"]) {
+  color-scheme: dark;
+  --bg: #070D1E;
+  --card: #0D1733;
+  --ink: #F0F4FC;
+  --foreground: #F0F4FC;
+  --accent: #3E74FF;
+  --accent-hover: #5A8AFF;
+  --tint: #14234C;
+  --muted: #94A3B8;
+  --muted-light: #64748B;
+  --positive: #22C55E;
+  --border: #1E2D54;
+  --border-dark: #2B3D6E;
+  --dark: #050914;
+  --dark-card: #0B1530;
+  --grid-line: rgba(255, 255, 255, 0.04);
 }
 
 .bg-linear-to-r {
@@ -26,8 +52,22 @@ html {
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(rgba(23, 37, 29, 0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(23, 37, 29, 0.025) 1px, transparent 1px);
+  background-image: linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: 32px 32px;
+  transition: background-color 250ms ease, color 250ms ease;
+}
+
+.dark {
+  scrollbar-color: var(--border) var(--bg);
+}
+
+.dark select option {
+  background-color: #0D1733;
+  color: #F0F4FC;
+}
+
+.dark .bg-white:not(.h-\[2px\]):not(.w-2):not(.h-2):not([data-keep-white]) {
+  background-color: var(--card);
 }
 
 @media (prefers-reduced-motion: reduce) {

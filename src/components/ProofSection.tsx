@@ -43,7 +43,7 @@ export function ProofSection() {
         {/* Dynamic Stat Layout: Renders verified numbers if available, or architectural verification architecture */}
         {hasVerifiedData ? (
           <Reveal delayMs={80}>
-            <div className="grid grid-cols-1 md:grid-cols-3 border-y border-border divide-y md:divide-y-0 md:divide-x divide-border bg-white mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 border-y border-border divide-y md:divide-y-0 md:divide-x divide-border bg-card mb-8">
               {verifiedStats.map((stat, idx) => (
                 <div key={idx} className="p-6 sm:p-8 flex flex-col justify-between">
                   <div>
@@ -67,7 +67,7 @@ export function ProofSection() {
         ) : (
           /* When verifiedStats is empty: No numbers rendered, clean architectural framework */
           <Reveal delayMs={80}>
-            <div className="border border-border bg-white p-6 sm:p-8 mb-8 rounded-none">
+            <div className="border border-border bg-card p-6 sm:p-8 mb-8 rounded-none">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-border mb-6">
                 <div>
                   <span className="text-xs font-semibold uppercase tracking-eyebrow text-ink block mb-1">

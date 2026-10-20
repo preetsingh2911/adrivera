@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: ['class', '[data-theme="dark"]'],
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -10,18 +11,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bg: '#F8F9FC',
-        ink: '#101A35',
-        foreground: '#101A35',
-        accent: '#285BFF',
-        tint: '#E9EEFA',
-        muted: '#4E586E',
-        'muted-light': '#68738A',
-        positive: '#16834A',
-        border: '#E1E6F0',
-        'border-dark': '#1F2C4C',
-        dark: '#0B1530',
-        'dark-card': '#121F42',
+        bg: 'var(--bg)',
+        card: 'var(--card)',
+        ink: 'var(--ink)',
+        foreground: 'var(--foreground)',
+        accent: 'var(--accent)',
+        tint: 'var(--tint)',
+        muted: 'var(--muted)',
+        'muted-light': 'var(--muted-light)',
+        positive: 'var(--positive)',
+        border: 'var(--border)',
+        'border-dark': 'var(--border-dark)',
+        dark: 'var(--dark)',
+        'dark-card': 'var(--dark-card)',
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],

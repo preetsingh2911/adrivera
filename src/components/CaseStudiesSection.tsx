@@ -28,7 +28,7 @@ export function CaseStudiesSection() {
         {/* Notice Banner when showing Illustrative Example */}
         {isIllustrative && (
           <ScrollReveal delayMs={50}>
-            <div className="mb-8 border border-border border-l-4 border-l-accent p-5 sm:p-6 bg-white rounded-none">
+            <div className="mb-8 border border-border border-l-4 border-l-accent p-5 sm:p-6 bg-card rounded-none">
               <div className="flex items-center gap-2 mb-2">
                 <span className="font-mono text-xs font-bold text-accent uppercase tracking-wider">
                   Illustrative Framework &amp; Sample Reporting
@@ -45,7 +45,7 @@ export function CaseStudiesSection() {
         <div className="space-y-12 mb-16">
           {displayEntries.map((study, idx) => (
             <ScrollReveal key={study.id} delayMs={idx * 60}>
-              <div className="border border-border bg-white rounded-none">
+              <div className="border border-border bg-card rounded-none">
                 {/* Entry Header: Category, Ownership & Plain-text Status Tag */}
                 <div className="p-6 sm:p-8 border-b border-border flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-bg/50">
                   <div>
@@ -67,7 +67,7 @@ export function CaseStudiesSection() {
                 </div>
 
                 {/* Core Parameters Bar */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 border-b border-border divide-y sm:divide-y-0 sm:divide-x divide-border bg-white text-xs sm:text-sm">
+                <div className="grid grid-cols-1 sm:grid-cols-3 border-b border-border divide-y sm:divide-y-0 sm:divide-x divide-border bg-card text-xs sm:text-sm">
                   <div className="p-4 sm:p-6">
                     <span className="text-[10px] font-mono uppercase tracking-wider text-muted block mb-1">
                       Campaign Objective
@@ -128,7 +128,7 @@ export function CaseStudiesSection() {
 
         {/* Short Note on Metric Definitions */}
         <ScrollReveal delayMs={120}>
-          <div className="border border-border bg-white p-6 sm:p-8 rounded-none">
+          <div className="border border-border bg-card p-6 sm:p-8 rounded-none">
             <div className="mb-6 pb-3 border-b border-border flex items-center justify-between">
               <span className="font-mono uppercase text-xs tracking-wider text-muted font-bold">
                 Metrics Samjhein (Evaluation Guide)

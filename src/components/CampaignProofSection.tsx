@@ -8,13 +8,13 @@ export function CampaignProofSection() {
         <span className="text-xs font-semibold uppercase tracking-eyebrow text-ink">
           Campaign Results
         </span>
-        <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 border border-border text-muted bg-white rounded-[2px]">
+        <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 border border-border text-muted bg-card rounded-[2px]">
           Real Growth Stories
         </span>
       </div>
 
       <div className="space-y-5">
-        <figure className="motion-card border border-border bg-white p-2">
+        <figure className="motion-card border border-border bg-card p-2">
           <img
             src="/taskloop-analytics.png"
             alt="Taskloop analytics showing 285 thousand views and over 1,200 percent growth"
@@ -36,7 +36,7 @@ export function CampaignProofSection() {
           </figcaption>
         </figure>
 
-        <figure className="motion-card border border-border bg-white p-2">
+        <figure className="motion-card border border-border bg-card p-2">
           <img
             src="/bhopal-events-analytics.png"
             alt="Analytics for a Bhopal event management company showing 2.42 million views and over 1,500 percent growth"
@@ -59,7 +59,7 @@ export function CampaignProofSection() {
         </figure>
       </div>
 
-      <div className="mt-4 border-l-2 border-accent bg-white p-4">
+      <div className="mt-4 border-l-2 border-accent bg-card p-4">
         <p className="font-heading font-extrabold text-base text-ink leading-tight">
           Many more businesses have seen 1000%+ growth in views.
         </p>

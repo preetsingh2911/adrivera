@@ -38,7 +38,7 @@ export function StickyMobileCta() {
   return (
     <aside
       aria-label="Mobile Contact Action"
-      className={`md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-border p-3 transition-transform duration-300 ease-in-out ${
+      className={`md:hidden fixed bottom-0 left-0 right-0 z-40 bg-card border-t border-border p-3 transition-transform duration-300 ease-in-out ${
         isVisible ? 'translate-y-0' : 'translate-y-full pointer-events-none'
       }`}
       style={{

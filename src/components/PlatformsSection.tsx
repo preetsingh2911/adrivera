@@ -25,7 +25,7 @@ export function PlatformsSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 mb-16 sm:mb-20">
           {/* Wireframe 1: Facebook / Instagram Feed (4:5 Post in Feed) */}
           <ScrollReveal delayMs={40}>
-            <div className="border border-border bg-white p-6 sm:p-8 flex flex-col h-full rounded-none">
+            <div className="border border-border bg-card p-6 sm:p-8 flex flex-col h-full rounded-none">
               <div className="flex items-center justify-between mb-4 pb-3 border-b border-border">
                 <span className="text-xs font-mono font-bold text-accent uppercase tracking-wider">
                   4:5 Feed Post
@@ -217,7 +217,7 @@ export function PlatformsSection() {
 
           {/* Wireframe 2: Stories (9:16 Full Screen) */}
           <ScrollReveal delayMs={80}>
-            <div className="border border-border bg-white p-6 sm:p-8 flex flex-col h-full rounded-none">
+            <div className="border border-border bg-card p-6 sm:p-8 flex flex-col h-full rounded-none">
               <div className="flex items-center justify-between mb-4 pb-3 border-b border-border">
                 <span className="text-xs font-mono font-bold text-accent uppercase tracking-wider">
                   9:16 Stories
@@ -418,7 +418,7 @@ export function PlatformsSection() {
 
           {/* Wireframe 3: Reels (9:16 with Side Action Column) */}
           <ScrollReveal delayMs={120}>
-            <div className="border border-border bg-white p-6 sm:p-8 flex flex-col h-full rounded-none">
+            <div className="border border-border bg-card p-6 sm:p-8 flex flex-col h-full rounded-none">
               <div className="flex items-center justify-between mb-4 pb-3 border-b border-border">
                 <span className="text-xs font-mono font-bold text-accent uppercase tracking-wider">
                   9:16 Reels
@@ -649,7 +649,7 @@ export function PlatformsSection() {
 
         {/* Three-Step Flow Diagram: Platform vs. Destination */}
         <ScrollReveal delayMs={150}>
-          <div className="border border-border bg-white p-6 sm:p-10 mb-8 rounded-none">
+          <div className="border border-border bg-card p-6 sm:p-10 mb-8 rounded-none">
             <div className="mb-8">
               <span className="font-mono uppercase text-xs tracking-wider text-muted font-semibold block mb-2">
                 Conversion Process
@@ -681,7 +681,7 @@ export function PlatformsSection() {
                         </span>
                       )}
                       {step.category === 'Interaction' && (
-                        <span className="font-mono text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 bg-white text-ink border border-border">
+                        <span className="font-mono text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 bg-card text-ink border border-border">
                           {step.role}
                         </span>
                       )}
@@ -723,7 +723,7 @@ export function PlatformsSection() {
 
         {/* Placement Qualification Note from the Brief */}
         <ScrollReveal delayMs={180}>
-          <div className="border border-border p-5 sm:p-6 bg-white rounded-none flex items-start gap-4">
+          <div className="border border-border p-5 sm:p-6 bg-card rounded-none flex items-start gap-4">
             <span className="w-1.5 h-1.5 bg-accent inline-block mt-2 flex-shrink-0" />
             <div className="space-y-1 text-xs sm:text-sm text-ink/85 leading-relaxed">
               <p className="font-medium text-ink">

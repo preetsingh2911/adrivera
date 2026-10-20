@@ -47,7 +47,7 @@ export function ContactSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left Form: Client-Side WhatsApp Message Builder */}
-          <div className="lg:col-span-7 border border-border bg-white p-6 sm:p-8 rounded-none">
+          <div className="lg:col-span-7 border border-border bg-card p-6 sm:p-8 rounded-none">
             <div className="flex items-center justify-between pb-4 border-b border-border mb-6">
               <span className="text-xs font-bold uppercase tracking-eyebrow text-ink">
                 Direct WhatsApp Enquiry
@@ -151,7 +151,7 @@ export function ContactSection() {
 
           {/* Right Column: Direct Info & Verification Status */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="border border-border bg-white p-6 sm:p-8 rounded-none">
+            <div className="border border-border bg-card p-6 sm:p-8 rounded-none">
               <span className="text-xs font-bold uppercase tracking-eyebrow text-muted block mb-4">
                 Operating Territory & Desk
               </span>

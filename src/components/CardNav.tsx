@@ -12,8 +12,30 @@ import {
   type PointerEvent as ReactPointerEvent,
   type ReactNode
 } from 'react';
-import { HugeiconsIcon } from '@hugeicons/react';
-import { ArrowUpRight01Icon } from '@hugeicons/core-free-icons';
+import { ThemeToggle } from './ThemeToggle';
+import { useTheme } from './ThemeProvider';
+
+function NavArrow({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      suppressHydrationWarning
+    >
+      <path
+        d="M9 6.65032C9 6.65032 15.9383 6.10759 16.9154 7.08463C17.8924 8.06167 17.3496 15 17.3496 15M16.5 7.5L6.5 17.5"
+        suppressHydrationWarning
+      />
+    </svg>
+  );
+}
 
 export interface CardNavLink {
   label: string;
@@ -117,8 +139,10 @@ const RIM =
   'pointer-events-none absolute inset-0 z-[3] rounded-[inherit] [box-shadow:inset_0_0_0_1px_var(--cn-edge),inset_0_1px_0_var(--cn-highlight)]';
 const BAR =
   'relative z-[2] box-border grid h-[var(--cn-bar)] grid-cols-[1fr_auto_1fr] items-center px-[var(--cn-inset)] group-data-[narrow]/cn:grid-cols-[auto_1fr_auto]';
+const MENU_CONTAINER =
+  'inline-flex items-center gap-2 justify-self-start group-data-[narrow]/cn:col-[3] group-data-[narrow]/cn:row-[1] group-data-[narrow]/cn:justify-self-end';
 const MENU =
-  'inline-flex h-[calc(var(--cn-bar)_-_var(--cn-inset)*2)] cursor-pointer items-center gap-[10px] justify-self-start rounded-[calc(var(--cn-radius)_-_var(--cn-inset))] border border-border/60 pl-[16px] pr-[14px] [background:rgba(255,255,255,0.06)] [font-family:inherit] [font-size:inherit] font-semibold text-[var(--cn-text)] outline-none transition-[background-color,border-color] duration-200 ease-[ease] hover:[background:var(--cn-hover)] hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--cn-ring)] data-[icon-only]:w-[calc(var(--cn-bar)_-_var(--cn-inset)*2)] data-[icon-only]:justify-center data-[icon-only]:p-0 group-data-[narrow]/cn:col-[3] group-data-[narrow]/cn:row-[1] group-data-[narrow]/cn:justify-self-end';
+  'inline-flex h-[calc(var(--cn-bar)_-_var(--cn-inset)*2)] cursor-pointer items-center gap-[10px] rounded-[calc(var(--cn-radius)_-_var(--cn-inset))] border border-border/60 pl-[16px] pr-[14px] [background:rgba(255,255,255,0.06)] [font-family:inherit] [font-size:inherit] font-semibold text-[var(--cn-text)] outline-none transition-[background-color,border-color] duration-200 ease-[ease] hover:[background:var(--cn-hover)] hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--cn-ring)] data-[icon-only]:w-[calc(var(--cn-bar)_-_var(--cn-inset)*2)] data-[icon-only]:justify-center data-[icon-only]:p-0';
 const BURGER = 'relative h-[12px] w-[18px]';
 const LINE_TOP =
   'absolute left-0 top-[2.25px] h-[1.5px] w-full rounded-[2px] bg-current transition-[top,rotate] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-data-[open]/cn:top-[5.25px] group-data-[open]/cn:rotate-45 motion-reduce:transition-none';
@@ -217,7 +241,7 @@ export function CardNav({
   logoHref = '/',
   items = DEFAULT_ITEMS,
   cta,
-  theme = 'light',
+  theme: themeProp,
   surface = 'glass',
   openOn = 'click',
   cardEffect = 'rise',
@@ -266,7 +290,14 @@ export function CardNav({
   const settingsRef = useRef(settings);
   settingsRef.current = settings;
 
-  const palette = THEMES[theme] ?? THEMES.light;
+  let themeContext: { resolvedTheme: 'light' | 'dark' } | null = null;
+  try {
+    themeContext = useTheme();
+  } catch {
+    // If used outside ThemeProvider
+  }
+  const activeTheme = themeProp ?? themeContext?.resolvedTheme ?? 'light';
+  const palette = THEMES[activeTheme] ?? THEMES.light;
   const vars: Record<string, string> = {
     ...palette,
     '--cn-max': `${maxWidth}px`,
@@ -516,31 +547,34 @@ export function CardNav({
     >
       <nav ref={panelRef} className={PANEL} aria-label={ariaLabel}>
         <div ref={barRef} className={BAR}>
-          <button
-            ref={menuRef}
-            type="button"
-            className={MENU}
-            data-icon-only={menuLabel ? undefined : ''}
-            aria-expanded={open}
-            aria-controls={contentId}
-            aria-label={menuLabel ? undefined : open ? 'Close menu' : 'Open menu'}
-            onClick={() => setOpen(!open)}
-          >
-            <span className={BURGER} aria-hidden="true">
-              <span className={LINE_TOP} />
-              <span className={LINE_BOTTOM} />
-            </span>
-            {menuLabel && (
-              <span className={MENU_LABEL}>
-                <span className={WORD_OPEN} aria-hidden={open}>
-                  Menu
-                </span>
-                <span className={WORD_CLOSE} aria-hidden={!open}>
-                  Close
-                </span>
+          <div className={MENU_CONTAINER}>
+            {narrow && <ThemeToggle size="sm" />}
+            <button
+              ref={menuRef}
+              type="button"
+              className={MENU}
+              data-icon-only={menuLabel ? undefined : ''}
+              aria-expanded={open}
+              aria-controls={contentId}
+              aria-label={menuLabel ? undefined : open ? 'Close menu' : 'Open menu'}
+              onClick={() => setOpen(!open)}
+            >
+              <span className={BURGER} aria-hidden="true">
+                <span className={LINE_TOP} />
+                <span className={LINE_BOTTOM} />
               </span>
-            )}
-          </button>
+              {menuLabel && (
+                <span className={MENU_LABEL}>
+                  <span className={WORD_OPEN} aria-hidden={open}>
+                    Menu
+                  </span>
+                  <span className={WORD_CLOSE} aria-hidden={!open}>
+                    Close
+                  </span>
+                </span>
+              )}
+            </button>
+          </div>
 
           {logo && (
             <LinkComponent href={logoHref} className={LOGO} aria-label={logoAlt}>
@@ -548,7 +582,10 @@ export function CardNav({
             </LinkComponent>
           )}
 
-          {cta && !narrow && ctaButton(cta, false)}
+          <div className="flex items-center gap-2 justify-self-end group-data-[narrow]/cn:hidden">
+            <ThemeToggle size="sm" />
+            {cta && !narrow && ctaButton(cta, false)}
+          </div>
         </div>
 
         <div ref={contentRef} id={contentId} className={CONTENT} aria-hidden={!open}>
@@ -582,9 +619,9 @@ export function CardNav({
                           }
                         },
                         <>
-                          <span className={ARROW} aria-hidden="true">
-                            <HugeiconsIcon className={ARROW_OUT} icon={ArrowUpRight01Icon} size={14} strokeWidth={2} />
-                            <HugeiconsIcon className={ARROW_IN} icon={ArrowUpRight01Icon} size={14} strokeWidth={2} />
+                          <span className={ARROW} aria-hidden="true" suppressHydrationWarning>
+                            <NavArrow className={ARROW_OUT} />
+                            <NavArrow className={ARROW_IN} />
                           </span>
                           {link.label}
                         </>
@@ -600,8 +637,13 @@ export function CardNav({
               ref={element => {
                 cardRefs.current[items.length] = element;
               }}
+              className="flex flex-col gap-2.5 pt-1"
             >
               {ctaButton(cta, true)}
+              <div className="flex items-center justify-between px-3.5 py-2.5 border border-border/70 rounded-[calc(var(--cn-radius)_-_var(--cn-inset))] bg-[var(--cn-tile)] text-xs font-mono">
+                <span className="text-[var(--cn-muted)] font-medium">Theme</span>
+                <ThemeToggle variant="segmented" />
+              </div>
             </div>
           )}
         </div>

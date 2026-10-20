@@ -41,7 +41,7 @@ export function FAQSection() {
         </ScrollReveal>
 
         {/* 11 FAQ Items using Native <details> / <summary> with CSS Rotation (No JS Required) */}
-        <div className="border border-border bg-white rounded-none divide-y divide-border">
+        <div className="border border-border bg-card rounded-none divide-y divide-border">
           {faqsData.items.map((item, idx) => (
             <details
               key={item.id}

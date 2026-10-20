@@ -20,7 +20,7 @@ export function TrustSection() {
 
         {/* The Promise Paragraph Block */}
         <ScrollReveal delayMs={50}>
-          <div className="border border-border bg-white p-6 sm:p-10 mb-12 rounded-none">
+          <div className="border border-border bg-card p-6 sm:p-10 mb-12 rounded-none">
             <div className="space-y-4 max-w-4xl">
               {trustContent.promiseParagraphs.map((paragraph, idx) => (
                 <p
@@ -40,7 +40,7 @@ export function TrustSection() {
 
         {/* Two-Column Ruled Accountability Layout */}
         <ScrollReveal delayMs={100}>
-            <div className="motion-card grid grid-cols-1 md:grid-cols-2 border border-border bg-white rounded-none divide-y md:divide-y-0 md:divide-x divide-border">
+            <div className="motion-card grid grid-cols-1 md:grid-cols-2 border border-border bg-card rounded-none divide-y md:divide-y-0 md:divide-x divide-border">
             {/* Left Column: ADrivera's Responsibilities */}
             <div className="p-6 sm:p-10 flex flex-col justify-between">
               <div>
@@ -99,7 +99,7 @@ export function TrustSection() {
 
         {/* Commitment Summary Note */}
         <ScrollReveal delayMs={140}>
-          <div className="mt-8 border border-border p-5 sm:p-6 bg-white rounded-none flex items-start gap-3.5">
+          <div className="mt-8 border border-border p-5 sm:p-6 bg-card rounded-none flex items-start gap-3.5">
             <span className="w-1.5 h-1.5 bg-accent inline-block mt-1.5 flex-shrink-0" />
             <p className="text-xs sm:text-sm text-muted leading-relaxed font-normal">
               {trustContent.commitmentNote}

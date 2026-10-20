@@ -60,9 +60,9 @@ export function PricingSection() {
             return (
               <article
                 key={plan.id}
-                className={`motion-card flex h-full flex-col border bg-white p-5 shadow-sm sm:p-6 ${
+                className={`motion-card flex h-full flex-col border bg-card p-5 shadow-sm sm:p-6 ${
                   isGrowth
-                    ? "border-accent bg-accent/[0.025] shadow-[0_14px_34px_rgba(40,91,255,0.12)] ring-1 ring-accent/20 lg:-translate-y-2"
+                    ? "border-accent bg-accent/[0.04] dark:bg-accent/[0.1] shadow-[0_14px_34px_rgba(40,91,255,0.12)] ring-1 ring-accent/20 lg:-translate-y-2"
                     : "border-border"
                 }`}
               >

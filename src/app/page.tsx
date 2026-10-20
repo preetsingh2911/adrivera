@@ -16,6 +16,7 @@ import { EnquirySection } from "@/components/EnquirySection";
 import { FinalCtaSection } from "@/components/FinalCtaSection";
 import { SiteFooter } from "@/components/SiteFooter";
 import { StickyMobileCta } from "@/components/StickyMobileCta";
+import { LiveCustomerCounter } from "@/components/LiveCustomerCounter";
 
 export default function HomePage() {
   return (
@@ -41,6 +42,7 @@ export default function HomePage() {
       </main>
 
       <SiteFooter />
+      <LiveCustomerCounter />
       <StickyMobileCta />
     </div>
   );

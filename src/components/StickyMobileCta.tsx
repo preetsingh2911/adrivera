@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { siteConfig } from '@/content/site';
+import { WhatsAppIcon } from './ui/WhatsAppIcon';
 
 export function StickyMobileCta() {
   const [isVisible, setIsVisible] = useState<boolean>(true);
@@ -48,9 +49,11 @@ export function StickyMobileCta() {
       <div className="flex items-center gap-3">
         <a
           href={whatsAppUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex-1 flex items-center justify-center gap-2 min-h-[48px] px-4 text-sm font-semibold text-white bg-accent hover:bg-[#1E4BD9] active:bg-[#153BB8] rounded-none transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent"
         >
-          <span className="w-2 h-2 bg-white inline-block flex-shrink-0" />
+          <WhatsAppIcon className="w-5 h-5 text-white shrink-0" />
           <span>WhatsApp Par Baat Karein</span>
         </a>
 

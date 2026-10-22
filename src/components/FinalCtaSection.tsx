@@ -1,6 +1,7 @@
 import React from 'react';
 import { finalCtaData } from '@/content/cta';
 import { ScrollReveal } from './ScrollReveal';
+import { WhatsAppIcon } from './ui/WhatsAppIcon';
 
 export function FinalCtaSection() {
   return (
@@ -45,9 +46,10 @@ export function FinalCtaSection() {
                     href="https://wa.me/918815512459?text=Namaste%20ADrivera%20team%2C%20main%20apne%20business%20ke%20liye%20Meta%20Ads%20ke%20baare%20mein%20baat%20karna%20chahta%20hoon."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md bg-transparent border-2 border-white/40 px-8 font-medium text-white transition-all duration-100 hover:[box-shadow:5px_5px_rgba(255,255,255,0.4)] translate-x-[3px] hover:translate-x-[0px] translate-y-[3px] hover:translate-y-[0px] [box-shadow:0px_0px_rgba(255,255,255,0.4)] active:translate-y-[3px] active:translate-x-[3px]"
+                    className="group relative inline-flex h-12 items-center justify-center gap-2.5 overflow-hidden rounded-md bg-transparent border-2 border-white/40 px-8 font-medium text-white transition-all duration-100 hover:[box-shadow:5px_5px_rgba(255,255,255,0.4)] translate-x-[3px] hover:translate-x-[0px] translate-y-[3px] hover:translate-y-[0px] [box-shadow:0px_0px_rgba(255,255,255,0.4)] active:translate-y-[3px] active:translate-x-[3px]"
                   >
-                    {finalCtaData.secondaryCta.label}
+                    <WhatsAppIcon className="w-5 h-5 text-[#25D366] shrink-0 transition-transform duration-200 group-hover:scale-110" />
+                    <span>{finalCtaData.secondaryCta.label}</span>
                   </a>
                 </div>
               </div>

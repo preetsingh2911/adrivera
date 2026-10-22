@@ -61,6 +61,23 @@ html {
   scrollbar-color: var(--border) var(--bg);
 }
 
+/* Bulletproof Theme Logo Display - Immune to specificity overrides */
+.theme-logo-light {
+  display: block !important;
+}
+.dark .theme-logo-light,
+[data-theme="dark"] .theme-logo-light {
+  display: none !important;
+}
+
+.theme-logo-dark {
+  display: none !important;
+}
+.dark .theme-logo-dark,
+[data-theme="dark"] .theme-logo-dark {
+  display: block !important;
+}
+
 .dark select option {
   background-color: #0D1733;
   color: #F0F4FC;

@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 import { NavLink } from '@/content/site';
 import { Button } from './ui/Button';
+import { BrandLogo } from './BrandLogo';
 
 interface MobileNavigationProps {
   isOpen: boolean;
@@ -82,10 +83,7 @@ export function MobileNavigation({
     >
       {/* Top Bar with Brand & Close Button */}
       <div className="flex items-center justify-between pb-6 border-b border-border">
-        <div className="flex items-center gap-2 text-ink font-heading font-semibold text-xl tracking-tight">
-          <span className="w-2.5 h-2.5 bg-accent inline-block flex-shrink-0 rounded-none" aria-hidden="true" />
-          <span>{brandName}</span>
-        </div>
+        <BrandLogo variant="horizontal" size="md" alt={brandName} />
 
         <button
           ref={closeBtnRef}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { siteContent } from '@/content/site';
 import { ThemeToggle } from './ThemeToggle';
+import { BrandLogo } from './BrandLogo';
 
 export function SiteFooter() {
   return (
@@ -11,13 +12,10 @@ export function SiteFooter() {
           <div className="md:col-span-6 flex flex-col items-start">
             <a
               href="/"
-              className="flex items-center gap-2 text-ink font-heading font-semibold text-xl tracking-tight mb-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2"
+              className="inline-flex items-center mb-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2"
+              aria-label={siteContent.brandName}
             >
-              <span
-                className="w-2.5 h-2.5 bg-accent inline-block flex-shrink-0 rounded-none"
-                aria-hidden="true"
-              />
-              <span>{siteContent.brandName}</span>
+              <BrandLogo variant="horizontal" size="lg" alt={siteContent.brandName} />
             </a>
             <p className="text-muted text-sm leading-relaxed max-w-sm mb-4">
               {siteContent.tagline}

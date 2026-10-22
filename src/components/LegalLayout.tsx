@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { siteConfig } from '@/content/site';
 import { ThemeToggle } from './ThemeToggle';
+import { BrandLogo } from './BrandLogo';
 
 interface LegalLayoutProps {
   title: string;
@@ -34,13 +35,10 @@ export function LegalLayout({
         <div className="max-w-site mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <Link
             href="/"
-            className="flex items-center gap-2 text-ink font-heading font-semibold text-lg tracking-tight focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent"
+            className="inline-flex items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent"
+            aria-label={siteConfig.brandName}
           >
-            <span
-              className="w-2.5 h-2.5 bg-accent inline-block flex-shrink-0"
-              aria-hidden="true"
-            />
-            <span>{siteConfig.brandName}</span>
+            <BrandLogo variant="horizontal" size="md" alt={siteConfig.brandName} />
           </Link>
 
           <div className="flex items-center gap-3 sm:gap-4">

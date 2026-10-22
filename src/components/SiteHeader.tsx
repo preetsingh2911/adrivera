@@ -3,6 +3,7 @@
 import React from 'react';
 import { siteContent } from '@/content/site';
 import CardNav, { type CardNavItem } from './CardNav';
+import { BrandLogo } from './BrandLogo';
 
 export function SiteHeader() {
   const items: CardNavItem[] = [
@@ -40,10 +41,7 @@ export function SiteHeader() {
   ];
 
   const logoNode = (
-    <div className="flex items-center gap-2 font-heading font-extrabold text-lg sm:text-xl tracking-tight text-ink">
-      <span className="h-2.5 w-2.5 flex-shrink-0 bg-accent rounded-[1px]" aria-hidden="true" />
-      <span>{siteContent.brandName}</span>
-    </div>
+    <BrandLogo variant="horizontal" size="md" alt={siteContent.brandName} />
   );
 
   return (

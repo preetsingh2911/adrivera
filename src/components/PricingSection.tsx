@@ -188,7 +188,7 @@ export function PricingSection() {
                   <button
                     type="button"
                     onClick={() => handleContactPlan(plan.id)}
-                    className="group relative flex h-12 w-full items-center justify-center overflow-hidden rounded-md bg-linear-to-r bg-gradient-to-r dark:from-[#070e41] dark:to-[#263381] from-[#f6f7ff] to-[#f5f6ff] dark:border-[rgb(76_100_255)] border-2 border-[#263381] px-4 font-semibold text-foreground dark:text-white transition-all duration-100 hover:[box-shadow:5px_5px_rgb(38_51_129)] translate-x-[3px] hover:translate-x-[0px] translate-y-[3px] hover:translate-y-[0px] [box-shadow:0px_0px_rgb(38_51_129)] dark:hover:[box-shadow:5px_5px_rgb(76_100_255)] dark:active:[box-shadow:0px_0px_rgb(76_100_255)] active:[box-shadow:0px_0px_rgb(38_51_129)] active:translate-y-[3px] active:translate-x-[3px]"
+                    className="group relative flex h-12 w-full items-center justify-center overflow-hidden rounded-md bg-gradient-to-r from-[#1E4BD9] to-[#285BFF] hover:from-[#1A42C5] hover:to-[#2250EA] border-2 border-[#1E4BD9] dark:border-[#3E74FF] px-4 font-semibold text-white transition-[transform,box-shadow,background-color,border-color,color] duration-200 hover:[box-shadow:4px_4px_rgb(21_59_184)] dark:hover:[box-shadow:4px_4px_rgb(62_116_255)] translate-x-[2px] hover:translate-x-0 translate-y-[2px] hover:translate-y-0 [box-shadow:0px_0px_transparent] active:translate-y-[2px] active:translate-x-[2px]"
                   >
                     Contact Now
                   </button>
@@ -197,7 +197,7 @@ export function PricingSection() {
                     aria-expanded={isExpanded}
                     aria-controls={`${plan.id}-details`}
                     onClick={() => setExpandedPlan(isExpanded ? null : plan.id)}
-                    className="group relative flex h-11 w-full items-center justify-center overflow-hidden rounded-md border-2 border-[#263381] bg-white dark:bg-[#070e41] px-4 font-semibold text-[#263381] dark:text-white transition-all duration-100 hover:[box-shadow:5px_5px_rgb(38_51_129)] translate-x-[3px] hover:translate-x-[0px] translate-y-[3px] hover:translate-y-[0px] [box-shadow:0px_0px_rgb(38_51_129)] active:[box-shadow:0px_0px_rgb(38_51_129)] active:translate-y-[3px] active:translate-x-[3px]"
+                    className="group relative flex h-11 w-full items-center justify-center overflow-hidden rounded-md border-2 border-border hover:border-accent/80 dark:border-border dark:hover:border-accent bg-card dark:bg-card/90 px-4 font-semibold text-ink dark:text-white transition-[transform,box-shadow,background-color,border-color,color] duration-200 hover:[box-shadow:4px_4px_rgba(40,91,255,0.15)] dark:hover:[box-shadow:4px_4px_rgba(62,116,255,0.3)] translate-x-[2px] hover:translate-x-0 translate-y-[2px] hover:translate-y-0 [box-shadow:0px_0px_transparent] active:translate-y-[2px] active:translate-x-[2px]"
                   >
                     {isExpanded ? "Show Less" : "Know More"}
                   </button>

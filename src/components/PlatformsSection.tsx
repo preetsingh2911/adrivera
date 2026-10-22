@@ -1,6 +1,8 @@
 import React from 'react';
 import { platformsData } from '@/content/platforms';
 import { ScrollReveal } from './ScrollReveal';
+import { FacebookIcon } from './ui/FacebookIcon';
+import { InstagramIcon } from './ui/InstagramIcon';
 
 export function PlatformsSection() {
   return (
@@ -9,9 +11,15 @@ export function PlatformsSection() {
         {/* Section Header */}
         <ScrollReveal>
           <div className="max-w-3xl mb-12 sm:mb-16">
-            <span className="inline-block text-xs font-semibold uppercase tracking-eyebrow text-muted mb-4">
-              {platformsData.eyebrow}
-            </span>
+            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full border border-border bg-card shadow-2xs mb-4">
+              <div className="flex items-center gap-1.5 shrink-0">
+                <FacebookIcon size={14} className="w-3.5 h-3.5" />
+                <InstagramIcon size={14} className="w-3.5 h-3.5" />
+              </div>
+              <span className="text-xs font-mono font-semibold uppercase tracking-eyebrow text-ink">
+                {platformsData.eyebrow}
+              </span>
+            </div>
             <h2 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl text-ink tracking-tighter leading-tight mb-4">
               {platformsData.headline}
             </h2>
@@ -27,7 +35,9 @@ export function PlatformsSection() {
           <ScrollReveal delayMs={40}>
             <div className="border border-border bg-card p-6 sm:p-8 flex flex-col h-full rounded-none">
               <div className="flex items-center justify-between mb-4 pb-3 border-b border-border">
-                <span className="text-xs font-mono font-bold text-accent uppercase tracking-wider">
+                <span className="text-xs font-mono font-bold text-accent uppercase tracking-wider flex items-center gap-1.5">
+                  <FacebookIcon size={14} className="w-3.5 h-3.5" />
+                  <InstagramIcon size={14} className="w-3.5 h-3.5" />
                   4:5 Feed Post
                 </span>
                 <span className="text-[11px] font-mono text-muted uppercase">
@@ -219,7 +229,9 @@ export function PlatformsSection() {
           <ScrollReveal delayMs={80}>
             <div className="border border-border bg-card p-6 sm:p-8 flex flex-col h-full rounded-none">
               <div className="flex items-center justify-between mb-4 pb-3 border-b border-border">
-                <span className="text-xs font-mono font-bold text-accent uppercase tracking-wider">
+                <span className="text-xs font-mono font-bold text-accent uppercase tracking-wider flex items-center gap-1.5">
+                  <InstagramIcon size={14} className="w-3.5 h-3.5" />
+                  <FacebookIcon size={14} className="w-3.5 h-3.5" />
                   9:16 Stories
                 </span>
                 <span className="text-[11px] font-mono text-muted uppercase">
@@ -420,7 +432,9 @@ export function PlatformsSection() {
           <ScrollReveal delayMs={120}>
             <div className="border border-border bg-card p-6 sm:p-8 flex flex-col h-full rounded-none">
               <div className="flex items-center justify-between mb-4 pb-3 border-b border-border">
-                <span className="text-xs font-mono font-bold text-accent uppercase tracking-wider">
+                <span className="text-xs font-mono font-bold text-accent uppercase tracking-wider flex items-center gap-1.5">
+                  <InstagramIcon size={14} className="w-3.5 h-3.5" />
+                  <FacebookIcon size={14} className="w-3.5 h-3.5" />
                   9:16 Reels
                 </span>
                 <span className="text-[11px] font-mono text-muted uppercase">
@@ -676,7 +690,9 @@ export function PlatformsSection() {
                         STEP {step.step}
                       </span>
                       {step.category === 'Platform' && (
-                        <span className="font-mono text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 bg-tint text-[#153BB8] border border-accent/30">
+                        <span className="font-mono text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 bg-tint text-[#153BB8] border border-accent/30 inline-flex items-center gap-1.5">
+                          <FacebookIcon size={12} className="w-3 h-3" />
+                          <InstagramIcon size={12} className="w-3 h-3" />
                           {step.role}
                         </span>
                       )}

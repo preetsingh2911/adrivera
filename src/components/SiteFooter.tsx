@@ -2,6 +2,8 @@ import React from 'react';
 import { siteContent } from '@/content/site';
 import { ThemeToggle } from './ThemeToggle';
 import { BrandLogo } from './BrandLogo';
+import { FacebookIcon } from './ui/FacebookIcon';
+import { InstagramIcon } from './ui/InstagramIcon';
 
 export function SiteFooter() {
   return (
@@ -23,6 +25,20 @@ export function SiteFooter() {
             <span className="text-xs font-mono text-muted">
               Territory: {siteContent.location}
             </span>
+            <div className="mt-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-card shadow-2xs">
+              <span className="text-xs font-mono font-medium text-muted">Focus:</span>
+              <div className="flex items-center gap-2">
+                <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-ink">
+                  <FacebookIcon size={14} className="w-3.5 h-3.5" />
+                  Facebook Ads
+                </span>
+                <span className="text-muted/60">&bull;</span>
+                <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-ink">
+                  <InstagramIcon size={14} className="w-3.5 h-3.5" />
+                  Instagram Ads
+                </span>
+              </div>
+            </div>
           </div>
 
           {/* Dynamic Footer Link Groups */}

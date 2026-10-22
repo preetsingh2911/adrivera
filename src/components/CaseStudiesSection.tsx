@@ -1,6 +1,8 @@
 import React from 'react';
 import { caseStudiesData } from '@/content/caseStudies';
 import { ScrollReveal } from './ScrollReveal';
+import { FacebookIcon } from './ui/FacebookIcon';
+import { InstagramIcon } from './ui/InstagramIcon';
 
 export function CaseStudiesSection() {
   const verifiedEntries = caseStudiesData.entries.filter((e) => e.status === 'verified');
@@ -13,9 +15,15 @@ export function CaseStudiesSection() {
         {/* Section Header */}
         <ScrollReveal>
           <div className="max-w-3xl mb-12 sm:mb-16">
-            <span className="inline-block text-xs font-semibold uppercase tracking-eyebrow text-muted mb-4">
-              {caseStudiesData.eyebrow}
-            </span>
+            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full border border-border bg-card shadow-2xs mb-4">
+              <div className="flex items-center gap-1.5 shrink-0">
+                <FacebookIcon size={14} className="w-3.5 h-3.5" />
+                <InstagramIcon size={14} className="w-3.5 h-3.5" />
+              </div>
+              <span className="text-xs font-mono font-semibold uppercase tracking-eyebrow text-ink">
+                {caseStudiesData.eyebrow}
+              </span>
+            </div>
             <h2 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl text-ink tracking-tighter leading-tight mb-4">
               {caseStudiesData.headline}
             </h2>
@@ -49,9 +57,16 @@ export function CaseStudiesSection() {
                 {/* Entry Header: Category, Ownership & Plain-text Status Tag */}
                 <div className="p-6 sm:p-8 border-b border-border flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-bg/50">
                   <div>
-                    <span className="font-mono text-xs text-muted uppercase tracking-wider block mb-1">
-                      {study.category} &bull; {study.ownership === 'founder-owned' ? 'Founder-Managed Venture' : 'Client Campaign'}
-                    </span>
+                    <div className="flex flex-wrap items-center gap-2 mb-1.5">
+                      <span className="font-mono text-xs text-muted uppercase tracking-wider">
+                        {study.category} &bull; {study.ownership === 'founder-owned' ? 'Founder-Managed Venture' : 'Client Campaign'}
+                      </span>
+                      <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-mono bg-tint/60 text-ink/80 border border-border/60">
+                        <FacebookIcon size={12} className="w-3 h-3" />
+                        <InstagramIcon size={12} className="w-3 h-3" />
+                        Meta Ads
+                      </span>
+                    </div>
                     <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-ink tracking-tight">
                       {study.title}
                     </h3>

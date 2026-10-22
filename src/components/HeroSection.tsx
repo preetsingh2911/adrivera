@@ -5,6 +5,8 @@ import { Reveal } from "./ui/Reveal";
 import { Eyebrow } from "./ui/Eyebrow";
 import { Button } from "./ui/Button";
 import { WhatsAppIcon } from "./ui/WhatsAppIcon";
+import { FacebookIcon } from "./ui/FacebookIcon";
+import { InstagramIcon } from "./ui/InstagramIcon";
 import { CampaignProofSection } from "./CampaignProofSection";
 
 export function HeroSection() {
@@ -18,39 +20,85 @@ export function HeroSection() {
         "Hi ADrivera, I would like to know more about your Meta Ads plans.",
       )}`;
 
+  // Split headline if comma is present for optimal 2-part visual chunking
+  const headlineParts = heroData.headline.includes(",")
+    ? [
+        heroData.headline.slice(0, heroData.headline.indexOf(",") + 1),
+        heroData.headline.slice(heroData.headline.indexOf(",") + 1).trim(),
+      ]
+    : [heroData.headline];
+
   return (
-    <section className="relative pt-12 pb-16 md:pt-20 md:pb-24 border-b border-border bg-bg overflow-hidden">
+    <section className="relative pt-6 pb-10 md:pt-12 md:pb-16 border-b border-border bg-bg overflow-hidden">
       <div className="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-start">
           {/* Left Column (7 cols): Core Positioning */}
           <div className="lg:col-span-7 flex flex-col items-start">
             <Reveal>
-              <Eyebrow number="01" label={heroData.eyebrow} />
+              <div className="inline-flex items-center gap-2 mb-2 px-2.5 py-1 rounded-full border border-border/80 bg-card/90 shadow-2xs">
+                <div className="flex items-center gap-1.5 shrink-0">
+                  <FacebookIcon size={15} className="w-3.5 h-3.5 shrink-0" />
+                  <InstagramIcon size={15} className="w-3.5 h-3.5 shrink-0" />
+                </div>
+                <span className="font-mono text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-ink dark:text-white">
+                  01 / Meta Ads in Bhopal · Facebook &amp; Instagram
+                </span>
+              </div>
             </Reveal>
 
             <Reveal delayMs={60}>
-              <h1 className="font-heading font-extrabold text-ink tracking-tightest leading-tightest text-[clamp(2.5rem,6.5vw,5.25rem)] mb-6">
-                {heroData.headline}
+              <h1 className="font-heading font-extrabold tracking-tight text-ink text-[clamp(1.35rem,4vw,1.65rem)] md:text-[1.85rem] lg:text-[1.95rem] leading-[1.15] mb-3.5 sm:mb-4 [text-wrap:balance]">
+                {headlineParts.length > 1 ? (
+                  <>
+                    <span className="block text-ink">{headlineParts[0]}</span>
+                    <span className="block mt-0.5 sm:mt-1 text-accent bg-gradient-to-r from-accent via-[#3D71FF] to-[#6392FF] dark:from-[#5A8AFF] dark:via-[#7EA7FF] dark:to-[#A3C2FF] bg-clip-text text-transparent">
+                      {headlineParts[1]}
+                    </span>
+                  </>
+                ) : (
+                  heroData.headline
+                )}
               </h1>
             </Reveal>
 
             <Reveal delayMs={120}>
-              <p className="text-muted text-base sm:text-lg leading-relaxed max-w-[65ch] mb-3">
-                {heroData.supportingCopy}
+              {/* Highlighted in bold without size increment */}
+              <p className="font-bold text-ink dark:text-white text-sm sm:text-base lg:text-lg leading-relaxed max-w-[56ch] mb-2 sm:mb-2.5">
+                ADrivera ke saath{' '}
+                <span className="inline-flex items-center gap-1 text-[#1877F2] dark:text-[#4293f7] font-bold">
+                  <FacebookIcon size={16} className="w-4 h-4 inline-block shrink-0 -translate-y-[1px]" />
+                  Facebook
+                </span>{' '}
+                aur{' '}
+                <span className="inline-flex items-center gap-1 text-[#D62976] dark:text-[#f35293] font-bold">
+                  <InstagramIcon size={16} className="w-4 h-4 inline-block shrink-0 -translate-y-[1px]" />
+                  Instagram
+                </span>{' '}
+                par apne business ki advertising shuru kijiye. Sahi audience tak pahunchne, enquiries badhane aur apne business ko ek pehchaan dene ki direction mein pehla kadam uthaiye.
               </p>
               {heroData.secondaryHinglishLine && (
-                <p
-                  lang="hi-Latn"
-                  className="text-ink text-sm sm:text-base font-normal leading-relaxed max-w-[65ch] mb-8"
-                >
-                  {heroData.secondaryHinglishLine}
-                </p>
+                <div className="flex items-center gap-2 text-ink dark:text-white text-xs sm:text-sm font-semibold mb-3.5 sm:mb-4">
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent inline-block shrink-0" />
+                  <span lang="hi-Latn">{heroData.secondaryHinglishLine}</span>
+                </div>
               )}
+
+              {/* Strategic platform capability strip */}
+              <div className="flex flex-wrap items-center gap-2 mb-4">
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-border bg-card text-[11px] sm:text-xs font-semibold text-ink shadow-2xs">
+                  <FacebookIcon size={14} className="w-3.5 h-3.5 shrink-0" />
+                  Facebook Ads &amp; Feed
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-border bg-card text-[11px] sm:text-xs font-semibold text-ink shadow-2xs">
+                  <InstagramIcon size={14} className="w-3.5 h-3.5 shrink-0" />
+                  Instagram Reels &amp; Stories
+                </span>
+              </div>
             </Reveal>
 
-            <Reveal delayMs={180}>
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-6">
-                <Button variant="primary" href={heroData.primaryCta.href}>
+            <Reveal delayMs={180} className="w-full sm:w-auto">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto mb-4">
+                <Button variant="primary" href={heroData.primaryCta.href} className="w-full sm:w-auto">
                   {heroData.primaryCta.label}
                 </Button>
                 <Button
@@ -60,7 +108,7 @@ export function HeroSection() {
                   rel={
                     isWhatsappPlaceholder ? undefined : "noopener noreferrer"
                   }
-                  className="gap-2.5"
+                  className="gap-2.5 w-full sm:w-auto"
                 >
                   <WhatsAppIcon className="w-5 h-5 text-[#25D366] shrink-0 transition-transform duration-200 group-hover:scale-110" />
                   <span>{heroData.secondaryCta.label}</span>

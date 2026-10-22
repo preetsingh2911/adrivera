@@ -1,5 +1,7 @@
 import React from "react";
 import { Reveal } from "./ui/Reveal";
+import { FacebookIcon } from "./ui/FacebookIcon";
+import { InstagramIcon } from "./ui/InstagramIcon";
 
 export function CampaignProofSection() {
   return (
@@ -22,9 +24,16 @@ export function CampaignProofSection() {
           />
           <figcaption className="p-3 pb-2">
             <div className="flex items-baseline justify-between gap-3 mb-1">
-              <span className="font-heading font-extrabold text-sm text-ink">
-                Taskloop · Rishabh, Owner
-              </span>
+              <div className="flex items-center gap-2">
+                <span className="font-heading font-extrabold text-sm text-ink">
+                  Taskloop · Rishabh, Owner
+                </span>
+                <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-mono bg-tint/60 text-muted">
+                  <InstagramIcon size={12} className="w-3 h-3" />
+                  <FacebookIcon size={12} className="w-3 h-3" />
+                  Meta Ads
+                </span>
+              </div>
               <span className="font-mono text-xs font-bold text-positive">
                 +1,240% views
               </span>
@@ -44,9 +53,16 @@ export function CampaignProofSection() {
           />
           <figcaption className="p-3 pb-2">
             <div className="flex items-baseline justify-between gap-3 mb-1">
-              <span className="font-heading font-extrabold text-sm text-ink">
-                Bhopal event management company
-              </span>
+              <div className="flex items-center gap-2">
+                <span className="font-heading font-extrabold text-sm text-ink">
+                  Bhopal event management company
+                </span>
+                <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-mono bg-tint/60 text-muted">
+                  <InstagramIcon size={12} className="w-3 h-3" />
+                  <FacebookIcon size={12} className="w-3 h-3" />
+                  Meta Ads
+                </span>
+              </div>
               <span className="font-mono text-xs font-bold text-positive">
                 +1,535% views
               </span>

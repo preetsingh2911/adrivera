@@ -1,6 +1,6 @@
 export const heroData = {
   eyebrow: 'Meta Ads in Bhopal · Facebook & Instagram',
-  headline: 'Business achha hai. Ab duniya ko pata bhi chalne do.',
+  headline: 'Aapke Business Mein Dum Hai, Ab Use Sahi Audience Tak Phauchane ka Kaam hamara',
   supportingCopy:
     'ADrivera ke saath Facebook aur Instagram par apne business ki advertising shuru kijiye. Sahi audience tak pahunchne, enquiries badhane aur apne business ko ek pehchaan dene ki direction mein pehla kadam uthaiye.',
   secondaryHinglishLine: 'Aap business sambhaliye, online visibility hum sambhalenge.',

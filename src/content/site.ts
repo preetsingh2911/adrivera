@@ -40,7 +40,7 @@ export interface SiteContent {
 
 export const siteContent: SiteContent = {
   brandName: 'ADrivera',
-  tagline: 'Business achha hai. Ab duniya ko pata bhi chalne do.',
+  tagline: 'Aapke Business Mein Dum Hai, Ab Use Sahi Audience Tak Phauchane ka Kaam hamara',
   whatsappNumber: '918815512459',
   navLinks: [
     { label: 'Home', href: '/#home' },

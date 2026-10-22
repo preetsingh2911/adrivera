@@ -23,7 +23,7 @@ function getSystemTheme(): ResolvedTheme {
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>('system');
+  const [theme, setThemeState] = useState<Theme>('light');
   const [resolvedTheme, setResolvedTheme] = useState<ResolvedTheme>('light');
   const [isMounted, setIsMounted] = useState(false);
   const [, startTransition] = useTransition();
@@ -49,7 +49,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   // Initialize on mount
   useEffect(() => {
     setIsMounted(true);
-    let initialTheme: Theme = 'system';
+    let initialTheme: Theme = 'light';
     try {
       const stored = localStorage.getItem(STORAGE_KEY) as Theme | null;
       if (stored === 'light' || stored === 'dark' || stored === 'system') {

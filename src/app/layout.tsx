@@ -141,7 +141,7 @@ export default function RootLayout({
       className={cn(inter.variable, manrope.variable, ibmPlexMono.variable, notoDevanagari.variable)}
     >
       <head>
-        <meta name="color-scheme" content="light dark" />
+        <meta name="color-scheme" content="light" />
         <meta name="darkreader-lock" content="true" />
         <script
           dangerouslySetInnerHTML={{
@@ -150,7 +150,7 @@ export default function RootLayout({
                 try {
                   var stored = localStorage.getItem('adrivera-theme');
                   var supportDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  var isDark = stored === 'dark' || (!stored && supportDark) || (stored === 'system' && supportDark);
+                  var isDark = stored === 'dark' || (stored === 'system' && supportDark);
                   if (isDark) {
                     document.documentElement.classList.add('dark');
                     document.documentElement.setAttribute('data-theme', 'dark');

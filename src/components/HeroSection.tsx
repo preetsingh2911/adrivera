@@ -4,6 +4,7 @@ import { heroData } from "@/content/hero";
 import { Reveal } from "./ui/Reveal";
 import { Eyebrow } from "./ui/Eyebrow";
 import { Button } from "./ui/Button";
+import { WhatsAppIcon } from "./ui/WhatsAppIcon";
 import { CampaignProofSection } from "./CampaignProofSection";
 
 export function HeroSection() {
@@ -59,8 +60,10 @@ export function HeroSection() {
                   rel={
                     isWhatsappPlaceholder ? undefined : "noopener noreferrer"
                   }
+                  className="gap-2.5"
                 >
-                  {heroData.secondaryCta.label}
+                  <WhatsAppIcon className="w-5 h-5 text-[#25D366] shrink-0 transition-transform duration-200 group-hover:scale-110" />
+                  <span>{heroData.secondaryCta.label}</span>
                 </Button>
               </div>
 

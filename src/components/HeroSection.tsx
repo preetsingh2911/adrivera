@@ -47,11 +47,11 @@ export function HeroSection() {
             </Reveal>
 
             <Reveal delayMs={60}>
-              <h1 className="font-heading font-extrabold tracking-tight text-ink text-[clamp(1.35rem,4vw,1.65rem)] md:text-[1.85rem] lg:text-[1.95rem] leading-[1.15] mb-3.5 sm:mb-4 [text-wrap:balance]">
+              <h1 className="font-heading font-extrabold tracking-tight text-ink text-3xl sm:text-4xl md:text-5xl lg:text-[2.85rem] xl:text-[3.25rem] leading-[1.12] sm:leading-[1.1] md:leading-[1.08] mb-4 sm:mb-5 [text-wrap:balance]">
                 {headlineParts.length > 1 ? (
                   <>
                     <span className="block text-ink">{headlineParts[0]}</span>
-                    <span className="block mt-0.5 sm:mt-1 text-accent bg-gradient-to-r from-accent via-[#3D71FF] to-[#6392FF] dark:from-[#5A8AFF] dark:via-[#7EA7FF] dark:to-[#A3C2FF] bg-clip-text text-transparent">
+                    <span className="block mt-1 sm:mt-1.5 text-accent bg-gradient-to-r from-accent via-[#3D71FF] to-[#6392FF] dark:from-[#5A8AFF] dark:via-[#7EA7FF] dark:to-[#A3C2FF] bg-clip-text text-transparent">
                       {headlineParts[1]}
                     </span>
                   </>

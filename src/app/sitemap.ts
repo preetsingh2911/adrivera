@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://adrivera.in';
+  const baseUrl = 'https://adrivera.store';
   // Use a fixed ISO date format for deterministic static export
   const lastModified = new Date('2026-10-18T10:00:00.000Z');
 

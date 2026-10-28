@@ -44,7 +44,7 @@ const notoDevanagari = Noto_Sans_Devanagari({
   fallback: ['sans-serif'],
 });
 
-const siteUrl = 'https://adrivera.in';
+const siteUrl = 'https://adrivera.store';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -70,6 +70,21 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.png', type: 'image/png' },
+      { url: '/favicon-48x48.png', sizes: '48x48', type: 'image/png' },
+      { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+      { url: '/favicon-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: ['/favicon.ico'],
+  },
+  manifest: '/site.webmanifest',
   openGraph: {
     title: 'ADrivera | Meta Ads Agency in Bhopal',
     description:
@@ -143,6 +158,15 @@ export default function RootLayout({
       <head>
         <meta name="color-scheme" content="light" />
         <meta name="darkreader-lock" content="true" />
+        {/* Google-compliant Favicon Tags */}
+        <link rel="icon" href="/favicon.png" type="image/png" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
